@@ -1,25 +1,116 @@
-            <nav class="navbar navbar-expand navbar-light navbar-bg">
-                <a class="sidebar-toggle d-flex">
-                    <i class="hamburger align-self-center"></i>
-                </a>
-
-                <div class="navbar-collapse collapse">
-                    <ul class="navbar-nav navbar-align">
-                        <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown">
-                                <i class="align-middle" data-feather="settings"></i>
-                            </a>
-
-                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                                <i class="avatar align-middle mr-1" data-feather="user"></i> <span class=" text-dark"><?= $this->session->userdata('nama') ?></span> </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="">Export Excel</a>
-                                <!-- <a class="dropdown-item" href="<?= base_url('cetak/exportexcel') ?>">Export Excel</a> -->
-                                <a class="dropdown-item" href="">Log Aktifitas User</a>
-                                <!-- <a class="dropdown-item" href="<?= base_url('admin/log_user') ?>">Log Aktifitas User</a> -->
-                                <a class="dropdown-item" href="<?= base_url('auth/logout') ?>">Log out</a>
+                        <nav class="navbar header-navbar pcoded-header">
+                            <div class="navbar-wrapper">
+                                <div class="navbar-logo">
+                                    <a class="mobile-menu waves-effect waves-light" id="mobile-collapse" href="#!">
+                                        <i class="ti-menu"></i>
+                                    </a>
+                                    <div class="mobile-search waves-effect waves-light">
+                                        <div class="header-search">
+                                            <div class="main-search morphsearch-search">
+                                                <div class="input-group">
+                                                    <span class="input-group-prepend search-close"><i class="ti-close input-group-text"></i></span>
+                                                    <input type="text" class="form-control" placeholder="Enter Keyword">
+                                                    <span class="input-group-append search-btn"><i class="ti-search input-group-text"></i></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="index.html">
+                                        <img class="img-fluid" src="<?= base_url() ?>assets/images/logo.png" alt="Theme-Logo" />
+                                    </a>
+                                    <a class="mobile-options waves-effect waves-light">
+                                        <i class="ti-more"></i>
+                                    </a>
+                                </div>
+                                <div class="navbar-container container-fluid">
+                                    <ul class="nav-left">
+                                        <li>
+                                            <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                        </li>
+                                        <li>
+                                            <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                                                <i class="ti-fullscreen"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="nav-right">
+                                        <li class="header-notification">
+                                            <a href="#!" class="waves-effect waves-light">
+                                                <i class="ti-bell"></i>
+                                                <span class="badge bg-c-red"></span>
+                                            </a>
+                                            <ul class="show-notification">
+                                                <li>
+                                                    <h6>Notifications</h6>
+                                                    <label class="label label-danger">New</label>
+                                                </li>
+                                                <li class="waves-effect waves-light">
+                                                    <div class="media">
+                                                        <img class="d-flex align-self-center img-radius" src="<?= base_url() ?>assets/images/avatar-2.jpg" alt="Generic placeholder image">
+                                                        <div class="media-body">
+                                                            <h5 class="notification-user">John Doe</h5>
+                                                            <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                            <span class="notification-time">30 minutes ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="waves-effect waves-light">
+                                                    <div class="media">
+                                                        <img class="d-flex align-self-center img-radius" src="<?= base_url() ?>assets/images/avatar-4.jpg" alt="Generic placeholder image">
+                                                        <div class="media-body">
+                                                            <h5 class="notification-user">Joseph William</h5>
+                                                            <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                            <span class="notification-time">30 minutes ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="waves-effect waves-light">
+                                                    <div class="media">
+                                                        <img class="d-flex align-self-center img-radius" src="<?= base_url() ?>assets/images/avatar-3.jpg" alt="Generic placeholder image">
+                                                        <div class="media-body">
+                                                            <h5 class="notification-user">Sara Soudein</h5>
+                                                            <p class="notification-msg">Lorem ipsum dolor sit amet, consectetuer elit.</p>
+                                                            <span class="notification-time">30 minutes ago</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="user-profile header-notification">
+                                            <a href="#!" class="waves-effect waves-light">
+                                                <img src="<?= base_url() ?>assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                                <span>John Doe</span>
+                                                <i class="ti-angle-down"></i>
+                                            </a>
+                                            <ul class="show-notification profile-notification">
+                                                <li class="waves-effect waves-light">
+                                                    <a href="#!">
+                                                        <i class="ti-settings"></i> Settings
+                                                    </a>
+                                                </li>
+                                                <li class="waves-effect waves-light">
+                                                    <a href="user-profile.html">
+                                                        <i class="ti-user"></i> Profile
+                                                    </a>
+                                                </li>
+                                                <li class="waves-effect waves-light">
+                                                    <a href="email-inbox.html">
+                                                        <i class="ti-email"></i> My Messages
+                                                    </a>
+                                                </li>
+                                                <li class="waves-effect waves-light">
+                                                    <a href="auth-lock-screen.html">
+                                                        <i class="ti-lock"></i> Lock Screen
+                                                    </a>
+                                                </li>
+                                                <li class="waves-effect waves-light">
+                                                    <a href="auth-normal-sign-in.html">
+                                                        <i class="ti-layout-sidebar-left"></i> Logout
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                        </nav>

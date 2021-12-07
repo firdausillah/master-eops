@@ -1,51 +1,186 @@
-<nav id="sidebar" class="sidebar">
-    <div class="sidebar-content js-simplebar">
-        <a class="sidebar-brand text-center" href="<?= base_url() ?>assets/index.html">
-            <span class="align-middle">ADMIN SARPRAS</span>
-        </a>
-
-        <ul class="sidebar-nav">
-            <li class="sidebar-header">
-                Pages
-            </li>
-            <?php $url = $this->uri->segment(2); ?>
-            <li class="sidebar-item <?= $url == 'dashboard' ? 'active' : '' ?>">
-                <a class="sidebar-link" href="<?= base_url() ?>admin/dashboard">
-                    <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-                </a>
-            </li>
-
-            <li class="sidebar-item <?= $url == 'gedung' ||  $url == 'ruang' ||  $url == 'barang' ? 'active' : '' ?>">
-                <a data-target="#forms" data-toggle="collapse" class="sidebar-link">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle align-middle">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg> <span class="align-middle">Data Master</span>
-                </a>
-                <ul id="forms" class="sidebar-dropdown list-unstyled collapse <?= $url == 'gedung' ||  $url == 'ruang' ||  $url == 'barang' ? 'show' : '' ?>" data-parent="#sidebar">
-                    <li class="sidebar-item <?= $url == 'gedung' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/gedung">Gedung</a></li>
-                    <li class="sidebar-item <?= $url == 'ruang' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/ruang">Ruang</a></li>
-                    <li class="sidebar-item <?= $url == 'barang' ? 'active' : '' ?>"><a class="sidebar-link" href="<?= base_url() ?>admin/barang">Barang</a></li>
-                </ul>
-            </li>
-
-            <li class="sidebar-item <?= $url == 'sarpras' ? 'active' : '' ?>">
-                <a class="sidebar-link" href="<?= base_url() ?>admin/sarpras">
-                    <i class="align-middle" data-feather="file"></i> <span class="align-middle">Sarpras</span>
-                </a>
-            </li>
-            <li class="sidebar-item <?= $url == 'user' ? 'active' : '' ?>">
-                <a class="sidebar-link" href="<?= base_url() ?>admin/user">
-                    <i class="align-middle" data-feather="user"></i> <span class="align-middle">User</span>
-                </a>
-            </li>
-            <li class="sidebar-item <?= $url == 'profile' ? 'active' : '' ?>">
-                <a class="sidebar-link" href="<?= base_url() ?>admin/profile">
-                    <i class="align-middle" data-feather="file"></i> <span class="align-middle">Profile</span>
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-</nav>
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header">
+                                    <img class="img-80 img-radius" src="<?= base_url() ?>assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                                    <div class="user-details">
+                                        <span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>
+                                    </div>
+                                </div>
+                                <div class="main-menu-content">
+                                    <ul>
+                                        <li class="more-details">
+                                            <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
+                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
+                                            <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="p-15 p-b-0">
+                                <form class="form-material">
+                                    <div class="form-group form-primary">
+                                        <input type="text" name="footer-email" class="form-control">
+                                        <span class="form-bar"></span>
+                                        <label class="float-label"><i class="fa fa-search m-r-10"></i>Search Friend</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="pcoded-navigation-label">Navigation</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="active">
+                                    <a href="index.html" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext">Dashboard</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">UI Element</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Basic</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class=" ">
+                                            <a href="breadcrumb.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Breadcrumbs</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="button.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Button</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="accordion.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Accordion</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="tabs.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Tabs</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="color.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Color</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="label-badge.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Label Badge</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="tooltip.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Tooltip And Popover</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="typography.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Typography</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a href="notification.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Notifications</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Forms</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="">
+                                    <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext">Form</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Tables</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="">
+                                    <a href="bs-basic-table.html" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>B</b></span>
+                                        <span class="pcoded-mtext">Table</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Chart And Maps</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="">
+                                    <a href="chart-morris.html" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>C</b></span>
+                                        <span class="pcoded-mtext">Charts</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="map-google.html" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-map-alt"></i><b>M</b></span>
+                                        <span class="pcoded-mtext">Maps</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="pcoded-navigation-label">Pages</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="pcoded-hasmenu ">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-id-badge"></i><b>A</b></span>
+                                        <span class="pcoded-mtext">Pages</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="">
+                                            <a href="auth-normal-sign-in.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Login</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="auth-sign-up.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Registration</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="sample-page.html" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
+                                                <span class="pcoded-mtext">Sample Page</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
