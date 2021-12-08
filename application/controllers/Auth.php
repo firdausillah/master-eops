@@ -24,6 +24,7 @@ class Auth extends CI_Controller
 
 	public function login_admin()
 	{
+		// print_r($_POST); exit();
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 

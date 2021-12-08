@@ -120,6 +120,9 @@
     <script src="<?= base_url() ?>assets/js/vertical/vertical-layout.min.js "></script>
 
     <script type="text/javascript" src="<?= base_url() ?>assets/js/script.js "></script>
+
+    <script src="<?= base_url() ?>assets/js/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/myScript.js"></script>
 </body>
 
 </html>
