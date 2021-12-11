@@ -7342,6 +7342,12 @@ body.menu-bottom #collapse-menu {
 	font-size: 11px;
 }
 
+.btn-small {
+	padding: 2px 3px;
+	line-height: 16px;
+	font-size: 11px;
+}
+
 .btn-mini {
 	padding: 5px 10px;
 	line-height: 14px;

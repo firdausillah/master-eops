@@ -1,6 +1,7 @@
                     <nav class="pcoded-navbar">
                         <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
                         <div class="pcoded-inner-navbar main-menu">
+                            <?php $url = $this->uri->segment(2); ?>
                             <div class="">
                                 <div class="main-menu-header">
                                     <img class="img-80 img-radius" src="<?= base_url() ?>assets/images/avatar-4.jpg" alt="User-Profile-Image">
@@ -20,24 +21,21 @@
                             </div>
                             <div class="pcoded-navigation-label">Navigation</div>
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="active">
+                                <li class="<?= $url == 'dashboard' ? 'active' : '' ?>">
                                     <a href="index.html" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
                                         <span class="pcoded-mtext">Dashboard</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigation-label">UI Element</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu">
+                                <li class="pcoded-hasmenu active pcoded-trigger">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
-                                        <span class="pcoded-mtext">Basic</span>
+                                        <span class="pcoded-mtext">Master</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
-                                        <li class=" ">
+                                        <li class=" active ">
                                             <a href="breadcrumb.html" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Breadcrumbs</span>
@@ -102,75 +100,12 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigation-label">Forms</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="">
-                                    <a href="form-elements-component.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Form</span>
+                                <li class="<?= $url == 'user' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('admin/user'); ?>" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext">Users</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                </li>
-                            </ul>
-                            <div class="pcoded-navigation-label">Tables</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="">
-                                    <a href="bs-basic-table.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>B</b></span>
-                                        <span class="pcoded-mtext">Table</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="pcoded-navigation-label">Chart And Maps</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="">
-                                    <a href="chart-morris.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>C</b></span>
-                                        <span class="pcoded-mtext">Charts</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="">
-                                    <a href="map-google.html" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-map-alt"></i><b>M</b></span>
-                                        <span class="pcoded-mtext">Maps</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="pcoded-navigation-label">Pages</div>
-                            <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu ">
-                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-id-badge"></i><b>A</b></span>
-                                        <span class="pcoded-mtext">Pages</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class="">
-                                            <a href="auth-normal-sign-in.html" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Login</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="auth-sign-up.html" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Registration</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a href="sample-page.html" class="waves-effect waves-dark">
-                                                <span class="pcoded-micon"><i class="ti-layout-sidebar-left"></i><b>S</b></span>
-                                                <span class="pcoded-mtext">Sample Page</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
                                 </li>
                             </ul>
                         </div>
