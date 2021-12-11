@@ -28,6 +28,9 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/jquery.mCustomScrollbar.css">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/dataTables.min.css">
 </head>
 
 <body>
@@ -123,6 +126,25 @@
 
     <script src="<?= base_url() ?>assets/js/sweetalert2.all.min.js"></script>
     <script src="<?= base_url() ?>assets/js/myScript.js"></script>
+    <script src="<?= base_url() ?>assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/daterangepicker.js"></script>
+    <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
+
+    <script>
+        // $(".input-group.date").datepicker({autoclose: true, todayHighlight: true});
+        $(".years").datepicker({
+            format: "yyyy",
+            viewMode: "years",
+            minViewMode: "years",
+            autoclose: true,
+            todayHighlight: true
+        });
+        $(".input-group.date").datepicker({
+            format: "yyyy-mm-dd",
+            autoclose: true,
+            todayHighlight: true
+        });
+    </script>
 </body>
 
 </html>
