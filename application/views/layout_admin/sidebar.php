@@ -28,7 +28,7 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="pcoded-hasmenu <?= $url == 'tahun_pelajaran' || $url == 'kelas' ? 'active pcoded-trigger' : '' ?>">
+                                <li class="pcoded-hasmenu <?=  $url == 'jurusan' || $url == 'tahun_pelajaran' || $url == 'kelas' ? 'active pcoded-trigger' : '' ?>">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
                                         <span class="pcoded-mtext">Master</span>
@@ -46,6 +46,13 @@
                                             <a href="<?= base_url('admin/kelas') ?>" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Kelas</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="<?= $url == 'jurusan' ? 'active' : '' ?>">
+                                            <a href="<?= base_url('admin/jurusan') ?>" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Jurusan</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
