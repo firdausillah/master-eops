@@ -58,6 +58,22 @@
                                         </li>
                                     </ul>
                                 </li>
+                                <li class="pcoded-hasmenu <?=  $url == 'nama_pembayaran' || $url == 'jenis_pembayaran' ? 'active pcoded-trigger' : '' ?>">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Master Pembayaran</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <li class="<?= $url == 'nama_pembayaran' ? 'active' : '' ?>">
+                                            <a href="<?= base_url('admin/pembayaran') ?>" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Nama Pembayaran</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="<?= $url == 'user' ? 'active' : '' ?>">
                                     <a href="<?= base_url('admin/user'); ?>" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>

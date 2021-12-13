@@ -30,28 +30,28 @@
                                     <div class="page-body">
                                         <!-- Hover table card start -->
                                         <div class="row">
-                                            <div class="col-lg-8 col-12">
+                                            <div class="col-md-6">
                                                 <div class="card">
                                                     <div class="card-header">
                                                         <h5>Form <?= $title ? $title : 'Judul Page' ?></h5>
                                                         <!--<span>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</span>-->
                                                     </div>
                                                     <div class="card-block">
-                                                        <form action="<?= base_url('admin/jurusan/update/'.$jurusan->id) ?>" method="POST" class="form-material">
+                                                        <form action="<?= base_url('admin/nama_pembayaran/update/'.$nama_pembayaran->id) ?>" method="POST" class="form-material">
                                                             <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">Kode Jurusan</label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" name="kode_jurusan" value="<?= $jurusan->kode_jurusan ?>" required>
+                                                                <label class="col-sm-2 col-form-label">Nama Pembayaran</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="nama_pembayaran" value="<?= $nama_pembayaran->nama_pembayaran ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-3 col-form-label">Nama Jurusan</label>
-                                                                <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" name="nama_jurusan" value="<?= $jurusan->nama_jurusan ?>" required>
+                                                                <label class="col-sm-2 col-form-label">Keterangan Pembayaran</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="keterangan_pembayaran" value="<?= $nama_pembayaran->keterangan_pembayaran ?>" required>
                                                                 </div>
                                                             </div>
                                                             <div class="text-right">
-                                                                <a href="<?= base_url() ?>admin/jurusan" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                <a href="<?= base_url() ?>admin/nama_pembayaran" class="btn btn-secondary btn-sm">Kembali</a>
                                                                 <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                                                             </div>
                                                         </form>
