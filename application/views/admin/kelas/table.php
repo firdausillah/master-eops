@@ -29,7 +29,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <div class="row">
-                                            <div class="col-6">
+                                            <div class="col-12 col-xl-6">
                                                 <!-- Hover table card start -->
                                                 <div class="card">
                                                     <div class="card-header">
@@ -65,6 +65,42 @@
                                                 </div>
                                                 <!-- Hover table card end -->
                                             </div>
+                                            <div class="col-12 col-xl-6">
+                                                <!-- Hover table card start -->
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#paralelModal">
+                                                            Tambah Paralel
+                                                        </button>
+                                                    </div>
+                                                    <div class="card-block table-border-style">
+                                                        <div class="table-responsive">
+                                                            <table id="myTable2" class="table table-hover table-sm">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>No</th>
+                                                                        <th class="text-midle">Paralel</th>
+                                                                        <th class="text-midle">Action</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <?php foreach ($paralel as $no => $par) : ?>
+                                                                        <tr>
+                                                                            <td><?= $no + 1; ?></td>
+                                                                            <td><?= $par->paralel ?></td>
+                                                                            <td style="width: 20%;">
+                                                                                <a href="<?= base_url('admin/kelas/edit/' . $par->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
+                                                                                <a href="<?= base_url('admin/kelas/delete/' . $par->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
+                                                                            </td>
+                                                                        </tr>
+                                                                    <?php endforeach ?>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Hover table card end -->
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- Page-body end -->
@@ -88,6 +124,31 @@
                                     <div class="mb-3">
                                         <label class="form-label">Kelas</label>
                                         <input type="text" class="form-control" name="kelas" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="paralelModal" tabindex="-1" role="dialog" aria-labelledby="paralelModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="paralelModalLabel">Paralel</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <?= form_open_multipart('admin/kelas/saveParalel') ?>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Paralel</label>
+                                        <input type="text" class="form-control" name="paralel" required>
                                     </div>
                                 </div>
                                 <div class="modal-footer">

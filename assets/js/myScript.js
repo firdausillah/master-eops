@@ -34,3 +34,6 @@ $('.tombol-hapus').on('click', function(e){
 $(document).ready(function () {
     $('#myTable').DataTable();
 });
+$(document).ready(function () {
+    $('#myTable2').DataTable();
+});

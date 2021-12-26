@@ -81,6 +81,13 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
+                                <li class="<?= $url == 'kelas_siswa' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('admin/kelas_siswa'); ?>" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext">Kelas Siswa</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
                                 <li class="<?= $url == 'user' ? 'active' : '' ?>">
                                     <a href="<?= base_url('admin/user'); ?>" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
