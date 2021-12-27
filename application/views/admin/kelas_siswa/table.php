@@ -48,7 +48,7 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-2">
+                                                                <div class="col-md-1">
                                                                     <div class="form-group">
                                                                         <label>Kelas</label>
                                                                         <select class="form-control" name="k">
@@ -76,10 +76,24 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
+                                                                <div class="col-md-1">
+                                                                    <div class="form-group">
+                                                                        <label>Paralel</label>
+                                                                        <select class="form-control" name="p">
+                                                                            <?php foreach ($paralel as $p) : ?>
+                                                                                <?php if ($_GET['p'] == null) :?>
+                                                                                    <option value="<?= $p->id ?>"><?= $p->paralel ?></option>
+                                                                                <?php else :?>
+                                                                                    <option <?= $_GET['p'] == $p->id ? 'selected' : '' ?> value="<?= $p->id ?>"><?= $p->paralel ?></option>
+                                                                                <?php endif?>
+                                                                            <?php endforeach ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="col-md-5">
                                                                     <div style="margin-top:25px;">
                                                                         <button type="submit" class="btn btn-success"><i class="fa fa-filter"></i> Filter Data</button>
-                                                                        <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i> Masukan Kelas Siswa</a>
+                                                                        <a href="<?= base_url('admin/kelas_siswa/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Masukan Kelas Siswa</a>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -8,6 +8,7 @@ class Kelas_siswa extends CI_Controller
         parent::__construct();
         $this->load->model('Kelas_siswaModel');
         $this->load->model('KelasModel');
+        $this->load->model('ParalelModel');
         $this->load->model('JurusanModel');
         $this->load->model('Tahun_pelajaranModel');
 
@@ -22,12 +23,68 @@ class Kelas_siswa extends CI_Controller
             'title' => 'Kelas Siswa',
             'kelas' => $this->KelasModel->get()->result(),
             'jurusan' => $this->JurusanModel->get()->result(),
+            'paralel' => $this->ParalelModel->get()->result(),
             'tahun_pelajaran' => $this->Tahun_pelajaranModel->get()->result(),
             'kelas_siswa' => $this->Kelas_siswaModel->get()->result(),
             'content' => 'admin/kelas_siswa/table'
         ];
 
         $this->load->view('layout_admin/base', $data);
+    }
+    
+    public function tambah(){
+        $data = [
+            'title' => 'Kelas Siswa',
+            'kelas' => $this->KelasModel->get()->result(),
+            'jurusan' => $this->JurusanModel->get()->result(),
+            'paralel' => $this->ParalelModel->get()->result(),
+            'tahun_pelajaran' => $this->Tahun_pelajaranModel->get()->result(),
+            'kelas_siswa' => $this->Kelas_siswaModel->get_siswa_non_kelas()->result(),
+            'content' => 'admin/kelas_siswa/tambah'
+        ];
+    
+        $this->load->view('layout_admin/base', $data);
+
+    }
+
+    public function update_kelas(){
+        
+        $id_siswa = $this->input->post('id_siswa');
+        $tp = $this->input->post('tp');
+        $k = $this->input->post('k');
+        $j = $this->input->post('j');
+        $p = $this->input->post('p');
+        
+        $kelas = $this->KelasModel->findBy(['id' => $k])->row();
+        $jurusan = $this->JurusanModel->findBy(['id' => $j])->row();
+        $paralel = $this->ParalelModel->findBy(['id' => $p])->row();
+        // print_r($kelas->kelas); exit();
+
+        foreach ($id_siswa as $key => $val) {
+            $data =[
+                'id_siswa' => $id_siswa[$key],
+                'id_jurusan' => $j,
+                'id_kelas' => $k,
+                'id_tahun_pelajaran' => $tp,
+                'id_wali_kelas' => $k,
+                'kelas' => $kelas->kelas,
+                'jurusan' => $jurusan->nama_jurusan,
+                'paralel' => $paralel->paralel
+            ];
+
+            $cek = $this->Kelas_siswaModel->findBy(['id_siswa' => $id_siswa[$key], 'id_tahun_pelajaran' => $tp])->num_rows();
+
+            print_r($cek);
+
+            if ($cek != 0) {
+                echo 'update';
+            } else {
+                echo 'tambah';
+            }
+
+        }
+        // print_r($data); 
+        exit();
     }
 
     public function save(){
