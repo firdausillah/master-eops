@@ -33,13 +33,38 @@ class Kelas_siswa extends CI_Controller
     }
     
     public function tambah(){
+
+        $kelas_siswa = $this->Kelas_siswaModel->get_siswa_non_kelas()->result();
+        
         $data = [
             'title' => 'Kelas Siswa',
             'kelas' => $this->KelasModel->get()->result(),
             'jurusan' => $this->JurusanModel->get()->result(),
             'paralel' => $this->ParalelModel->get()->result(),
             'tahun_pelajaran' => $this->Tahun_pelajaranModel->get()->result(),
-            'kelas_siswa' => $this->Kelas_siswaModel->get_siswa_non_kelas()->result(),
+            'kelas_siswa' => $kelas_siswa,
+            'content' => 'admin/kelas_siswa/tambah'
+        ];
+    
+        $this->load->view('layout_admin/base', $data);
+
+    }
+    
+    public function edit(){
+
+        if ($_GET != null) {
+            $kelas_siswa = $this->Kelas_siswaModel->findBy(['tb_tahun_pelajaran_siswa.id_tahun_pelajaran' => $_GET['tp'] ])->row_array();
+        } else {
+            $kelas_siswa = $this->Kelas_siswaModel->get()->result();
+        }
+
+        $data = [
+            'title' => 'Kelas Siswa',
+            'kelas' => $this->KelasModel->get()->result(),
+            'jurusan' => $this->JurusanModel->get()->result(),
+            'paralel' => $this->ParalelModel->get()->result(),
+            'tahun_pelajaran' => $this->Tahun_pelajaranModel->get()->result(),
+            'kelas_siswa' => $kelas_siswa,
             'content' => 'admin/kelas_siswa/tambah'
         ];
     
@@ -102,15 +127,15 @@ class Kelas_siswa extends CI_Controller
         redirect(base_url('admin/kelas_siswa'));
     }
 
-    public function edit($id){
-        $data = [
-            'title' => 'Edit Kelas Siswa',
-            'kelas_siswa' => $this->Kelas_siswaModel->findBy(['id' => $id])->row(),
-            'content' => 'admin/kelas_siswa/edit'
-        ];
+    // public function edit($id){
+    //     $data = [
+    //         'title' => 'Edit Kelas Siswa',
+    //         'kelas_siswa' => $this->Kelas_siswaModel->findBy(['id' => $id])->row(),
+    //         'content' => 'admin/kelas_siswa/edit'
+    //     ];
 
-        $this->load->view('layout_admin/base', $data);
-    }
+    //     $this->load->view('layout_admin/base', $data);
+    // }
 
     public function update($id){
         $data = [
