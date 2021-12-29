@@ -51,7 +51,7 @@ class Kelas_siswa extends CI_Controller
         $kelas_siswa = $this->Kelas_siswaModel->get_siswa_non_kelas()->result();
         
         $data = [
-            'title' => 'Kelas Siswa',
+            'title' => 'Masukan Siswa Kedalam Kelas',
             'kelas' => $this->KelasModel->get()->result(),
             'jurusan' => $this->JurusanModel->get()->result(),
             'paralel' => $this->ParalelModel->get()->result(),
@@ -82,7 +82,7 @@ class Kelas_siswa extends CI_Controller
         // print_r($kelas_siswa->); exit();
 
         $data = [
-            'title' => 'Kelas Siswa',
+            'title' => 'Update Kelas Siswa',
             'kelas' => $this->KelasModel->get()->result(),
             'jurusan' => $this->JurusanModel->get()->result(),
             'paralel' => $this->ParalelModel->get()->result(),
