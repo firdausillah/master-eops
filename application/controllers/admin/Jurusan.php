@@ -27,7 +27,8 @@ class Jurusan extends CI_Controller
     public function save(){
         $data = [
             'kode_jurusan' => $this->input->post('kode_jurusan'),
-            'nama_jurusan' => $this->input->post('nama_jurusan')
+            'nama_jurusan' => $this->input->post('nama_jurusan'),
+            'singkatan' => $this->input->post('singkatan')
         ];
         
         if ($this->JurusanModel->add($data)) {
@@ -52,7 +53,8 @@ class Jurusan extends CI_Controller
     public function update($id){
         $data = [
             'kode_jurusan' => $this->input->post('kode_jurusan'),
-            'nama_jurusan' => $this->input->post('nama_jurusan')
+            'nama_jurusan' => $this->input->post('nama_jurusan'),
+            'singkatan' => $this->input->post('singkatan')
         ];
         
         if ($this->JurusanModel->update(['id' => $id], $data)) {

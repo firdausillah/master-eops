@@ -45,6 +45,7 @@
                                                                         <th>No</th>
                                                                         <th class="text-midle">Kode Jurusan</th>
                                                                         <th class="text-midle">Jurusan</th>
+                                                                        <th class="text-midle">Singkatan</th>
                                                                         <th class="text-midle">Action</th>
                                                                     </tr>
                                                                 </thead>
@@ -54,6 +55,7 @@
                                                                             <td><?= $no + 1; ?></td>
                                                                             <td><?= $kls->kode_jurusan ?></td>
                                                                             <td><?= $kls->nama_jurusan ?></td>
+                                                                            <td><?= $kls->singkatan ?></td>
                                                                             <td style="width: 20%;">
                                                                                 <a href="<?= base_url('admin/jurusan/edit/' . $kls->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
                                                                                 <a href="<?= base_url('admin/jurusan/delete/' . $kls->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
@@ -94,6 +96,10 @@
                                     <div class="mb-3">
                                         <label class="form-label">Nama Jurusan</label>
                                         <input type="text" class="form-control" name="nama_jurusan" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Singkatan Jurusan</label>
+                                        <input type="text" class="form-control" name="singkatan" required>
                                     </div>
                                 </div>
                                 <div class="modal-footer">

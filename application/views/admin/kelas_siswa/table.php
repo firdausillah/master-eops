@@ -31,16 +31,19 @@
                                         <div class="row">
                                             <div class="col-12 col-xxl-10">
                                                 <div class="card">
+                                                    <div class="card-header">
+                                                        Filter
+                                                    </div>
                                                     <div class="card-block">
                                                         <form action="<?= base_url('admin/kelas_siswa') ?>" method="GET">
                                                             <div class="row">
-                                                                <div class="col-md-2">
+                                                                <div class="col-xl-2">
                                                                     <div class="form-group">
                                                                         <label>Tahun Pelajaran</label>
                                                                         <select class="form-control" name="tp">
                                                                             <?php foreach ($tahun_pelajaran as $tp) : ?>
                                                                                 <?php if ($_GET['tp'] == null) :?>
-                                                                                    <option value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
+                                                                                    <option <?= $tp->status_tahun == 1 ?> value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
                                                                                 <?php else :?>
                                                                                     <option <?= $_GET['tp'] == $tp->id ? 'selected' : '' ?> value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
                                                                                 <?php endif?>
@@ -48,7 +51,7 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-1">
+                                                                <div class="col-xl-1">
                                                                     <div class="form-group">
                                                                         <label>Kelas</label>
                                                                         <select class="form-control" name="k">
@@ -62,7 +65,7 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-3">
+                                                                <div class="col-xl-3">
                                                                     <div class="form-group">
                                                                         <label>Jurusan</label>
                                                                         <select class="form-control" name="j">
@@ -76,7 +79,7 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-1">
+                                                                <div class="col-xl-1">
                                                                     <div class="form-group">
                                                                         <label>Paralel</label>
                                                                         <select class="form-control" name="p">
@@ -90,10 +93,10 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-5">
+                                                                <div class="col-xl-5">
                                                                     <div style="margin-top:25px;">
-                                                                        <button type="submit" class="btn btn-success"><i class="fa fa-filter"></i> Filter Data</button>
-                                                                        <a href="<?= base_url('admin/kelas_siswa/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Masukan Kelas Siswa</a>
+                                                                        <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-filter"></i> Filter Data</button>
+                                                                        <a href="<?= base_url('admin/kelas_siswa/tambah') ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Masukan Kelas Siswa</a>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -111,6 +114,7 @@
                                                                         <th class="text-midle">Nama</th>
                                                                         <th class="text-midle">Kelas</th>
                                                                         <th class="text-midle">Jurusan</th>
+                                                                        <th class="text-midle">Paralel</th>
                                                                         <th class="text-midle">Action</th>
                                                                     </tr>
                                                                 </thead>
@@ -119,11 +123,12 @@
                                                                         <tr>
                                                                             <td><?= $no + 1; ?></td>
                                                                             <td><?= $sis->nama ?></td>
-                                                                            <td><?= $sis->kelas ?></td>
+                                                                            <td><?= $sis->kelas .' '. $sis->jurusan .' '. $sis->paralel .' ' ?></td>
                                                                             <td><?= $sis->nama_jurusan ?></td>
+                                                                            <td><?= $sis->paralel ?></td>
                                                                             <td style="width: 20%;">
-                                                                                <a href="<?= base_url('admin/siswa/edit/' . $sis->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
-                                                                                <a href="<?= base_url('admin/siswa/delete/' . $sis->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
+                                                                                <a href="<?= base_url('admin/siswa/edit/' . $sis->id_tapel_siswa) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
+                                                                                <a href="<?= base_url('admin/siswa/delete/' . $sis->id_tapel_siswa) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
                                                                             </td>
                                                                         </tr>
                                                                     <?php endforeach ?>

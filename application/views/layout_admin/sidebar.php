@@ -28,7 +28,7 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="pcoded-hasmenu <?=  $url == 'jurusan' || $url == 'tahun_pelajaran' || $url == 'kelas' ? 'active pcoded-trigger' : '' ?>">
+                                <li class="pcoded-hasmenu <?= $url == 'jurusan' || $url == 'tahun_pelajaran' || $url == 'kelas' || $url == 'siswa' ? 'active pcoded-trigger' : '' ?>">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
                                         <span class="pcoded-mtext">Master</span>
@@ -56,9 +56,16 @@
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
+                                        <li class="<?= $url == 'siswa' ? 'active' : '' ?>">
+                                            <a href="<?= base_url('admin/siswa'); ?>" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                                <span class="pcoded-mtext">Data Siswa</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li class="pcoded-hasmenu <?=  $url == 'nama_pembayaran' || $url == 'jenis_pembayaran' ? 'active pcoded-trigger' : '' ?>">
+                                <li class="pcoded-hasmenu <?= $url == 'nama_pembayaran' || $url == 'jenis_pembayaran' ? 'active pcoded-trigger' : '' ?>">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
                                         <span class="pcoded-mtext">Master Pembayaran</span>
@@ -73,13 +80,6 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li class="<?= $url == 'siswa' ? 'active' : '' ?>">
-                                    <a href="<?= base_url('admin/siswa'); ?>" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Data Siswa</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
                                 </li>
                                 <li class="<?= $url == 'kelas_siswa' ? 'active' : '' ?>">
                                     <a href="<?= base_url('admin/kelas_siswa'); ?>" class="waves-effect waves-dark">

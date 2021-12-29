@@ -50,6 +50,12 @@
                                                                     <input type="text" class="form-control" name="nama_jurusan" value="<?= $jurusan->nama_jurusan ?>" required>
                                                                 </div>
                                                             </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-3 col-form-label">Singkatan Jurusan</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" name="singkatan" value="<?= $jurusan->singkatan ?>" required>
+                                                                </div>
+                                                            </div>
                                                             <div class="text-right">
                                                                 <a href="<?= base_url() ?>admin/jurusan" class="btn btn-secondary btn-sm">Kembali</a>
                                                                 <button type="submit" class="btn btn-success btn-sm">Simpan</button>
