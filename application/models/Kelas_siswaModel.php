@@ -7,13 +7,14 @@
 	}
  	
  	function get(){
-		$this->db->select('tb_siswa.id as id_siswa, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran_siswa.paralel, tb_siswa.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_tahun_pelajaran_siswa.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_tahun_pelajaran_siswa.id_tahun_pelajaran');
+		$this->db->select('tb_siswa.id as id_siswa, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran.status_tahun, tb_tahun_pelajaran_siswa.paralel, tb_siswa.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_tahun_pelajaran_siswa.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_tahun_pelajaran_siswa.id_tahun_pelajaran');
 		$this->db->from('tb_tahun_pelajaran_siswa');
 		$this->db->join('tb_siswa', 'tb_tahun_pelajaran_siswa.id_siswa = tb_siswa.id', 'left');
 		$this->db->join('tb_kelas', 'tb_tahun_pelajaran_siswa.id_kelas = tb_kelas.id', 'left');
 		$this->db->join('tb_paralel', 'tb_tahun_pelajaran_siswa.id_paralel = tb_paralel.id', 'left');
 		$this->db->join('tb_jurusan', 'tb_tahun_pelajaran_siswa.id_jurusan = tb_jurusan.id', 'left');
 		$this->db->join('tb_tahun_pelajaran', 'tb_tahun_pelajaran_siswa.id_tahun_pelajaran = tb_jurusan.id', 'left');
+		$this->db->where('tb_tahun_pelajaran.status_tahun', '1');
 		return $this->db->get();
  	}
  	

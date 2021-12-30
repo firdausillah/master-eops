@@ -42,7 +42,7 @@
                                                                             <select class="form-control" name="tp">
                                                                                 <?php foreach ($tahun_pelajaran as $tp) : ?>
                                                                                     <?php if ($_GET['tp'] == null) : ?>
-                                                                                        <option <?= $tp->status_tahun == 1 ?> value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
+                                                                                        <option <?= $tp->status_tahun == 1 ? 'selected' : '' ?> value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
                                                                                     <?php else : ?>
                                                                                         <option <?= $_GET['tp'] == $tp->id ? 'selected' : '' ?> value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
                                                                                     <?php endif ?>

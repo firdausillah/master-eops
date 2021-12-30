@@ -43,7 +43,7 @@
                                                                         <select class="form-control" name="tp">
                                                                             <?php foreach ($tahun_pelajaran as $tp) : ?>
                                                                                 <?php if ($_GET['tp'] == null) :?>
-                                                                                    <option <?= $tp->status_tahun == 1 ?> value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
+                                                                                    <option <?= $tp->status_tahun == 1 ? 'selected' : '' ?> value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
                                                                                 <?php else :?>
                                                                                     <option <?= $_GET['tp'] == $tp->id ? 'selected' : '' ?> value="<?= $tp->id ?>"><?= $tp->tahun_awal . '/' . $tp->tahun_akhir ?></option>
                                                                                 <?php endif?>
@@ -113,8 +113,6 @@
                                                                         <th>No</th>
                                                                         <th class="text-midle">Nama</th>
                                                                         <th class="text-midle">Kelas</th>
-                                                                        <th class="text-midle">Jurusan</th>
-                                                                        <th class="text-midle">Paralel</th>
                                                                         <th class="text-midle">Action</th>
                                                                     </tr>
                                                                 </thead>
@@ -124,8 +122,6 @@
                                                                             <td><?= $no + 1; ?></td>
                                                                             <td><?= $sis->nama ?></td>
                                                                             <td><?= $sis->kelas .' '. $sis->jurusan .' '. $sis->paralel .' ' ?></td>
-                                                                            <td><?= $sis->nama_jurusan ?></td>
-                                                                            <td><?= $sis->paralel ?></td>
                                                                             <td style="width: 20%;">
                                                                                 <a href="<?= base_url('admin/siswa/edit/' . $sis->id_tapel_siswa) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
                                                                                 <a href="<?= base_url('admin/siswa/delete/' . $sis->id_tapel_siswa) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>

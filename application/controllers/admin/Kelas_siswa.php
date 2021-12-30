@@ -20,6 +20,7 @@ class Kelas_siswa extends CI_Controller
     public function index(){
 
         if ($_GET) {
+            // $kelas = $_GET['k'] == 'all' ? $_GET['k'] : 
             $data = [
                 'id_tahun_pelajaran' => $_GET['tp'],
                 'tb_tahun_pelajaran_siswa.id_kelas' => $_GET['k'],
