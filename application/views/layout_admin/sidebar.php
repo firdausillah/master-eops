@@ -74,26 +74,44 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="<?= $url == 'siswa' ? 'active' : '' ?>">
-                                    <a href="<?= base_url('admin/siswa'); ?>" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Data Siswa</span>
+                                <li class="pcoded-hasmenu <?= $url == 'siswa' || $url == 'ptk' || $url == 'wali_kelas' || $url == 'kelas_siswa' ? 'active pcoded-trigger' : '' ?>">
+                                    <a href="javascript:void(0)" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
+                                        <span class="pcoded-mtext">Akademik</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                </li>
-                                <li class="<?= $url == 'ptk' ? 'active' : '' ?>">
-                                    <a href="<?= base_url('admin/ptk'); ?>" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Data PTK</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
-                                <li class="<?= $url == 'kelas_siswa' ? 'active' : '' ?>">
-                                    <a href="<?= base_url('admin/kelas_siswa'); ?>" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
-                                        <span class="pcoded-mtext">Kelas Siswa</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
+                                    <ul class="pcoded-submenu">
+                                        <div class="pcoded-navigation-label ml-2">Siswa</div>
+                                        <li class="<?= $url == 'siswa' ? 'active' : '' ?>">
+                                            <a href="<?= base_url('admin/siswa'); ?>" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><b>FC</b></span>
+                                                <span class="pcoded-mtext">Data Siswa</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="<?= $url == 'kelas_siswa' ? 'active' : '' ?>">
+                                            <a href="<?= base_url('admin/kelas_siswa'); ?>" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><b>FC</b></span>
+                                                <span class="pcoded-mtext">Kelas Siswa</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <div class="pcoded-navigation-label ml-2">PTK</div>
+                                        <li class="<?= $url == 'ptk' ? 'active' : '' ?>">
+                                            <a href="<?= base_url('admin/ptk'); ?>" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><b>FC</b></span>
+                                                <span class="pcoded-mtext">Data PTK</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                        <li class="<?= $url == 'wali_kelas' ? 'active' : '' ?>">
+                                            <a href="<?= base_url('admin/wali_kelas'); ?>" class="waves-effect waves-dark">
+                                                <span class="pcoded-micon"><b>FC</b></span>
+                                                <span class="pcoded-mtext">Data Wali Kelas</span>
+                                                <span class="pcoded-mcaret"></span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="<?= $url == 'user' ? 'active' : '' ?>">
                                     <a href="<?= base_url('admin/user'); ?>" class="waves-effect waves-dark">

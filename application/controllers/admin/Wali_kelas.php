@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kelas_siswa extends CI_Controller
+class Wali_kelas extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Kelas_siswaModel');
+        $this->load->model('Wali_kelasModel');
         $this->load->model('KelasModel');
         $this->load->model('ParalelModel');
         $this->load->model('JurusanModel');
@@ -19,29 +19,31 @@ class Kelas_siswa extends CI_Controller
 
     public function index(){
 
+        // print_r($this->Wali_kelasModel->get()->result()); exit();
+
         if ($_GET) {
             // $kelas = $_GET['k'] == 'all' ? $_GET['k'] : 
             $data = [
-                'id_tahun_pelajaran' => $_GET['tp'],
-                'tb_tahun_pelajaran_siswa.id_kelas' => $_GET['k'],
-                'tb_tahun_pelajaran_siswa.id_jurusan' => $_GET['j'],
-                'tb_tahun_pelajaran_siswa.id_paralel' => $_GET['p']
+                'id_tahun_pelajaran' => $_GET['tp']
+                // 'tb_wali_kelas.id_kelas' => $_GET['k'],
+                // 'tb_wali_kelas.id_jurusan' => $_GET['j'],
+                // 'tb_wali_kelas.id_paralel' => $_GET['p']
             ];
-            $kelas_siswa = $this->Kelas_siswaModel->findBy($data)->result();
+            $wali_kelas = $this->Wali_kelasModel->findBy($data)->result();
         } else{
-            $kelas_siswa = $this->Kelas_siswaModel->get()->result();
+            $wali_kelas = $this->Wali_kelasModel->get()->result();
         }
         // exit();
 
-        // print_r($this->Kelas_siswaModel->get()->result()); exit();
+        // print_r($this->Wali_kelasModel->get()->result()); exit();
         $data = [
             'title' => 'Kelas Siswa',
             'kelas' => $this->KelasModel->get()->result(),
             'jurusan' => $this->JurusanModel->get()->result(),
             'paralel' => $this->ParalelModel->get()->result(),
             'tahun_pelajaran' => $this->Tahun_pelajaranModel->get()->result(),
-            'kelas_siswa' => $kelas_siswa,
-            'content' => 'admin/kelas_siswa/table'
+            'wali_kelas' => $wali_kelas,
+            'content' => 'admin/wali_kelas/table'
         ];
 
         $this->load->view('layout_admin/base', $data);
@@ -49,7 +51,8 @@ class Kelas_siswa extends CI_Controller
     
     public function tambah(){
 
-        $kelas_siswa = $this->Kelas_siswaModel->get_siswa_non_kelas()->result();
+        $wali_kelas = $this->Wali_kelasModel->get_ptk_non_kelas()->result();
+        // print_r($wali_kelas); exit();
         
         $data = [
             'title' => 'Masukan Siswa Kedalam Kelas',
@@ -57,8 +60,8 @@ class Kelas_siswa extends CI_Controller
             'jurusan' => $this->JurusanModel->get()->result(),
             'paralel' => $this->ParalelModel->get()->result(),
             'tahun_pelajaran' => $this->Tahun_pelajaranModel->get()->result(),
-            'kelas_siswa' => $kelas_siswa,
-            'content' => 'admin/kelas_siswa/tambah'
+            'wali_kelas' => $wali_kelas,
+            'content' => 'admin/wali_kelas/tambah'
         ];
     
         $this->load->view('layout_admin/base', $data);
@@ -68,19 +71,19 @@ class Kelas_siswa extends CI_Controller
     public function edit(){
 
         if ($_GET != null) {
-            // $kelas_siswa = $this->Kelas_siswaModel->findBy(['tb_tahun_pelajaran_siswa.id_tahun_pelajaran' => $_GET['tp'] ])->row_array();
+            // $wali_kelas = $this->Wali_kelasModel->findBy(['tb_wali_kelas.id_tahun_pelajaran' => $_GET['tp'] ])->row_array();
 
             $data = [
-                'id_tahun_pelajaran' => $_GET['tp'],
-                'tb_tahun_pelajaran_siswa.id_kelas' => $_GET['k'],
-                'tb_tahun_pelajaran_siswa.id_jurusan' => $_GET['j'],
-                'tb_tahun_pelajaran_siswa.id_paralel' => $_GET['p']
+                'id_tahun_pelajaran' => $_GET['tp']
+                // 'tb_wali_kelas.id_kelas' => $_GET['k'],
+                // 'tb_wali_kelas.id_jurusan' => $_GET['j'],
+                // 'tb_wali_kelas.id_paralel' => $_GET['p']
             ];
-            $kelas_siswa = $this->Kelas_siswaModel->findBy($data)->result();
+            $wali_kelas = $this->Wali_kelasModel->findBy($data)->result();
         } else {
-            $kelas_siswa = $this->Kelas_siswaModel->get()->result();
+            $wali_kelas = $this->Wali_kelasModel->get()->result();
         }
-        // print_r($kelas_siswa->); exit();
+        // print_r($wali_kelas->); exit();
 
         $data = [
             'title' => 'Update Kelas Siswa',
@@ -88,8 +91,8 @@ class Kelas_siswa extends CI_Controller
             'jurusan' => $this->JurusanModel->get()->result(),
             'paralel' => $this->ParalelModel->get()->result(),
             'tahun_pelajaran' => $this->Tahun_pelajaranModel->get()->result(),
-            'kelas_siswa' => $kelas_siswa,
-            'content' => 'admin/kelas_siswa/tambah'
+            'wali_kelas' => $wali_kelas,
+            'content' => 'admin/wali_kelas/tambah'
         ];
     
         $this->load->view('layout_admin/base', $data);
@@ -123,28 +126,28 @@ class Kelas_siswa extends CI_Controller
                 'paralel' => $paralel->paralel
             ];
 
-            $cek = $this->Kelas_siswaModel->findBy(['id_siswa' => $id_siswa[$key], 'id_tahun_pelajaran' => $tp->id])->num_rows();
+            $cek = $this->Wali_kelasModel->findBy(['id_siswa' => $id_siswa[$key], 'id_tahun_pelajaran' => $tp->id])->num_rows();
 
             // print_r($cek);
             
             if ($cek != 0) {
-                $id_tapel_siswa = $this->Kelas_siswaModel->findBy(['id_siswa' => $id_siswa[$key], 'id_tahun_pelajaran' => $tp->id])->row();
+                $id_tapel_siswa = $this->Wali_kelasModel->findBy(['id_siswa' => $id_siswa[$key], 'id_tahun_pelajaran' => $tp->id])->row();
                 // print_r($id_tapel_siswa->id_tapel_siswa);
                 // exit();
-                if ($this->Kelas_siswaModel->update(['id' => $id_tapel_siswa->id_tapel_siswa], $data)) {
+                if ($this->Wali_kelasModel->update(['id' => $id_tapel_siswa->id_tapel_siswa], $data)) {
                     $this->session->set_flashdata('flash', 'Data berhasil diupdate');
                 } else {
                     $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
                 }
             } else {
-                if ($this->Kelas_siswaModel->add($data)) {
+                if ($this->Wali_kelasModel->add($data)) {
                     $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
                 } else {
                     $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
                 }
             }
         }
-        redirect(base_url('admin/kelas_siswa/tambah'));
+        redirect(base_url('admin/wali_kelas/tambah'));
     }
 
 }
