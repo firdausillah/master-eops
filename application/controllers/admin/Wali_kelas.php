@@ -59,12 +59,14 @@ class Wali_kelas extends CI_Controller
     public function edit(){
         $cek_wali = $this->Wali_kelasModel->findBy(['id_ptk' => $_GET['ptk'], 'id_tahun_pelajaran' => $_GET['tp']])->row();
 
+        
         if ($cek_wali != null) {
             $wali_kelas = $cek_wali;
         } else{
             $wali_kelas = $this->PtkModel->findBy(['id' => $_GET['ptk']])->row();
         }
-
+        // print_r(isset($wali_kelas->kuli) ?? 'satu'); exit();
+        
         $data = [
             'title' => 'Update Wali Kelas',
             'kelas' => $this->KelasModel->get()->result(),
@@ -79,7 +81,58 @@ class Wali_kelas extends CI_Controller
     }
 
     public function save(){
-        print_r($_POST);
+        $id_ptk = $this->input->post('id_ptk');
+        $tp = $this->input->post('id_tahun_pelajaran');
+        $k = $this->input->post('id_kelas');
+        $j = $this->input->post('id_jurusan');
+        $p = $this->input->post('id_paralel');
+
+        $kelas = $this->KelasModel->findBy(['id' => $k])->row();
+        $jurusan = $this->JurusanModel->findBy(['id' => $j])->row();
+        $paralel = $this->ParalelModel->findBy(['id' => $p])->row();
+
+        $data = [
+            'id_ptk' => $id_ptk,
+            'id_kelas' => $k,
+            'id_jurusan' => $j,
+            'id_paralel' => $p,
+            'id_tahun_pelajaran' => $tp,
+            'kode' => $k . $j . $p . $tp, //kode wali kelas -> id_kelas.id_jurusan.id_paralel.id_tahun_pelajaran
+            'kelas' => $kelas->kelas,
+            'jurusan' => $jurusan->singkatan,
+            'paralel' => $paralel->paralel
+        ];
+        
+        $cek_wali_ganda = $this->Wali_kelasModel->findBy([
+            'kode' => $data['kode']
+        ])->row();
+
+        $cek_wali = $this->Wali_kelasModel->findBy([
+            'id_ptk' => $id_ptk,
+            'id_tahun_pelajaran' => $tp
+        ])->num_rows();
+
+        if (isset($cek_wali_ganda)) {
+            $this->Wali_kelasModel->delete(['kode' => $cek_wali_ganda->kode]);
+        } 
+
+        // exit();
+
+        if ($cek_wali) {
+            if ($this->Wali_kelasModel->update(['id_ptk' => $id_ptk, 'id_tahun_pelajaran' => $tp], $data)) {
+                $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+            } else {
+                $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+            }
+        } else {
+            if ($this->Wali_kelasModel->add($data)) {
+                $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
+            } else {
+                $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+            }
+        }
+
+        redirect(base_url('admin/wali_kelas?tp='. $tp));
     }
 
 }

@@ -41,15 +41,15 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-3 col-form-label">Nama PTK</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" name="" value="<?= $wali_kelas->nama ?>">
+                                                                    <input type="text" class="form-control" name="" disabled value="<?= $wali_kelas->nama ?>">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
                                                                 <label class="col-sm-3 col-form-label">Tahun Pelajaran</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" name="" value="<?= $tahun_pelajaran->tahun_awal.' - '. $tahun_pelajaran->tahun_akhir ?>">
-                                                                    <input type="hidden" class="form-control" name="id_ptk" value="<?= $_GET['ptk']?>">
-                                                                    <input type="hidden" class="form-control" name="id_tahun_pelajaran" value="<?= $_GET['tp']?>">
+                                                                    <input type="text" class="form-control" name="" disabled value="<?= $tahun_pelajaran->tahun_awal . ' - ' . $tahun_pelajaran->tahun_akhir ?>">
+                                                                    <input type="hidden" class="form-control" name="id_ptk" value="<?= $_GET['ptk'] ?>">
+                                                                    <input type="hidden" class="form-control" name="id_tahun_pelajaran" value="<?= $_GET['tp'] ?>">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
@@ -58,7 +58,11 @@
                                                                     <select name="id_kelas" id="id_kelas" class="form-control">
                                                                         <option value="">Pilih disini</option>
                                                                         <?php foreach ($kelas as $key => $kel) : ?>
-                                                                            <option <?= isset($wali_kelas->id_kelas) ?? $wali_kelas->id_kelas == $kel->id ? 'selected' : '' ?> value="<?= $kel->id ?>"><?= $kel->kelas ?></option>
+                                                                            <?php if (isset($wali_kelas->kelas)) : ?>
+                                                                                <option <?= $wali_kelas->id_kelas == $kel->id ? ' selected' : '' ?> value="<?= $kel->id ?>"><?= $kel->kelas ?></option>
+                                                                            <?php else : ?>
+                                                                                <option value="<?= $kel->id ?>"><?= $kel->kelas ?></option>
+                                                                            <?php endif ?>
                                                                         <?php endforeach ?>
                                                                     </select>
                                                                 </div>
@@ -69,7 +73,11 @@
                                                                     <select name="id_jurusan" id="id_jurusan" class="form-control">
                                                                         <option value="">Pilih disini</option>
                                                                         <?php foreach ($jurusan as $key => $jur) : ?>
-                                                                            <option <?= isset($wali_kelas->id_jurusan) ?? $wali_kelas->id_jurusan == $jur->id ? 'selected' : '' ?> value="<?= $jur->id ?>"><?= $jur->nama_jurusan ?></option>
+                                                                            <?php if (isset($wali_kelas->jurusan)) : ?>
+                                                                                <option <?= $wali_kelas->id_jurusan == $jur->id ? ' selected' : '' ?> value="<?= $jur->id ?>"><?= $jur->nama_jurusan ?></option>
+                                                                            <?php else : ?>
+                                                                                <option value="<?= $jur->id ?>"><?= $jur->nama_jurusan ?></option>
+                                                                            <?php endif ?>
                                                                         <?php endforeach ?>
                                                                     </select>
                                                                 </div>
@@ -80,13 +88,17 @@
                                                                     <select name="id_paralel" id="id_paralel" class="form-control">
                                                                         <option value="">Pilih disini</option>
                                                                         <?php foreach ($paralel as $key => $par) : ?>
-                                                                            <option <?= isset($wali_kelas->id_paralel) ?? $wali_kelas->id_paralel == $par->id ? 'selected' : '' ?> value="<?= $par->id ?>"><?= $par->paralel ?></option>
+                                                                            <?php if (isset($wali_kelas->paralel)) : ?>
+                                                                                <option <?= $wali_kelas->id_paralel == $par->id ? ' selected' : '' ?> value="<?= $par->id ?>"><?= $par->paralel ?></option>
+                                                                            <?php else : ?>
+                                                                                <option value="<?= $par->id ?>"><?= $par->paralel ?></option>
+                                                                            <?php endif ?>
                                                                         <?php endforeach ?>
                                                                     </select>
                                                                 </div>
                                                             </div>
                                                             <div class="text-right">
-                                                                <a href="<?= base_url() ?>admin/jurusan" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                <a href="javascript:history.back()" class="btn btn-secondary btn-sm">Kembali</a>
                                                                 <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                                                             </div>
                                                         </form>

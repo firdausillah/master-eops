@@ -54,7 +54,7 @@
                                                                 <div class="col-md-4">
                                                                     <div style="margin-top:25px;">
                                                                         <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-filter"></i> Filter Data</button>
-                                                                        <a href="<?= base_url('admin/wali_kelas/tambah') ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Masukan Kelas PTK</a>
+                                                                        <!-- <a href="<?= base_url('admin/wali_kelas/tambah') ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Masukan Kelas PTK</a> -->
                                                                     </div>
                                                                 </div>
                                                             </div>

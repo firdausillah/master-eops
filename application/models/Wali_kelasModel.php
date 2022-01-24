@@ -33,7 +33,7 @@
  	}
 
  	function findBy($id){
-		$this->db->select('tb_ptk.id as id_ptk, tb_wali_kelas.id as id_tapel_ptk, tb_wali_kelas.paralel, tb_ptk.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_wali_kelas.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_wali_kelas.id_tahun_pelajaran, tb_wali_kelas.id_kelas, tb_wali_kelas.id_jurusan, tb_wali_kelas.id_paralel');
+		$this->db->select('tb_ptk.id as id_ptk, tb_wali_kelas.id as id_tapel_ptk, tb_wali_kelas.paralel, tb_ptk.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_wali_kelas.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_wali_kelas.id_tahun_pelajaran, tb_wali_kelas.id_kelas, tb_wali_kelas.id_jurusan, tb_wali_kelas.id_paralel, tb_wali_kelas.kode');
 		// $this->db->from('tb_wali_kelas');
 		$this->db->join('tb_ptk', 'tb_wali_kelas.id_ptk = tb_ptk.id', 'right');
 		$this->db->join('tb_kelas', 'tb_wali_kelas.id_kelas = tb_kelas.id', 'left');
