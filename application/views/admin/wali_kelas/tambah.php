@@ -50,7 +50,7 @@
                                                                             </select>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="col-md-2">
+                                                                    <div class="col-md-4">
                                                                         <div style="margin-top:25px;">
                                                                             <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-filter"></i> Filter Data</button>
                                                                         </div>
@@ -68,7 +68,7 @@
                                                                     <a href="<?= base_url('admin/wali_kelas/edit') ?>" type="submit" class="btn btn-info btn-sm btn-block">PTK Wali Kelas</a>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <a href="<?= base_url('admin/wali_kelas/tambah') ?>" type="submit" class="btn btn-info btn-sm btn-block">PTK Buksn Wali Kelas</a>
+                                                                    <a href="<?= base_url('admin/wali_kelas/tambah') ?>" type="submit" class="btn btn-info btn-sm btn-block">Semua PTK</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -77,7 +77,6 @@
                                                                 <table id="myTable" class="table table-hover table-sm">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th>#</th>
                                                                             <th>No</th>
                                                                             <th class="text-midle">Nama</th>
                                                                             <th class="text-midle">Kelas</th>
@@ -90,11 +89,8 @@
                                                                             <tr>
                                                                                 <td>
                                                                                     <input type="checkbox" name="id_ptk[]" class="chk-box" value="<?= $sis->id_ptk ?>" />
-                                                                                    <!-- <?php if ($sis->id_tapel_ptk != null) : ?>
-                                                                                        <input type="hidden" name="id_tapel_ptk[]" value="<?= $sis->id_tapel_ptk ?>">
-                                                                                    <?php endif ?> -->
+                                                                                    <?= $no + 1; ?>
                                                                                 </td>
-                                                                                <td><?= $no + 1; ?></td>
                                                                                 <td><?= $sis->nama ?></td>
                                                                                 <td><?= $sis->kelas ?></td>
                                                                                 <td><?= $sis->jurusan ?></td>

@@ -113,11 +113,11 @@ class Kelas_siswa extends CI_Controller
         foreach ($id_siswa as $key => $val) {
             $data =[
                 'id_siswa' => $id_siswa[$key],
-                'id_jurusan' => $j,
                 'id_kelas' => $k,
+                'id_jurusan' => $j,
                 'id_paralel' => $p,
                 'id_tahun_pelajaran' => $tp->id,
-                'kode' => $j.$p.$k.$tp->id,
+                'kode' => $k.$j.$p.$tp->id,
                 'kelas' => $kelas->kelas,
                 'jurusan' => $jurusan->singkatan,
                 'paralel' => $paralel->paralel

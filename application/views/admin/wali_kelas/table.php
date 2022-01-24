@@ -51,7 +51,7 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-2">
+                                                                <div class="col-md-4">
                                                                     <div style="margin-top:25px;">
                                                                         <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-filter"></i> Filter Data</button>
                                                                         <a href="<?= base_url('admin/wali_kelas/tambah') ?>" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> Masukan Kelas PTK</a>
@@ -81,8 +81,7 @@
                                                                             <td><?= $sis->nama ?></td>
                                                                             <td><?= $sis->kelas .' '. $sis->jurusan .' '. $sis->paralel .' ' ?></td>
                                                                             <td style="width: 20%;">
-                                                                                <a href="<?= base_url('admin/wali_kelas/edit/' . $sis->id_tapel_ptk) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
-                                                                                <a href="<?= base_url('admin/wali_kelas/delete/' . $sis->id_tapel_ptk) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
+                                                                                <a href="<?= base_url('admin/wali_kelas/edit?ptk=' . $sis->id_ptk. '&tp=' . $tapel) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
                                                                             </td>
                                                                         </tr>
                                                                     <?php endforeach ?>
