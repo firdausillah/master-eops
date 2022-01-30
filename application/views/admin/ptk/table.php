@@ -44,8 +44,8 @@
                                                                     <tr>
                                                                         <th>No</th>
                                                                         <th class="text-midle">Nama</th>
+                                                                        <th class="text-midle">NIK</th>
                                                                         <th class="text-midle">Username</th>
-                                                                        <th class="text-midle">Password</th>
                                                                         <th class="text-midle">Action</th>
                                                                     </tr>
                                                                 </thead>
@@ -53,9 +53,9 @@
                                                                     <?php foreach ($ptk as $no => $kls) : ?>
                                                                         <tr>
                                                                             <td><?= $no + 1; ?></td>
-                                                                            <td><?= $kls->nama ?></td>
+                                                                            <td><?= $kls->nama_ptk ?></td>
+                                                                            <td><?= $kls->nik_ptk ?></td>
                                                                             <td><?= $kls->username ?></td>
-                                                                            <td><?= $kls->password ?></td>
                                                                             <td style="width: 20%;">
                                                                                 <a href="<?= base_url('admin/ptk/edit/' . $kls->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
                                                                                 <a href="<?= base_url('admin/ptk/delete/' . $kls->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
@@ -90,15 +90,39 @@
                                 <?= form_open_multipart('admin/ptk/save') ?>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label class="form-label">Nama</label>
-                                        <input type="text" class="form-control" name="nama" required>
+                                        <label class="form-label">Nama <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="nama_ptk" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Username</label>
+                                        <label class="form-label">NIK <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="nik_ptk" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
+                                        <select class="form-control" name="jenis_kelamin_ptk" id="jenis_kelamin_ptk">
+                                            <option value="">Pilih Disini</option>
+                                            <option value="Laki-laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tempat Lahir <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="tempat_lahir_ptk" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tanggal Lahir <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="tanggal_lahir_ptk" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nama Ibu <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="nama_ibu_ptk" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Username <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="username" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Password</label>
+                                        <label class="form-label">Password <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="password" required>
                                     </div>
                                 </div>
