@@ -446,32 +446,50 @@
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Nomor Surat Tugas</label>
-                                                                                    <input type="text" class="form-control" name="nomr_surat_tugas" value="<?= $ptk->nomr_surat_tugas ?>">
+                                                                                    <label class="form-label">Pangkat Golongan</label>
+                                                                                    <input type="text" class="form-control" name="pangkat_golongan" value="<?= $ptk->pangkat_golongan ?>">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Tanggal Surat Tugas</label>
-                                                                                    <input type="date" class="form-control" name="tanggal_surat_tugas" value="<?= $ptk->tanggal_surat_tugas ?>">
+                                                                                    <label class="form-label">Nomor SK Inpasing</label>
+                                                                                    <input type="number" class="form-control" name="no_sk_inpasing" value="<?= $ptk->no_sk_inpasing ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">TMT Tugas</label>
-                                                                                    <input type="date" class="form-control" name="tmt_tugas" value="<?= $ptk->tmt_tugas ?>">
+                                                                                    <label class="form-label">Tanggal SK Inpasing</label>
+                                                                                    <input type="date" class="form-control" name="tgl_sk_inpasing" value="<?= $ptk->tgl_sk_inpasing ?>">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Status Sekolah Induk</label>
-                                                                                    <select class="form-control" name="status_sekolah_induk" id="status_sekolah_induk">
-                                                                                        <option value="">Pilih Disini</option>
-                                                                                        <option <?= $ptk->status_sekolah_induk == 'Ya' ? 'Ya' : '' ?> value="Ya">Ya</option>
-                                                                                        <option <?= $ptk->status_sekolah_induk == 'Tidak' ? 'Tidak' : '' ?> value="Tidak">Tidak</option>
-                                                                                    </select>
+                                                                                    <label class="form-label">TMT SK Inpasing</label>
+                                                                                    <input type="date" class="form-control" name="tmt_sk_inpasing" value="<?= $ptk->tmt_sk_inpasing ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Angka Kredit</label>
+                                                                                    <input type="text" class="form-control" name="angka_kredit" value="<?= $ptk->angka_kredit ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Masa Kerja Tahun</label>
+                                                                                    <input type="text" class="form-control" name="masa_kerja_tahun" value="<?= $ptk->masa_kerja_tahun ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Masa Kerja Bulan</label>
+                                                                                    <input type="text" class="form-control" name="masa_kerja_bulan" value="<?= $ptk->masa_kerja_bulan ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
