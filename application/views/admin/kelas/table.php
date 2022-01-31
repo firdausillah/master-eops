@@ -89,8 +89,8 @@
                                                                             <td><?= $no + 1; ?></td>
                                                                             <td><?= $par->paralel ?></td>
                                                                             <td style="width: 20%;">
-                                                                                <a href="<?= base_url('admin/kelas/edit/' . $par->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
-                                                                                <a href="<?= base_url('admin/kelas/delete/' . $par->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
+                                                                                <a href="<?= base_url('admin/kelas/editparalel/' . $par->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
+                                                                                <a href="<?= base_url('admin/kelas/deleteparalel/' . $par->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
                                                                             </td>
                                                                         </tr>
                                                                     <?php endforeach ?>
