@@ -143,6 +143,26 @@ class Ptk extends CI_Controller
         redirect(base_url('admin/ptk/edit/'.$id.'?page=data_penugasan'));
     }
 
+    public function save_inpasing($id){
+        $data = [
+            'pangkat_golongan' => $this->input->post('pangkat_golongan'),
+            'no_sk_inpasing' => $this->input->post('no_sk_inpasing'),
+            'tgl_sk_inpasing' => $this->input->post('tgl_sk_inpasing'),
+            'tmt_sk_inpasing' => $this->input->post('tmt_sk_inpasing'),
+            'angka_kredit' => $this->input->post('angka_kredit'),
+            'masa_kerja_tahun' => $this->input->post('masa_kerja_tahun'),
+            'masa_kerja_bulan' => $this->input->post('masa_kerja_bulan')
+        ];
+        
+        if ($this->PtkModel->update(['id' => $id], $data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/ptk/edit/'.$id.'?page=data_inpasing'));
+    }
+
     public function delete($id){
         if ($this->PtkModel->delete(['id' => $id])) {
             $this->session->set_flashdata('flash', 'Data berhasil dihapus');

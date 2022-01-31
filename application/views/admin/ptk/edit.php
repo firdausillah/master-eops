@@ -130,8 +130,8 @@
                                                                         <div class="row">
                                                                             <div class="col-6 text-right">
                                                                                 <div class="form-group">
-                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-success btn-sm">Kembali</a>
-                                                                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                                    <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -277,8 +277,8 @@
                                                                         <div class="row">
                                                                             <div class="col-6 text-right">
                                                                                 <div class="form-group">
-                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-success btn-sm">Kembali</a>
-                                                                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                                    <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -374,8 +374,8 @@
                                                                         <div class="row">
                                                                             <div class="col-6 text-right">
                                                                                 <div class="form-group">
-                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-success btn-sm">Kembali</a>
-                                                                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                                    <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -422,8 +422,8 @@
                                                                         <div class="row">
                                                                             <div class="col-6 text-right">
                                                                                 <div class="form-group">
-                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-success btn-sm">Kembali</a>
-                                                                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                                    <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -442,7 +442,7 @@
                                                                         felis amet.</p>
                                                                 </div>
                                                                 <div class="tab-pane<?= $page == 'data_inpasing' ? ' active show' : ''; ?>" id="data_inpasing" role="tabpanel">
-                                                                    <form action="<?= base_url('admin/ptk/save_penugasan/' . $ptk->id) ?>" method="POST">
+                                                                    <form action="<?= base_url('admin/ptk/save_inpasing/' . $ptk->id) ?>" method="POST">
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
@@ -496,8 +496,8 @@
                                                                         <div class="row">
                                                                             <div class="col-6 text-right">
                                                                                 <div class="form-group">
-                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-success btn-sm">Kembali</a>
-                                                                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                                                                    <a href="<?= base_url('admin/ptk') ?>" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                                    <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
