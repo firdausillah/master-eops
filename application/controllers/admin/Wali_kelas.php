@@ -34,7 +34,7 @@ class Wali_kelas extends CI_Controller
 
             $wali_kelas[] = (object) [
                 'id_ptk' => $value->id,
-                'nama' => $value->nama,
+                'nama_ptk' => $value->nama_ptk,
                 'kelas' => isset($wali->kelas) ? $wali->kelas : '',
                 'jurusan' => isset($wali->nama_jurusan) ? $wali->nama_jurusan : '',
                 'id_jurusan' => isset($wali->id_jurusan) ? $wali->id_jurusan : '',

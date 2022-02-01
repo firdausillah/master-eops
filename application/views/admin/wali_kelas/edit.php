@@ -41,7 +41,7 @@
                                                             <div class="form-group row">
                                                                 <label class="col-sm-3 col-form-label">Nama PTK</label>
                                                                 <div class="col-sm-9">
-                                                                    <input type="text" class="form-control" name="" disabled value="<?= $wali_kelas->nama ?>">
+                                                                    <input type="text" class="form-control" name="" disabled value="<?= $wali_kelas->nama_ptk ?>">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">

@@ -78,7 +78,7 @@
                                                                     <?php foreach ($wali_kelas as $no => $sis) : ?>
                                                                         <tr>
                                                                             <td><?= $no + 1; ?></td>
-                                                                            <td><?= $sis->nama ?></td>
+                                                                            <td><?= $sis->nama_ptk ?></td>
                                                                             <td><?= $sis->kelas .' '. $sis->jurusan .' '. $sis->paralel .' ' ?></td>
                                                                             <td style="width: 20%;">
                                                                                 <a href="<?= base_url('admin/wali_kelas/edit?ptk=' . $sis->id_ptk. '&tp=' . $tapel) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
@@ -97,35 +97,6 @@
                                     <!-- Page-body end -->
                                 </div>
                                 <!-- <div id="styleSelector"> </div> -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel"><?= $title ? $title : 'Judul Page' ?></h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <?= form_open_multipart('admin/ptk/save') ?>
-                                <div class="modal-body">
-                                    <div class="mb-3">
-                                        <label class="form-label">Kode Jurusan</label>
-                                        <input type="text" class="form-control" name="kode_jurusan" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Nama Jurusan</label>
-                                        <input type="text" class="form-control" name="nama_jurusan" required>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
-                                </div>
-                                </form>
                             </div>
                         </div>
                     </div>
