@@ -8,7 +8,7 @@ class Ptk extends CI_Controller
         parent::__construct();
         $this->load->model('PtkModel');
         $this->load->model('Riwayat_sertifikasiModel');
-        // $this->load->model('PtkModel');
+        $this->load->model('Riwayat_pendidikanModel');
         // $this->load->model('PtkModel');
 
         if ($this->session->userdata('role') != 'admin') {
@@ -53,6 +53,7 @@ class Ptk extends CI_Controller
             'title' => 'Edit Data Penelitian Tindakan Kelas',
             'ptk' => $this->PtkModel->findBy(['id' => $id])->row(),
             'riwayat_sertifikasi' => $this->Riwayat_sertifikasiModel->findBy(['id_ptk' => $id])->result(),
+            'riwayat_pendidikan' => $this->Riwayat_pendidikanModel->findBy(['id_ptk' => $id])->result(),
             'content' => 'admin/ptk/edit'
         ];
 
@@ -222,6 +223,68 @@ class Ptk extends CI_Controller
         redirect(base_url('admin/ptk/edit/' . $id_ptk->id_ptk . '?page=riwayat_sertifikasi'));
     }
     // END RIWAYAT SERTIFIKASI
+
+    // RIWAYAT PENDIDIKAN
+    public function save_rp($id){
+        $data = [
+            'bidang_studi' => $id,
+            'jenjang_pendidikan' => $this->input->post('jenjang_pendidikan'),
+            'gelar_akademik' => $this->input->post('gelar_akademik'),
+            'satuan_pendidikan' => $this->input->post('satuan_pendidikan'),
+            'tahun_masuk' => $this->input->post('tahun_masuk'),
+            'tahun_lulus' => $this->input->post('tahun_lulus'),
+            'nim' => $this->input->post('nim'),
+            'mata_kuliah' => $this->input->post('mata_kuliah'),
+            'semester' => $this->input->post('semester'),
+            'ipk' => $this->input->post('ipk')
+        ];
+
+        if ($this->Riwayat_pendidikanModel->add($data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/ptk/edit/' . $id . '?page=riwayat_pendidikan'));
+    }
+
+    public function update_rp($id){
+        $id_ptk = $this->Riwayat_pendidikanModel->findBy(['id' => $id])->row();
+
+        $data = [
+            'jenjang_pendidikan' => $this->input->post('jenjang_pendidikan'),
+            'gelar_akademik' => $this->input->post('gelar_akademik'),
+            'satuan_pendidikan' => $this->input->post('satuan_pendidikan'),
+            'tahun_masuk' => $this->input->post('tahun_masuk'),
+            'tahun_lulus' => $this->input->post('tahun_lulus'),
+            'nim' => $this->input->post('nim'),
+            'mata_kuliah' => $this->input->post('mata_kuliah'),
+            'semester' => $this->input->post('semester'),
+            'ipk' => $this->input->post('ipk')
+        ];
+
+        if ($this->Riwayat_pendidikanModel->update(['id' => $id], $data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+        
+        redirect(base_url('admin/ptk/edit/' . $id_ptk->id_ptk . '?page=riwayat_pendidikan'));
+    }
+    
+    public function delete_rp($id){
+
+        $id_ptk = $this->Riwayat_pendidikanModel->findBy(['id' => $id])->row();
+
+        if ($this->Riwayat_pendidikanModel->delete(['id' => $id])) {
+            $this->session->set_flashdata('flash', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+        
+        redirect(base_url('admin/ptk/edit/' . $id_ptk->id_ptk . '?page=riwayat_pendidikan'));
+    }
+    // END RIWAYAT PENDIDIKAN
 
 
     public function delete($id){

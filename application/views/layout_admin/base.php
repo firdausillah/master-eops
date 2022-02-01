@@ -27,6 +27,7 @@
     <!-- scrollbar.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/jquery.mCustomScrollbar.css">
     <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/mycss.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/daterangepicker.css">

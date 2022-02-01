@@ -454,12 +454,12 @@
                                                                                     <tr>
                                                                                         <form action="<?= base_url('admin/ptk/update_rs/' . $rs->id) ?>" method="POST">
                                                                                             <td><?= $no + 1; ?></td>
-                                                                                            <td><input type="text" class="form-control form-control-sm" name="jenis_sertifikasi" value="<?= $rs->jenis_sertifikasi ?>"></td>
-                                                                                            <td><input type="text" class="form-control form-control-sm" name="nomor_sertifikasi" value="<?= $rs->nomor_sertifikasi ?>"></td>
-                                                                                            <td><input type="text" class="form-control form-control-sm" name="thn_sertifikasi" value="<?= $rs->thn_sertifikasi ?>"></td>
-                                                                                            <td><input type="text" class="form-control form-control-sm" name="bidang_studi_sertifikasi" value="<?= $rs->bidang_studi_sertifikasi ?>"></td>
-                                                                                            <td><input type="text" class="form-control form-control-sm" name="nrg" value="<?= $rs->nrg ?>"></td>
-                                                                                            <td><input type="text" class="form-control form-control-sm" name="nomor_peserta" value="<?= $rs->nomor_peserta ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="jenis_sertifikasi" value="<?= $rs->jenis_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="nomor_sertifikasi" value="<?= $rs->nomor_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="thn_sertifikasi" value="<?= $rs->thn_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="bidang_studi_sertifikasi" value="<?= $rs->bidang_studi_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="nrg" value="<?= $rs->nrg ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="nomor_peserta" value="<?= $rs->nomor_peserta ?>"></td>
                                                                                             <td style="width: 20%;">
                                                                                                 <button type="submit" class="btn btn-success btn-small"><i class="fas fa-save"></i> Simpan</button>
                                                                                                 <a href="<?= base_url('admin/ptk/delete_rs/' . $rs->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="fas fa-trash"></i> Hapus</a>
@@ -472,8 +472,54 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="tab-pane<?= $page == 'riwayat_pendidikan' ? ' active show' : ''; ?>" id="riwayat_pendidikan" role="tabpanel">
-                                                                    <p class="m-0">4.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet
-                                                                        felis amet.</p>
+                                                                    <div class="m-2">
+                                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">
+                                                                            Tambah Riwayat Pendidikan
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="table-responsive">
+                                                                        <table id="myTable" class="table table-hover table-sm">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>No</th>
+                                                                                    <th class="text-midle" style="width: 30%;">Bidang Studi</th>
+                                                                                    <th class="text-midle">Jenjang Pendidikan</th>
+                                                                                    <th class="text-midle">Gelar Akademik</th>
+                                                                                    <th class="text-midle">Satuan Pendidikan</th>
+                                                                                    <th class="text-midle">Tahun Masuk</th>
+                                                                                    <th class="text-midle">Tahun Lulus</th>
+                                                                                    <th class="text-midle">NIM</th>
+                                                                                    <th class="text-midle">Mata Kuliah</th>
+                                                                                    <th class="text-midle">Semester</th>
+                                                                                    <th class="text-midle">IPK</th>
+                                                                                    <th class="text-midle">Aksi</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <?php foreach ($riwayat_pendidikan as $no => $rp) : ?>
+                                                                                    <tr>
+                                                                                        <form action="<?= base_url('admin/ptk/update_rp/' . $rp->id) ?>" method="POST">
+                                                                                            <td><?= $no + 1; ?></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="bidang_studi" value="<?= $rp->bidang_studi ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="jenjang_pendidikan" value="<?= $rp->jenjang_pendidikan ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="gelar_akademik" value="<?= $rp->gelar_akademik ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="satuan_pendidikan" value="<?= $rp->satuan_pendidikan ?>"></td>
+                                                                                            <td><input type="number" min="1900" max="2099" step="1" class="custom-form-control form-control-sm" name="tahun_masuk" value="<?= $rp->tahun_masuk ?>"></td>
+                                                                                            <td><input type="number" min="1900" max="2099" step="1" class="custom-form-control form-control-sm" name="tahun_lulus" value="<?= $rp->tahun_lulus ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="nim" value="<?= $rp->nim ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="mata_kuliah" value="<?= $rp->mata_kuliah ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="semester" value="<?= $rp->semester ?>"></td>
+                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="ipk" value="<?= $rp->ipk ?>"></td>
+                                                                                            <td style="width: 20%;">
+                                                                                                <button type="submit" class="btn btn-success btn-small"><i class="fas fa-save"></i> Simpan</button>
+                                                                                                <a href="<?= base_url('admin/ptk/delete_rp/' . $rp->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="fas fa-trash"></i> Hapus</a>
+                                                                                            </td>
+                                                                                        </form>
+                                                                                    </tr>
+                                                                                <?php endforeach ?>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="tab-pane<?= $page == 'tugas_tambahan' ? ' active show' : ''; ?>" id="tugas_tambahan" role="tabpanel">
                                                                     <p class="m-0">4.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet
@@ -593,6 +639,74 @@
                                         <input type="number" class="form-control" name="nomor_peserta">
                                     </div>
                                 </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Riwayat pendidikan -->
+                    <div class="modal fade bd-example-modal-lg " id="riwayat_pendidikan_modal" tabindex="-1" role="dialog" aria-labelledby="riwayat_pendidikan_modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="riwayat_pendidikan_modalLabel"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <?= form_open_multipart('admin/ptk/save_rp/' . $ptk->id) ?>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Bidang Studi</label>
+                                                <input type="text" class="form-control" name="bidang_studi">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Jenjang Pendidikan</label>
+                                                <input type="text" class="form-control" name="jenjang_pendidikan">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Gelar Akademik</label>
+                                                <input type="text" class="form-control" name="gelar_akademik">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Satuan Pendidikan</label>
+                                                <input type="text" class="form-control" name="satuan_pendidikan">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Tahun Masuk</label>
+                                                <input type="number" min="1900" max="2099" step="1" class="form-control" name="tahun_masuk">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <label class="form-label">Tahun Lulus</label>
+                                                <input type="number" min="1900" max="2099" step="1" class="form-control" name="tahun_lulus">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">NIM</label>
+                                                <input type="text" class="form-control" name="nim">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Mata Kuliah</label>
+                                                <input type="text" class="form-control" name="mata_kuliah">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Semester</label>
+                                                <input type="text" class="form-control" name="semester">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">IPK</label>
+                                                <input type="text" class="form-control" name="ipk">
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
