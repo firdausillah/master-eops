@@ -227,7 +227,8 @@ class Ptk extends CI_Controller
     // RIWAYAT PENDIDIKAN
     public function save_rp($id){
         $data = [
-            'bidang_studi' => $id,
+            'id_ptk' => $id,
+            'bidang_studi' => $this->input->post('bidang_studi'),
             'jenjang_pendidikan' => $this->input->post('jenjang_pendidikan'),
             'gelar_akademik' => $this->input->post('gelar_akademik'),
             'satuan_pendidikan' => $this->input->post('satuan_pendidikan'),
@@ -252,6 +253,7 @@ class Ptk extends CI_Controller
         $id_ptk = $this->Riwayat_pendidikanModel->findBy(['id' => $id])->row();
 
         $data = [
+            'bidang_studi' => $this->input->post('bidang_studi'),
             'jenjang_pendidikan' => $this->input->post('jenjang_pendidikan'),
             'gelar_akademik' => $this->input->post('gelar_akademik'),
             'satuan_pendidikan' => $this->input->post('satuan_pendidikan'),
