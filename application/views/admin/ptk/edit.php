@@ -430,8 +430,46 @@
                                                                     </form>
                                                                 </div>
                                                                 <div class="tab-pane<?= $page == 'riwayat_sertifikasi' ? ' active show' : ''; ?>" id="riwayat_sertifikasi" role="tabpanel">
-                                                                    <p class="m-0">4.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet
-                                                                        felis amet.</p>
+                                                                    <div class="m-2">
+                                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#riwayat_sertifikasi_modal">
+                                                                            Tambah Riwayat Sertifikasi
+                                                                        </button>
+                                                                    </div>
+                                                                    <div class="table-responsive">
+                                                                        <table id="myTable" class="table table-hover table-sm">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>No</th>
+                                                                                    <th class="text-midle">Jenis Sertifikasi</th>
+                                                                                    <th class="text-midle">Nomor Sertifikasi</th>
+                                                                                    <th class="text-midle">Tahun Sertifikasi</th>
+                                                                                    <th class="text-midle">Bidang Studi</th>
+                                                                                    <th class="text-midle">NRG</th>
+                                                                                    <th class="text-midle">Nomor Peserta</th>
+                                                                                    <th class="text-midle">Aksi</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <?php foreach ($riwayat_sertifikasi as $no => $rs) : ?>
+                                                                                    <tr>
+                                                                                        <form action="<?= base_url('admin/ptk/update_rs/' . $rs->id) ?>" method="POST">
+                                                                                            <td><?= $no + 1; ?></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="jenis_sertifikasi" value="<?= $rs->jenis_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nomor_sertifikasi" value="<?= $rs->nomor_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="thn_sertifikasi" value="<?= $rs->thn_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="bidang_studi_sertifikasi" value="<?= $rs->bidang_studi_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nrg" value="<?= $rs->nrg ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nomor_peserta" value="<?= $rs->nomor_peserta ?>"></td>
+                                                                                            <td style="width: 20%;">
+                                                                                                <button type="submit" class="btn btn-success btn-small"><i class="fas fa-save"></i> Simpan</button>
+                                                                                                <a href="<?= base_url('admin/ptk/delete_rs/' . $rs->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="fas fa-trash"></i> Hapus</a>
+                                                                                            </td>
+                                                                                        </form>
+                                                                                    </tr>
+                                                                                <?php endforeach ?>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="tab-pane<?= $page == 'riwayat_pendidikan' ? ' active show' : ''; ?>" id="riwayat_pendidikan" role="tabpanel">
                                                                     <p class="m-0">4.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet
@@ -514,6 +552,52 @@
                                     <!-- Page-body end -->
                                 </div>
                                 <!-- <div id="styleSelector"> </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Riwayat Sertifikasi -->
+                    <div class="modal fade" id="riwayat_sertifikasi_modal" tabindex="-1" role="dialog" aria-labelledby="riwayat_sertifikasi_modalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="riwayat_sertifikasi_modalLabel"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <?= form_open_multipart('admin/ptk/save_rs/' . $ptk->id) ?>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Jenis Sertifikasi</label>
+                                        <input type="text" class="form-control" name="jenis_sertifikasi">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nomor Sertifikasi</label>
+                                        <input type="number" class="form-control" name="nomor_sertifikasi">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tahun Sertifikasi</label>
+                                        <input type="number" min="1900" max="2099" step="1" class="form-control" name="thn_sertifikasi">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Bidang Studi Sertifikasi</label>
+                                        <input type="text" class="form-control" name="bidang_studi_sertifikasi">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">NRG</label>
+                                        <input type="text" class="form-control" name="nrg">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nomor Peserta</label>
+                                        <input type="number" class="form-control" name="nomor_peserta">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>

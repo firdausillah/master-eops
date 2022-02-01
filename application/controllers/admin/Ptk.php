@@ -7,6 +7,9 @@ class Ptk extends CI_Controller
     {
         parent::__construct();
         $this->load->model('PtkModel');
+        $this->load->model('Riwayat_sertifikasiModel');
+        // $this->load->model('PtkModel');
+        // $this->load->model('PtkModel');
 
         if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth"));
@@ -49,6 +52,7 @@ class Ptk extends CI_Controller
         $data = [
             'title' => 'Edit Data Penelitian Tindakan Kelas',
             'ptk' => $this->PtkModel->findBy(['id' => $id])->row(),
+            'riwayat_sertifikasi' => $this->Riwayat_sertifikasiModel->findBy(['id_ptk' => $id])->result(),
             'content' => 'admin/ptk/edit'
         ];
 
@@ -162,6 +166,63 @@ class Ptk extends CI_Controller
 
         redirect(base_url('admin/ptk/edit/'.$id.'?page=data_inpasing'));
     }
+
+    // RIWAYAT SERTIFIKASI
+    public function save_rs($id){
+        $data = [
+            'id_ptk' => $id,
+            'jenis_sertifikasi' => $this->input->post('jenis_sertifikasi'),
+            'nomor_sertifikasi' => $this->input->post('nomor_sertifikasi'),
+            'thn_sertifikasi' => $this->input->post('thn_sertifikasi'),
+            'bidang_studi_sertifikasi' => $this->input->post('bidang_studi_sertifikasi'),
+            'nrg' => $this->input->post('nrg'),
+            'nomor_peserta' => $this->input->post('nomor_peserta')
+        ];
+
+        if ($this->Riwayat_sertifikasiModel->add($data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/ptk/edit/' . $id . '?page=riwayat_sertifikasi'));
+    }
+
+    public function update_rs($id){
+        $id_ptk = $this->Riwayat_sertifikasiModel->findBy(['id' => $id])->row();
+
+        $data = [
+            'jenis_sertifikasi' => $this->input->post('jenis_sertifikasi'),
+            'nomor_sertifikasi' => $this->input->post('nomor_sertifikasi'),
+            'thn_sertifikasi' => $this->input->post('thn_sertifikasi'),
+            'bidang_studi_sertifikasi' => $this->input->post('bidang_studi_sertifikasi'),
+            'nrg' => $this->input->post('nrg'),
+            'nomor_peserta' => $this->input->post('nomor_peserta')
+        ];
+
+        if ($this->Riwayat_sertifikasiModel->update(['id' => $id], $data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+        
+        redirect(base_url('admin/ptk/edit/' . $id_ptk->id_ptk . '?page=riwayat_sertifikasi'));
+    }
+    
+    public function delete_rs($id){
+
+        $id_ptk = $this->Riwayat_sertifikasiModel->findBy(['id' => $id])->row();
+
+        if ($this->Riwayat_sertifikasiModel->delete(['id' => $id])) {
+            $this->session->set_flashdata('flash', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+        
+        redirect(base_url('admin/ptk/edit/' . $id_ptk->id_ptk . '?page=riwayat_sertifikasi'));
+    }
+    // END RIWAYAT SERTIFIKASI
+
 
     public function delete($id){
         if ($this->PtkModel->delete(['id' => $id])) {
