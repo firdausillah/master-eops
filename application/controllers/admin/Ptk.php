@@ -9,7 +9,7 @@ class Ptk extends CI_Controller
         $this->load->model('PtkModel');
         $this->load->model('Riwayat_sertifikasiModel');
         $this->load->model('Riwayat_pendidikanModel');
-        // $this->load->model('PtkModel');
+        $this->load->model('Tugas_tambahanModel');
 
         if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth"));
@@ -54,6 +54,7 @@ class Ptk extends CI_Controller
             'ptk' => $this->PtkModel->findBy(['id' => $id])->row(),
             'riwayat_sertifikasi' => $this->Riwayat_sertifikasiModel->findBy(['id_ptk' => $id])->result(),
             'riwayat_pendidikan' => $this->Riwayat_pendidikanModel->findBy(['id_ptk' => $id])->result(),
+            'tugas_tambahan' => $this->Tugas_tambahanModel->findBy(['id_ptk' => $id])->result(),
             'content' => 'admin/ptk/edit'
         ];
 
@@ -288,6 +289,57 @@ class Ptk extends CI_Controller
     }
     // END RIWAYAT PENDIDIKAN
 
+    // TUGAS TAMABAHAN
+    public function save_tt($id){
+        $data = [
+            'id_ptk' => $id,
+            'jabatan_ptk' => $this->input->post('jabatan_ptk'),
+            'nomorsk_tugastambahan' => $this->input->post('nomorsk_tugastambahan'),
+            'tmt_tugas_tambahan' => $this->input->post('tmt_tugas_tambahan'),
+            'tst_tugas_tambahan' => $this->input->post('tst_tugas_tambahan'),
+        ];
+
+        if ($this->Tugas_tambahanModel->add($data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/ptk/edit/' . $id . '?page=tugas_tambahan'));
+    }
+
+    public function update_tt($id){
+        $id_ptk = $this->Tugas_tambahanModel->findBy(['id' => $id])->row();
+
+        $data = [
+            'jabatan_ptk' => $this->input->post('jabatan_ptk'),
+            'nomorsk_tugastambahan' => $this->input->post('nomorsk_tugastambahan'),
+            'tmt_tugas_tambahan' => $this->input->post('tmt_tugas_tambahan'),
+            'tst_tugas_tambahan' => $this->input->post('tst_tugas_tambahan'),
+        ];
+
+        if ($this->Tugas_tambahanModel->update(['id' => $id], $data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+        
+        redirect(base_url('admin/ptk/edit/' . $id_ptk->id_ptk . '?page=tugas_tambahan'));
+    }
+    
+    public function delete_tt($id){
+
+        $id_ptk = $this->Tugas_tambahanModel->findBy(['id' => $id])->row();
+
+        if ($this->Tugas_tambahanModel->delete(['id' => $id])) {
+            $this->session->set_flashdata('flash', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+        
+        redirect(base_url('admin/ptk/edit/' . $id_ptk->id_ptk . '?page=tugas_tambahan'));
+    }
+    // END TUGAS TAMABAHAN
 
     public function delete($id){
         if ($this->PtkModel->delete(['id' => $id])) {

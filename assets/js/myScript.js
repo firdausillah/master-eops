@@ -37,3 +37,6 @@ $(document).ready(function () {
 $(document).ready(function () {
     $('#myTable2').DataTable();
 });
+$(document).ready(function () {
+    $('#myTable3').DataTable();
+});

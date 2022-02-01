@@ -434,6 +434,7 @@
                                                                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#riwayat_sertifikasi_modal">
                                                                             Tambah Riwayat Sertifikasi
                                                                         </button>
+                                                                        <a href="<?= base_url('admin/ptk') ?>" class="btn btn-secondary btn-sm">Kembali</a>
                                                                     </div>
                                                                     <div class="table-responsive">
                                                                         <table id="myTable" class="table table-hover table-sm">
@@ -454,13 +455,13 @@
                                                                                     <tr>
                                                                                         <form action="<?= base_url('admin/ptk/update_rs/' . $rs->id) ?>" method="POST">
                                                                                             <td><?= $no + 1; ?></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="jenis_sertifikasi" value="<?= $rs->jenis_sertifikasi ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="nomor_sertifikasi" value="<?= $rs->nomor_sertifikasi ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="thn_sertifikasi" value="<?= $rs->thn_sertifikasi ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="bidang_studi_sertifikasi" value="<?= $rs->bidang_studi_sertifikasi ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="nrg" value="<?= $rs->nrg ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="nomor_peserta" value="<?= $rs->nomor_peserta ?>"></td>
-                                                                                            <td style="width: 20%;">
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="jenis_sertifikasi" value="<?= $rs->jenis_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nomor_sertifikasi" value="<?= $rs->nomor_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="thn_sertifikasi" value="<?= $rs->thn_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="bidang_studi_sertifikasi" value="<?= $rs->bidang_studi_sertifikasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nrg" value="<?= $rs->nrg ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nomor_peserta" value="<?= $rs->nomor_peserta ?>"></td>
+                                                                                            <td style="width: 15%;">
                                                                                                 <button type="submit" class="btn btn-success btn-small"><i class="fas fa-save"></i> Simpan</button>
                                                                                                 <a href="<?= base_url('admin/ptk/delete_rs/' . $rs->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="fas fa-trash"></i> Hapus</a>
                                                                                             </td>
@@ -476,9 +477,10 @@
                                                                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bd-example-modal-lg">
                                                                             Tambah Riwayat Pendidikan
                                                                         </button>
+                                                                        <a href="<?= base_url('admin/ptk') ?>" class="btn btn-secondary btn-sm">Kembali</a>
                                                                     </div>
                                                                     <div class="table-responsive">
-                                                                        <table id="myTable" class="table table-hover table-sm">
+                                                                        <table id="myTable2" class="table table-hover table-sm">
                                                                             <thead>
                                                                                 <tr>
                                                                                     <th>No</th>
@@ -500,17 +502,17 @@
                                                                                     <tr>
                                                                                         <form action="<?= base_url('admin/ptk/update_rp/' . $rp->id) ?>" method="POST">
                                                                                             <td><?= $no + 1; ?></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="bidang_studi" value="<?= $rp->bidang_studi ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="jenjang_pendidikan" value="<?= $rp->jenjang_pendidikan ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="gelar_akademik" value="<?= $rp->gelar_akademik ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="satuan_pendidikan" value="<?= $rp->satuan_pendidikan ?>"></td>
-                                                                                            <td><input type="number" min="1900" max="2099" step="1" class="custom-form-control form-control-sm" name="tahun_masuk" value="<?= $rp->tahun_masuk ?>"></td>
-                                                                                            <td><input type="number" min="1900" max="2099" step="1" class="custom-form-control form-control-sm" name="tahun_lulus" value="<?= $rp->tahun_lulus ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="nim" value="<?= $rp->nim ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="mata_kuliah" value="<?= $rp->mata_kuliah ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="semester" value="<?= $rp->semester ?>"></td>
-                                                                                            <td><input type="text" class="custom-form-control form-control-sm" name="ipk" value="<?= $rp->ipk ?>"></td>
-                                                                                            <td style="width: 20%;">
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="bidang_studi" value="<?= $rp->bidang_studi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="jenjang_pendidikan" value="<?= $rp->jenjang_pendidikan ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="gelar_akademik" value="<?= $rp->gelar_akademik ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="satuan_pendidikan" value="<?= $rp->satuan_pendidikan ?>"></td>
+                                                                                            <td><input type="number" min="1900" max="2099" step="1" class="form-control form-control-sm" name="tahun_masuk" value="<?= $rp->tahun_masuk ?>"></td>
+                                                                                            <td><input type="number" min="1900" max="2099" step="1" class="form-control form-control-sm" name="tahun_lulus" value="<?= $rp->tahun_lulus ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nim" value="<?= $rp->nim ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="mata_kuliah" value="<?= $rp->mata_kuliah ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="semester" value="<?= $rp->semester ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="ipk" value="<?= $rp->ipk ?>"></td>
+                                                                                            <td style="width: 15%;">
                                                                                                 <button type="submit" class="btn btn-success btn-small"><i class="fas fa-save"></i> Simpan</button>
                                                                                                 <a href="<?= base_url('admin/ptk/delete_rp/' . $rp->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="fas fa-trash"></i> Hapus</a>
                                                                                             </td>
@@ -522,8 +524,43 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="tab-pane<?= $page == 'tugas_tambahan' ? ' active show' : ''; ?>" id="tugas_tambahan" role="tabpanel">
-                                                                    <p class="m-0">4.Cras consequat in enim ut efficitur. Nulla posuere elit quis auctor interdum praesent sit amet nulla vel enim amet. Donec convallis tellus neque, et imperdiet
-                                                                        felis amet.</p>
+                                                                    <div class="m-2">
+                                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#tugas_tambahan_model">
+                                                                            Tambah Tugas Tambahan
+                                                                        </button>
+                                                                        <a href="<?= base_url('admin/ptk') ?>" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                    </div>
+                                                                    <div class="table-responsive">
+                                                                        <table id="myTable3" class="table table-hover table-sm">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>No</th>
+                                                                                    <th class="text-midle">Jabatan PTK</th>
+                                                                                    <th class="text-midle">Nomor SK</th>
+                                                                                    <th class="text-midle">TMT Tugas Tambahan</th>
+                                                                                    <th class="text-midle">TST Tugas Tambahan</th>
+                                                                                    <th class="text-midle">Aksi</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <?php foreach ($tugas_tambahan as $no => $tt) : ?>
+                                                                                    <tr>
+                                                                                        <form action="<?= base_url('admin/ptk/update_tt/' . $tt->id) ?>" method="POST">
+                                                                                            <td><?= $no + 1; ?></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="jabatan_ptk" value="<?= $tt->jabatan_ptk ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nomorsk_tugastambahan" value="<?= $tt->nomorsk_tugastambahan ?>"></td>
+                                                                                            <td><input type="date" class="form-control form-control-sm" name="tmt_tugas_tambahan" value="<?= $tt->tmt_tugas_tambahan ?>"></td>
+                                                                                            <td><input type="date" class="form-control form-control-sm" name="tst_tugas_tambahan" value="<?= $tt->tst_tugas_tambahan ?>"></td>
+                                                                                            <td style="width: 15%;">
+                                                                                                <button type="submit" class="btn btn-success btn-small"><i class="fas fa-save"></i> Simpan</button>
+                                                                                                <a href="<?= base_url('admin/ptk/delete_tt/' . $tt->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="fas fa-trash"></i> Hapus</a>
+                                                                                            </td>
+                                                                                        </form>
+                                                                                    </tr>
+                                                                                <?php endforeach ?>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="tab-pane<?= $page == 'data_inpasing' ? ' active show' : ''; ?>" id="data_inpasing" role="tabpanel">
                                                                     <form action="<?= base_url('admin/ptk/save_inpasing/' . $ptk->id) ?>" method="POST">
@@ -670,14 +707,24 @@
                                                 <label class="form-label">Jenjang Pendidikan</label>
                                                 <input type="text" class="form-control" name="jenjang_pendidikan">
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Gelar Akademik</label>
                                                 <input type="text" class="form-control" name="gelar_akademik">
                                             </div>
+                                        </div>
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Satuan Pendidikan</label>
                                                 <input type="text" class="form-control" name="satuan_pendidikan">
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Tahun Masuk</label>
                                                 <input type="number" min="1900" max="2099" step="1" class="form-control" name="tahun_masuk">
@@ -688,25 +735,76 @@
                                                 <label class="form-label">Tahun Lulus</label>
                                                 <input type="number" min="1900" max="2099" step="1" class="form-control" name="tahun_lulus">
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label class="form-label">NIM</label>
                                                 <input type="text" class="form-control" name="nim">
                                             </div>
+                                        </div>
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Mata Kuliah</label>
                                                 <input type="text" class="form-control" name="mata_kuliah">
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Semester</label>
                                                 <input type="text" class="form-control" name="semester">
                                             </div>
+                                        </div>
+                                        <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <label class="form-label">IPK</label>
                                                 <input type="text" class="form-control" name="ipk">
                                             </div>
                                         </div>
-                                        </div>
                                     </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Modal Tugas Tambahan -->
+                    <div class="modal fade" id="tugas_tambahan_model" tabindex="-1" role="dialog" aria-labelledby="tugas_tambahan_modelLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="tugas_tambahan_modelLabel"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <?= form_open_multipart('admin/ptk/save_tt/' . $ptk->id) ?>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Jabatan PTK</label>
+                                        <input type="text" class="form-control" name="jabatan_ptk">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nomor SK Tugas Tambahan</label>
+                                        <input type="text" class="form-control" name="nomorsk_tugastambahan">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">TMT Tugas Tambahan</label>
+                                        <input type="date" class="form-control" name="tmt_tugas_tambahan">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">TST Tugas Tambahan</label>
+                                        <input type="date" class="form-control" name="tst_tugas_tambahan">
+                                    </div>
+                                </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
