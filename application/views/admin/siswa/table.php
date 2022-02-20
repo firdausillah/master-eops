@@ -88,12 +88,40 @@
                                 <?= form_open_multipart('admin/siswa/save') ?>
                                 <div class="modal-body">
                                     <div class="mb-3">
-                                        <label class="form-label">Kode Jurusan</label>
-                                        <input type="text" class="form-control" name="kode_jurusan" required>
+                                        <label class="form-label">Nama <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="nama" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label class="form-label">Nama Jurusan</label>
-                                        <input type="text" class="form-control" name="nama_jurusan" required>
+                                        <label class="form-label">NIK <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="nik_siswa" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Jenis Kelamin <span class="text-danger">*</span></label>
+                                        <select class="form-control" name="jk" id="jk">
+                                            <option value="">Pilih Disini</option>
+                                            <option value="Laki-laki">Laki-laki</option>
+                                            <option value="Perempuan">Perempuan</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tempat Lahir <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="tempatlahir_siswa" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tanggal Lahir <span class="text-danger">*</span></label>
+                                        <input type="date" class="form-control" name="tgllahir_siswa" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nama Ibu <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="nama_ibu" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nomor Telepon <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="nohp" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Password <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="password" required>
                                     </div>
                                 </div>
                                 <div class="modal-footer">

@@ -26,8 +26,14 @@ class Siswa extends CI_Controller
 
     public function save(){
         $data = [
-            'kode_jurusan' => $this->input->post('kode_jurusan'),
-            'nama_jurusan' => $this->input->post('nama_jurusan')
+            'nama' => $this->input->post('nama'),
+            'nik_siswa' => $this->input->post('nik_siswa'),
+            'jk' => $this->input->post('jk'),
+            'tempatlahir_siswa' => $this->input->post('tempatlahir_siswa'),
+            'tgllahir_siswa' => $this->input->post('tgllahir_siswa'),
+            'nama_ibu' => $this->input->post('nama_ibu'),
+            'nohp' => $this->input->post('nohp'),
+            'password' => $this->input->post('password')
         ];
         
         if ($this->SiswaModel->add($data)) {
@@ -51,8 +57,14 @@ class Siswa extends CI_Controller
 
     public function update($id){
         $data = [
-            'kode_jurusan' => $this->input->post('kode_jurusan'),
-            'nama_jurusan' => $this->input->post('nama_jurusan')
+            'nama' => $this->input->post('nama'),
+            'nik_siswa' => $this->input->post('nik_siswa'),
+            'jk' => $this->input->post('jk'),
+            'tempatlahir_siswa' => $this->input->post('tempatlahir_siswa'),
+            'tgllahir_siswa' => $this->input->post('tgllahir_siswa'),
+            'nama_ibu' => $this->input->post('nama_ibu'),
+            'nohp' => $this->input->post('nohp'),
+            'password' => $this->input->post('password')
         ];
         
         if ($this->SiswaModel->update(['id' => $id], $data)) {
