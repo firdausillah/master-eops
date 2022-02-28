@@ -97,7 +97,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <!-- Authentication card start -->
-                    <form class="md-float-material form-material" method="POST" action="<?= base_url('auth/login_admin') ?>">
+                    <?php
+                    $url = $this->uri->segment(2);
+                    if ($url == 'wali_kelas') : ?>
+                        <form class="md-float-material form-material" method="POST" action="<?= base_url('auth/login_wali_kelas') ?>">
+                    <?php elseif ($url == 'admin') : ?>
+                        <form class="md-float-material form-material" method="POST" action="<?= base_url('auth/login_admin') ?>">
+                    <?php endif ?>
                         <div class="text-center my-2">
                             <img src="<?= base_url() ?>assets/images/logo-pendar-transparan.png" height="60px" alt="logo.png">
                             <!-- <h3 class="text-white">Pendar.std</h3> -->

@@ -7,8 +7,9 @@ class Siswa extends CI_Controller
     {
         parent::__construct();
         $this->load->model('SiswaModel');
+        $this->load->model('Kelas_siswaModel');
 
-        if ($this->session->userdata('role') != 'admin') {
+        if ($this->session->userdata('role') != 'wali_kelas') {
             redirect(base_url("auth"));
         }
     }
@@ -21,7 +22,18 @@ class Siswa extends CI_Controller
             'content' => 'admin/siswa/table'
         ];
 
-        $this->load->view('layout_admin/base', $data);
+        $this->load->view('layout_wali_kelas/base', $data);
+    }
+
+    public function kelas($kode)
+    {
+        $data = [
+            'title' => 'Siswa',
+            'siswa' => $this->Kelas_siswaModel->findBy(['kode' => $kode])->result(),
+            'content' => 'admin/siswa/table'
+        ];
+
+        $this->load->view('layout_wali_kelas/base', $data);
     }
 
     public function save(){
@@ -52,7 +64,7 @@ class Siswa extends CI_Controller
             'content' => 'admin/siswa/edit'
         ];
 
-        $this->load->view('layout_admin/base', $data);
+        $this->load->view('layout_wali_kelas/base', $data);
     }
 
     public function save_identitas($id)

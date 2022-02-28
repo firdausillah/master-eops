@@ -92,11 +92,11 @@
     <div id="pcoded" class="pcoded">
         <div class="pcoded-overlay-box"></div>
         <div class="pcoded-container navbar-wrapper">
-            <?php $this->load->view('layout_admin/navbar') ?>
+            <?php $this->load->view('layout_wali_kelas/navbar') ?>
 
             <div class="pcoded-main-container">
                 <div class="pcoded-wrapper">
-                    <?php $this->load->view('layout_admin/sidebar') ?>
+                    <?php $this->load->view('layout_wali_kelas/sidebar') ?>
 
                     <!-- sweetalert -->
                     <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash') ?>"></div>
