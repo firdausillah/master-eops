@@ -7,7 +7,7 @@
 	}
  	
  	function get(){
-		$this->db->select('tb_siswa.id as id_siswa, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran.status_tahun, tb_tahun_pelajaran_siswa.paralel, tb_siswa.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_tahun_pelajaran_siswa.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_tahun_pelajaran_siswa.id_tahun_pelajaran');
+		$this->db->select('tb_siswa.id as id_siswa, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran.status_tahun, tb_tahun_pelajaran_siswa.paralel, tb_siswa.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_tahun_pelajaran_siswa.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_tahun_pelajaran_siswa.id_tahun_pelajaran, tb_tahun_pelajaran_siswa.kode as kode, tb_siswa.nohp');
 		$this->db->from('tb_tahun_pelajaran_siswa');
 		$this->db->join('tb_siswa', 'tb_tahun_pelajaran_siswa.id_siswa = tb_siswa.id', 'left');
 		$this->db->join('tb_kelas', 'tb_tahun_pelajaran_siswa.id_kelas = tb_kelas.id', 'left');
@@ -19,7 +19,7 @@
  	}
  	
  	function get_siswa_non_kelas(){
-		$this->db->select('tb_siswa.id as id_siswa, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran_siswa.paralel, tb_siswa.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_tahun_pelajaran_siswa.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_tahun_pelajaran_siswa.id_tahun_pelajaran');
+		$this->db->select('tb_siswa.id as id_siswa, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran_siswa.paralel, tb_siswa.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_tahun_pelajaran_siswa.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_tahun_pelajaran_siswa.id_tahun_pelajaran, tb_tahun_pelajaran_siswa.kode as kode, tb_siswa.nohp');
 		$this->db->from('tb_tahun_pelajaran_siswa');
 		$this->db->join('tb_siswa', 'tb_tahun_pelajaran_siswa.id_siswa = tb_siswa.id', 'right');
 		$this->db->join('tb_kelas', 'tb_tahun_pelajaran_siswa.id_kelas = tb_kelas.id', 'left');
@@ -31,7 +31,7 @@
  	}
 
  	function findBy($id){
-		$this->db->select('tb_siswa.id as id_siswa, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran_siswa.paralel, tb_siswa.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_tahun_pelajaran_siswa.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_tahun_pelajaran_siswa.id_tahun_pelajaran');
+		$this->db->select('tb_siswa.id as id_siswa, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran_siswa.paralel, tb_siswa.nama, tb_kelas.kelas, tb_jurusan.nama_jurusan, tb_tahun_pelajaran.tahun_awal, tb_tahun_pelajaran_siswa.jurusan, tb_tahun_pelajaran.tahun_akhir, tb_tahun_pelajaran_siswa.id_tahun_pelajaran, tb_tahun_pelajaran_siswa.kode as kode, tb_siswa.nohp');
 		// $this->db->from('tb_tahun_pelajaran_siswa');
 		$this->db->join('tb_siswa', 'tb_tahun_pelajaran_siswa.id_siswa = tb_siswa.id', 'right');
 		$this->db->join('tb_kelas', 'tb_tahun_pelajaran_siswa.id_kelas = tb_kelas.id', 'left');
@@ -41,6 +41,14 @@
  		$this->db->where($id);
  		return $this->db->get('tb_tahun_pelajaran_siswa');
  	}
+
+	function get_siswa_kelas($kode){
+		$this->db->select('tb_siswa.nama, tb_siswa.nik_siswa, tb_siswa.password, tb_siswa.nohp, tb_tahun_pelajaran_siswa.id as id_tapel_siswa, tb_tahun_pelajaran_siswa.paralel, tb_tahun_pelajaran_siswa.kode as kode');
+		$this->db->join('tb_siswa', 'tb_tahun_pelajaran_siswa.id_siswa = tb_siswa.id', 'right');
+		$this->db->join('tb_tahun_pelajaran', 'tb_tahun_pelajaran_siswa.id_tahun_pelajaran = tb_tahun_pelajaran.id', 'left');
+		$this->db->where($kode);
+		return $this->db->get('tb_tahun_pelajaran_siswa');
+	} 
 
  	function add($data){
  		return $this->db->insert('tb_tahun_pelajaran_siswa',$data);
