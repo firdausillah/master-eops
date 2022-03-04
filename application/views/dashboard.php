@@ -10,13 +10,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <style>
+        .box {
+            height: 600px;
+            width: 100%;
+        }
+
+        .center-text {
+            padding: 80px 0;
+        }
+
         .gradien-bg {
-            background: linear-gradient(to right, #4998f1, #2c5d93);
+            background: linear-gradient(to bottom, #4998f1, #2c5d93);
             transition: 5s;
         }
 
-        .gradien-bg:hover {
-            background: linear-gradient(to right, #2c5d93, #4998f1);
+        .naik {
+            margin-top: -210px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
 
@@ -24,13 +37,15 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="jumbotron mt-2 text-center text-white gradien-bg">
+    <div class="box text-center text-white gradien-bg">
+        <div class="center-text">
             <h1>Selamat datang di</h1>
             <h1>EOPS SMK PGRI PESANGGARAN</h1>
             <h3>Silahkan pilih anda ingin login sebagai apa,</h3>
             <h3>Anda akan di alihkan ke menu login sesuai pilihan anda</h3>
         </div>
+    </div>
+    <div class="container naik">
         <div class="card-deck">
             <div class="card">
                 <img src="https://ldtschool.in/images/contacts.jpg" class="card-img-top" alt="https://ldtschool.in/images/contacts.jpg">
@@ -40,7 +55,7 @@
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <a href="<?= base_url('auth/admin') ?>" class="btn btn-primary btn-block">Admin</a>
+                        <a href="<?= base_url('auth/admin') ?>" class="btn btn-primary btn-block">Login</a>
                     </small>
                 </div>
             </div>
@@ -52,7 +67,7 @@
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <a href="<?= base_url('auth/wali_kelas') ?>" class="btn btn-primary btn-block">Wali Kelas</a>
+                        <a href="<?= base_url('auth/wali_kelas') ?>" class="btn btn-primary btn-block">Login</a>
                     </small>
                 </div>
             </div>
@@ -64,7 +79,7 @@
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <a href="<?= base_url('auth/siswa') ?>" class="btn btn-primary btn-block">Siswa</a>
+                        <a href="<?= base_url('auth/siswa') ?>" class="btn btn-primary btn-block">Login</a>
                     </small>
                 </div>
             </div>

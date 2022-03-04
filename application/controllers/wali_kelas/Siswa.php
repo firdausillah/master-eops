@@ -57,14 +57,14 @@ class Siswa extends CI_Controller
         redirect(base_url('admin/siswa'));
     }
 
-    public function edit($id){
+    public function show($id){
         $data = [
-            'title' => 'Edit Siswa',
+            'title' => 'Show Siswa',
             'siswa' => $this->SiswaModel->findBy(['id' => $id])->row(),
-            'content' => 'admin/siswa/edit'
+            'content' => 'wali_kelas/kelas/show-siswa'
         ];
 
-        $this->load->view('layout_wali_kelas/base', $data);
+        $this->load->view('wali_kelas/kelas/show-siswa', $data);
     }
 
     public function save_identitas($id)

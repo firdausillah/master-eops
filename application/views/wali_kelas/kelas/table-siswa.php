@@ -53,7 +53,8 @@
                                                                             <td><?= $sis->nama ?></td>
                                                                             <td><?= $sis->nohp ?></td>
                                                                             <td style="width: 20%;">
-                                                                                <a href="<?= base_url('wali_kelas/siswa/edit/' . $sis->id_siswa) ?>" class="btn btn-success btn-small btn-block">Lihat Siswa</a>
+                                                                                <a href="#show_modal" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="<?= $sis->id_siswa ?>" class="btn btn-success btn-small btn-block">Lihat Siswa</a>
+                                                                                <!-- <a href="<?= base_url('wali_kelas/siswa/edit/' . $sis->id_siswa) ?>" class="btn btn-success btn-small btn-block">Lihat Siswa</a> -->
                                                                             </td>
                                                                         </tr>
                                                                     <?php endforeach ?>
@@ -72,3 +73,38 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="modal fade bd-example-modal-lg" id="show_modal" tabindex="-1" aria-labelledby="show_modalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="show_modalLabel">Lihat Data Siswa</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="hasil-data"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+                    <script type="text/javascript">
+                        $(document).ready(function() {
+                            $('#show_modal').on('show.bs.modal', function(e) {
+                                var idx = $(e.relatedTarget).data('id');
+                                console.log(idx);
+                                //menggunakan fungsi ajax untuk pengambilan data
+                                $.ajax({
+                                    type: 'post',
+                                    url: '<?= base_url('wali_kelas/siswa/show/') ?>' + idx,
+                                    data: 'idx=' + idx,
+                                    success: function(data) {
+                                        $('.hasil-data').html(data); //menampilkan data ke dalam modal
+                                    }
+                                });
+                            });
+                        });
+                    </script>

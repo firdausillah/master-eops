@@ -28,13 +28,6 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                <li class="<?= $url == 'siswa' ? 'active' : '' ?>">
-                                    <a href="<?= base_url('wali_kelas/siswa') ?>" class="waves-effect waves-dark">
-                                        <span class="pcoded-micon"><i class="ti-user"></i><b>D</b></span>
-                                        <span class="pcoded-mtext">Siswa</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
                                 <li class="<?= $url == 'kelas' ? 'active' : '' ?>">
                                     <a href="<?= base_url('wali_kelas/kelas') ?>" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-user"></i><b>D</b></span>
