@@ -33,9 +33,9 @@
                                                 <!-- Hover table card start -->
                                                 <div class="card">
                                                     <div class="card-header">
-                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
+                                                        <!-- <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
                                                             Tambah <?= $title ? $title : 'Judul Page' ?>
-                                                        </button>
+                                                        </button> -->
                                                     </div>
                                                     <div class="card-block table-border-style">
                                                         <div class="table-responsive">

@@ -11,10 +11,27 @@ class Auth extends CI_Controller
 		$this->load->model('AuthModel', 'mAuth');
 		$this->load->model('ProfileModel');
 		$this->load->model('LogUserModel');
+
 	}
 
 	public function index()
 	{
+				if ($this->session->userdata() !== null) {
+			if ($this->session->userdata('role') == 'admin') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("admin/dashboard"));
+			}
+			if ($this->session->userdata('role') == 'wali_kelas') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("wali_kelas/dashboard"));
+			}
+			if ($this->session->userdata('role') == 'siswa') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("siswa/dashboard"));
+			}
+		} else{
+			redirect(base_url("auth"));
+		}
 		$data = [
 			'title' => 'Pilihan Login'
 		];
@@ -24,6 +41,22 @@ class Auth extends CI_Controller
 
 	public function admin()
 	{
+				if ($this->session->userdata() !== null) {
+			if ($this->session->userdata('role') == 'admin') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("admin/dashboard"));
+			}
+			if ($this->session->userdata('role') == 'wali_kelas') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("wali_kelas/dashboard"));
+			}
+			if ($this->session->userdata('role') == 'siswa') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("siswa/dashboard"));
+			}
+		} else{
+			redirect(base_url("auth"));
+		}
 		$data = [
 			'title' => $this->ProfileModel->findBy(['id' => 1])->row()
 		];
@@ -33,6 +66,22 @@ class Auth extends CI_Controller
 
 	public function wali_kelas()
 	{
+				if ($this->session->userdata() !== null) {
+			if ($this->session->userdata('role') == 'admin') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("admin/dashboard"));
+			}
+			if ($this->session->userdata('role') == 'wali_kelas') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("wali_kelas/dashboard"));
+			}
+			if ($this->session->userdata('role') == 'siswa') {
+				$this->session->set_flashdata('flash', 'Anda sudah Login');
+				redirect(base_url("siswa/dashboard"));
+			}
+		} else{
+			redirect(base_url("auth"));
+		}
 		$data = [
 			'title' => $this->ProfileModel->findBy(['id' => 1])->row()
 		];
