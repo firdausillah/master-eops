@@ -94,6 +94,9 @@
                                         <label class="form-label">File Excel</label>
                                         <input type="file" class="form-control" name="excel">
                                     </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Download Template Excel Disini <a class="text-success" href="<?= base_url() ?>uploads/file/template/siswa-master-import.xlsx">Download</a></label>
+                                    </div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
