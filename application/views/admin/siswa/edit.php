@@ -302,6 +302,12 @@
                                                                                     <input type="text" class="form-control" name="password" value="<?= $siswa->password ?>">
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Nomor Induk</label>
+                                                                                    <input type="text" class="form-control" name="no_induk" value="<?= $siswa->no_induk ?>">
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                         <div class="row">
                                                                             <div class="col-6 text-right">

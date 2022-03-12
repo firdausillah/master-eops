@@ -29,7 +29,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <div class="row">
-                                            <div class="col-12 col-xl-10">
+                                            <div class="col-12 col-xl-12">
                                                 <!-- Hover table card start -->
                                                 <div class="card">
                                                     <div class="card-header">
@@ -47,7 +47,11 @@
                                                                     <tr>
                                                                         <th>No</th>
                                                                         <th class="text-midle">Nama</th>
+                                                                        <th class="text-midle">JK</th>
                                                                         <th class="text-midle">NISN</th>
+                                                                        <th class="text-midle">No. Induk</th>
+                                                                        <th class="text-midle">NIK</th>
+                                                                        <th class="text-midle">Tingkat Kelas</th>
                                                                         <th class="text-midle">Action</th>
                                                                     </tr>
                                                                 </thead>
@@ -56,6 +60,10 @@
                                                                         <tr>
                                                                             <td><?= $no + 1; ?></td>
                                                                             <td><?= $sis->nama ?></td>
+                                                                            <td><?= $sis->jk ?></td>
+                                                                            <td><?= $sis->nisn ?></td>
+                                                                            <td><?= $sis->no_induk ?></td>
+                                                                            <td><?= $sis->nik_siswa ?></td>
                                                                             <td><?= $sis->nisn ?></td>
                                                                             <td style="width: 20%;">
                                                                                 <a href="<?= base_url('admin/siswa/edit/' . $sis->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
