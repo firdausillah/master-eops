@@ -29,7 +29,7 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <div class="row">
-                                            <div class="col-md-8 col-12">
+                                            <div class="col-md-12 col-12">
                                                 <!-- Hover table card start -->
                                                 <div class="card">
                                                     <div class="card-header">
@@ -45,7 +45,10 @@
                                                                         <th>No</th>
                                                                         <th class="text-midle">Nama</th>
                                                                         <th class="text-midle">NIK</th>
-                                                                        <th class="text-midle">Username</th>
+                                                                        <th class="text-midle">JK</th>
+                                                                        <th class="text-midle">Status Induk</th>
+                                                                        <th class="text-midle">Status Kepegawaian</th>
+                                                                        <th class="text-midle">TTL</th>
                                                                         <th class="text-midle">Action</th>
                                                                     </tr>
                                                                 </thead>
@@ -55,7 +58,14 @@
                                                                             <td><?= $no + 1; ?></td>
                                                                             <td><?= $kls->nama_ptk ?></td>
                                                                             <td><?= $kls->nik_ptk ?></td>
-                                                                            <td><?= $kls->username ?></td>
+                                                                            <td><?= $kls->jenis_kelamin_ptk ?></td>
+                                                                            <td><?= $kls->status_sekolah_induk ?></td>
+                                                                            <td><?= $kls->status_kepegawaian ?></td>
+                                                                            <?php if($kls->tempat_lahir_ptk): ?>
+                                                                            <td><?= $kls->tempat_lahir_ptk.', '. date('d F Y', strtotime($kls->tanggal_lahir_ptk)) ?></td>
+                                                                            <?php else :?>
+                                                                                <td></td>
+                                                                            <?php endif ?>
                                                                             <td style="width: 20%;">
                                                                                 <a href="<?= base_url('admin/ptk/edit/' . $kls->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
                                                                                 <a href="<?= base_url('admin/ptk/delete/' . $kls->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
