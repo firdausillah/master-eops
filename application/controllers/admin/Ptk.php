@@ -19,7 +19,7 @@ class Ptk extends CI_Controller
     public function index()
     {
         $data = [
-            'title' => 'Penelitian Tindakan Kelas',
+            'title' => 'Pegawai Tindakan Kependidikan',
             'ptk' => $this->PtkModel->get()->result(),
             'content' => 'admin/ptk/table'
         ];
@@ -50,7 +50,7 @@ class Ptk extends CI_Controller
 
     public function edit($id){
         $data = [
-            'title' => 'Edit Data Penelitian Tindakan Kelas',
+            'title' => 'Edit Data Pegawai Tindakan Kependidikan',
             'ptk' => $this->PtkModel->findBy(['id' => $id])->row(),
             'riwayat_sertifikasi' => $this->Riwayat_sertifikasiModel->findBy(['id_ptk' => $id])->result(),
             'riwayat_pendidikan' => $this->Riwayat_pendidikanModel->findBy(['id_ptk' => $id])->result(),
