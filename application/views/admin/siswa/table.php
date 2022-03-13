@@ -96,7 +96,7 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <?= form_open_multipart('admin/import_excel/save') ?>
+                                <?= form_open_multipart('admin/import_excel/import_data_siswa') ?>
                                 <div class="modal-body">
                                     <div class="mb-3">
                                         <label class="form-label">File Excel</label>

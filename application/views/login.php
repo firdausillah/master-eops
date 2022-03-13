@@ -101,63 +101,60 @@
                     $url = $this->uri->segment(2);
                     if ($url == 'wali_kelas') : ?>
                         <form class="md-float-material form-material" method="POST" action="<?= base_url('auth/login_wali_kelas') ?>">
-                    <?php elseif ($url == 'admin') : ?>
-                        <form class="md-float-material form-material" method="POST" action="<?= base_url('auth/login_admin') ?>">
-                    <?php endif ?>
-                        <div class="text-center my-2">
-                            <img src="<?= base_url() ?>assets/images/logo-pendar-transparan.png" height="60px" alt="logo.png">
-                            <!-- <h3 class="text-white">Pendar.std</h3> -->
-                        </div>
-                        <div class="auth-box card">
-                            <div class="card-block">
-                                <div class="row m-b-20">
-                                    <div class="col-md-12">
-                                        <h3 class="text-center">Login</h3>
-                                    </div>
-                                </div>
-                                <div class="form-group form-primary">
-                                    <input type="text" name="username" class="form-control">
-                                    <span class="form-bar"></span>
-                                    <label class="float-label">Your Username</label>
-                                </div>
-                                <div class="form-group form-primary">
-                                    <input type="password" name="password" class="form-control">
-                                    <span class="form-bar"></span>
-                                    <label class="float-label">Password</label>
-                                </div>
-                                <div class="row m-t-25 text-left">
-                                    <div class="col-12">
-                                        <div class="checkbox-fade fade-in-primary d-">
-                                            <label>
-                                                <input type="checkbox" value="">
-                                                <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-                                                <span class="text-inverse">Remember me</span>
-                                            </label>
-                                        </div>
-                                        <div class="forgot-phone text-right f-right">
-                                            <a href="#" class="text-right f-w-600"> Forgot Password?</a>
+                        <?php elseif ($url == 'admin') : ?>
+                            <form class="md-float-material form-material" method="POST" action="<?= base_url('auth/login_admin') ?>">
+                            <?php endif ?>
+                            <div class="text-center my-2">
+                                <img src="<?= base_url() ?>assets/images/logo-pendar-transparan.png" height="60px" alt="logo.png">
+                                <!-- <h3 class="text-white">Pendar.std</h3> -->
+                            </div>
+                            <div class="auth-box card">
+                                <div class="card-block">
+                                    <div class="row m-b-20">
+                                        <div class="col-md-12">
+                                            <h3 class="text-center">Login</h3>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row m-t-30">
-                                    <div class="col-md-12">
-                                        <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
+                                    <div class="form-group form-primary">
+                                        <input type="text" name="username" class="form-control">
+                                        <span class="form-bar"></span>
+                                        <label class="float-label">Your Username</label>
                                     </div>
-                                </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-md-10">
-                                        <p class="text-inverse text-left m-b-0">Thank you.</p>
-                                        <p class="text-inverse text-left"><a href="index.html"><b>Back to website</b></a></p>
+                                    <div class="form-group form-primary">
+                                        <input type="password" name="password" class="form-control" id="myInput">
+                                        <span class="form-bar"></span>
+                                        <label class="float-label">Password</label>
                                     </div>
-                                    <div class="col-md-2">
-                                        <img src="<?= base_url() ?>assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                    <div class="row text-left">
+                                        <div class="col-12">
+                                            <div class="checkbox-fade fade-in-primary d-">
+                                                <label>
+                                                    <input onclick="myFunction()" type="checkbox" value="">
+                                                    <span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
+                                                    <span class="text-inverse">Show Password</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Login</button>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <p class="text-inverse text-left m-b-0">Thank you.</p>
+                                            <p class="text-inverse text-left"><a href="smkpgripesanggaran.sch.id"><b>Back to website</b></a></p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <img src="<?= base_url() ?>assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                    <!-- end of form -->
+                            </form>
+                            <!-- end of form -->
                 </div>
                 <!-- end of col-sm-12 -->
             </div>
@@ -196,6 +193,16 @@
     <!-- sweetalert -->
     <script>
         $('#myModal').modal('show');
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
     </script>
 </body>
 
