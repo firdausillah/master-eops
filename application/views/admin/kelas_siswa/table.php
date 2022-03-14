@@ -117,6 +117,11 @@
                                                                     <div style="margin-top:25px;" class="text-center">
                                                                         <button type="submit" class="btn btn-sm btn-success btn-block"><i class="fa fa-filter"></i> Filter Data</button>
                                                                         <a href="<?= base_url('admin/kelas_siswa/tambah') ?>" class="btn btn-sm btn-primary btn-block"><i class="fa fa-plus"></i> Masukan Kelas Siswa</a>
+                                                                        <?php if ($_GET != null) :
+                                                                            $kode = $_GET['k']. $_GET['j']. $_GET['p']. $_GET['tp'];
+                                                                            ?>
+                                                                            <a href="<?= base_url('export/export_siswa_kelas/'. $kode)  ?>" class="btn btn-sm btn-secondary btn-block"><i class="fa fa-download"></i> Export Excel</a>
+                                                                        <?php endif ?>
                                                                     </div>
                                                                 </div>
                                                             </div>
