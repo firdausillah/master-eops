@@ -35,6 +35,13 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
+                                <li class="<?= $url == 'profile' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('wali_kelas/profile') ?>" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="ti-user"></i><b>D</b></span>
+                                        <span class="pcoded-mtext">Profile</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
