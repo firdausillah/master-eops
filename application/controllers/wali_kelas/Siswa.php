@@ -14,49 +14,6 @@ class Siswa extends CI_Controller
         }
     }
 
-    public function index()
-    {
-        $data = [
-            'title' => 'Siswa',
-            'siswa' => $this->SiswaModel->get()->result(),
-            'content' => 'admin/siswa/table'
-        ];
-
-        $this->load->view('layout_wali_kelas/base', $data);
-    }
-
-    public function kelas($kode)
-    {
-        $data = [
-            'title' => 'Siswa',
-            'siswa' => $this->Kelas_siswaModel->findBy(['kode' => $kode])->result(),
-            'content' => 'admin/siswa/table'
-        ];
-
-        $this->load->view('layout_wali_kelas/base', $data);
-    }
-
-    public function save(){
-        $data = [
-            'nama' => $this->input->post('nama'),
-            'nik_siswa' => $this->input->post('nik_siswa'),
-            'jk' => $this->input->post('jk'),
-            'tempatlahir_siswa' => $this->input->post('tempatlahir_siswa'),
-            'tgllahir_siswa' => $this->input->post('tgllahir_siswa'),
-            'nama_ibu' => $this->input->post('nama_ibu'),
-            'nohp' => $this->input->post('nohp'),
-            'password' => $this->input->post('password')
-        ];
-        
-        if ($this->SiswaModel->add($data)) {
-            $this->session->set_flashdata('flash', 'Data berhasil dimasukan');
-        } else {
-            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
-        }
-
-        redirect(base_url('admin/siswa'));
-    }
-
     public function show($id){
         $data = [
             'title' => 'Show Siswa',
@@ -70,13 +27,7 @@ class Siswa extends CI_Controller
     public function save_identitas($id)
     {
         $data = [
-            'nama' => $this->input->post('nama'),
-            'jk' => $this->input->post('jk'),
-            'nisn' => $this->input->post('nisn'),
-            'nik_siswa' => $this->input->post('nik_siswa'),
             'no_kk' => $this->input->post('no_kk'),
-            'tempatlahir_siswa' => $this->input->post('tempatlahir_siswa'),
-            'tgllahir_siswa' => $this->input->post('tgllahir_siswa'),
             'noakte_lahir' => $this->input->post('noakte_lahir'),
             'kewarganegaraan' => $this->input->post('kewarganegaraan'),
             'agama' => $this->input->post('agama'),
@@ -92,8 +43,6 @@ class Siswa extends CI_Controller
             'tempat_tinggal' => $this->input->post('tempat_tinggal'),
             'moda_transportasi' => $this->input->post('moda_transportasi'),
             'anak_keberapa' => $this->input->post('anak_keberapa'),
-            'nomor_kip' => $this->input->post('nomor_kip'),
-            'nama_kip' => $this->input->post('nama_kip'),
             'lintang' => $this->input->post('lintang'),
             'bujur' => $this->input->post('bujur'),
             'nomor_kks' => $this->input->post('nomor_kks'),
@@ -105,7 +54,7 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/siswa/edit/' . $id . '?page=data_identitas'));
+        // redirect(base_url('admin/siswa/edit/' . $id . '?page=data_identitas'));
     }
 
     public function save_ayah($id)
@@ -126,13 +75,12 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/siswa/edit/' . $id . '?page=data_ayah'));
+        // redirect(base_url('admin/siswa/edit/' . $id . '?page=data_ayah'));
     }
 
     public function save_ibu($id)
     {
         $data = [
-            'nama_ibu' => $this->input->post('nama_ibu'),
             'nohp_ibu' => $this->input->post('nohp_ibu'),
             'nik_ibu' => $this->input->post('nik_ibu'),
             'tgllahir_ibu' => $this->input->post('tgllahir_ibu'),
@@ -147,7 +95,7 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/siswa/edit/' . $id . '?page=data_ibu'));
+        // redirect(base_url('admin/siswa/edit/' . $id . '?page=data_ibu'));
     }
 
     public function save_wali($id)
@@ -168,7 +116,7 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/siswa/edit/' . $id . '?page=data_wali'));
+        // redirect(base_url('admin/siswa/edit/' . $id . '?page=data_wali'));
     }
 
     public function save_periodik($id)
@@ -187,7 +135,7 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/siswa/edit/' . $id . '?page=data_periodik'));
+        // redirect(base_url('admin/siswa/edit/' . $id . '?page=data_periodik'));
     }
 
     public function save_registrasi_pd($id)
@@ -207,7 +155,7 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/siswa/edit/' . $id . '?page=registrasi_pd'));
+        // redirect(base_url('admin/siswa/edit/' . $id . '?page=registrasi_pd'));
     }
 
     public function save_pendaftaran_keluar($id)
@@ -224,15 +172,6 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/siswa/edit/' . $id . '?page=pendaftaran_keluar'));
-    }
-
-    public function delete($id){
-        if ($this->SiswaModel->delete(['id' => $id])) {
-            $this->session->set_flashdata('flash', 'Data berhasil dihapus');
-        } else {
-            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
-        }
-        redirect('admin/siswa');
+        // redirect(base_url('admin/siswa/edit/' . $id . '?page=pendaftaran_keluar'));
     }
 }

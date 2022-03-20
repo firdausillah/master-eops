@@ -42,7 +42,10 @@
                                                                     <tr>
                                                                         <th>No</th>
                                                                         <th class="text-midle">Nama</th>
-                                                                        <th class="text-midle">Nomor Telpon</th>
+                                                                        <th class="text-midle">JK</th>
+                                                                        <th class="text-midle">NISN</th>
+                                                                        <th class="text-midle">No. Induk</th>
+                                                                        <th class="text-midle">NIK</th>
                                                                         <th class="text-midle">Aksi</th>
                                                                     </tr>
                                                                 </thead>
@@ -51,7 +54,10 @@
                                                                         <tr>
                                                                             <td><?= $no + 1; ?></td>
                                                                             <td><?= $sis->nama ?></td>
-                                                                            <td><?= $sis->nohp ?></td>
+                                                                            <td><?= $sis->jk ?></td>
+                                                                            <td><?= $sis->nisn ?></td>
+                                                                            <td><?= $sis->no_induk ?></td>
+                                                                            <td><?= $sis->nik_siswa ?></td>
                                                                             <td style="width: 20%;">
                                                                                 <a href="#show_modal" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="<?= $sis->id_siswa ?>" class="btn btn-success btn-small btn-block">Lihat Siswa</a>
                                                                                 <!-- <a href="<?= base_url('wali_kelas/siswa/edit/' . $sis->id_siswa) ?>" class="btn btn-success btn-small btn-block">Lihat Siswa</a> -->
@@ -95,7 +101,6 @@
                         $(document).ready(function() {
                             $('#show_modal').on('show.bs.modal', function(e) {
                                 var idx = $(e.relatedTarget).data('id');
-                                console.log(idx);
                                 //menggunakan fungsi ajax untuk pengambilan data
                                 $.ajax({
                                     type: 'post',

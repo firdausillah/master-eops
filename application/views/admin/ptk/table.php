@@ -36,6 +36,9 @@
                                                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
                                                             Tambah <?= $title ? $title : 'Judul Page' ?>
                                                         </button>
+                                                        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#ImportPtk">
+                                                            Import <?= $title ? $title : 'Judul Page' ?>
+                                                        </button>
                                                     </div>
                                                     <div class="card-block table-border-style">
                                                         <div class="table-responsive">
@@ -61,9 +64,9 @@
                                                                             <td><?= $kls->jenis_kelamin_ptk ?></td>
                                                                             <td><?= $kls->status_sekolah_induk ?></td>
                                                                             <td><?= $kls->status_kepegawaian ?></td>
-                                                                            <?php if($kls->tempat_lahir_ptk): ?>
-                                                                            <td><?= $kls->tempat_lahir_ptk.', '. date('d F Y', strtotime($kls->tanggal_lahir_ptk)) ?></td>
-                                                                            <?php else :?>
+                                                                            <?php if ($kls->tempat_lahir_ptk) : ?>
+                                                                                <td><?= $kls->tempat_lahir_ptk . ', ' . date('d F Y', strtotime($kls->tanggal_lahir_ptk)) ?></td>
+                                                                            <?php else : ?>
                                                                                 <td></td>
                                                                             <?php endif ?>
                                                                             <td style="width: 20%;">
@@ -84,6 +87,34 @@
                                     <!-- Page-body end -->
                                 </div>
                                 <!-- <div id="styleSelector"> </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Import -->
+                    <div class="modal fade" id="ImportPtk" tabindex="-1" role="dialog" aria-labelledby="ImportPtkLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ImportPtkLabel"><?= $title ? $title : 'Judul Page' ?></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <?= form_open_multipart('admin/import_excel/import_data_ptk') ?>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">File Excel</label>
+                                        <input type="file" class="form-control" name="excel">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Download Template Excel Disini <a class="text-success" href="<?= base_url() ?>uploads/file/template/ptk-master-import.xlsx">Download</a></label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Import</button>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
