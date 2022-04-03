@@ -45,6 +45,9 @@
                                                                     <a class="nav-link <?= $page == 'data_pribadi' ? 'active show' : ''; ?>" data-toggle="tab" href="#data_pribadi" role="tab" aria-selected="false">Pribadi</a>
                                                                 </li>
                                                                 <li class="nav-item">
+                                                                    <a class="nav-link <?= $page == 'foto' ? 'active show' : ''; ?>" data-toggle="tab" href="#foto" role="tab" aria-selected="false">Foto</a>
+                                                                </li>
+                                                                <li class="nav-item">
                                                                     <a class="nav-link <?= $page == 'data_kepegawaian' ? 'active show' : ''; ?>" data-toggle="tab" href="#data_kepegawaian" role="tab" aria-selected="false">Kepegawaian</a>
                                                                 </li>
                                                                 <li class="nav-item">
@@ -268,6 +271,30 @@
                                                                         </div>
                                                                         <div class="row">
                                                                             <div class="col-6 text-right">
+                                                                                <div class="form-group">
+                                                                                    <button type="submit" class="btn btn-success btn-sm">Simpan</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                                <div class="tab-pane<?= $page == 'foto' ? ' active show' : ''; ?>" id="foto" role="tabpanel">
+                                                                    <form action="<?= base_url('wali_kelas/profile/save_foto/' . $ptk->id) ?>" method="POST" enctype="multipart/form-data">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label" for="">Foto Profile</label>
+                                                                                    <input class="form-control" type="file" name="foto" id="foto">
+                                                                                    <input type="hidden" class="form-control" value="<?= $ptk->foto ?>" name="gambar">
+                                                                                    <input type="hidden" class="form-control" value="<?= $ptk->nama_ptk ?>" name="nama">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <img src="<?= base_url('uploads/img/ptk/' . $ptk->foto) ?>" height="200px" alt="">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6 text-right">
                                                                                 <div class="form-group">
                                                                                     <button type="submit" class="btn btn-success btn-sm">Simpan</button>
                                                                                 </div>

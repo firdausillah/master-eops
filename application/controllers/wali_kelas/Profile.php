@@ -61,6 +61,44 @@ class Profile extends CI_Controller
         redirect(base_url('wali_kelas/profile?page=data_pribadi'));
     }
 
+    public function save_foto($id)
+    {
+        $this->load->helper('slug');
+
+        $nama = $this->input->post('nama');
+        $foto = $this->input->post('gambar');
+
+        // Output: 54esmdr0qf
+        $kode = $id .'-'. slugify($nama);
+        // echo $kode; exit();
+
+        if (!empty($_FILES['foto']['name'])) { // $_FILES untuk mengambil data foto
+            $cfg = [
+                'upload_path' => './uploads/img/ptk',
+                'allowed_types' => 'png|jpg|gif|jpeg',
+                'file_name' => $kode,
+                // 'overwrite' => TRUE,
+                'overwrite' => (empty($foto) ? FALSE : TRUE),
+                'max_size' => '2028',
+            ];
+            if (!empty($foto)) $cfg['file_name'] = $kode;
+            // print_r($cfg); exit();
+            $this->load->library('upload', $cfg);
+
+            if ($this->upload->do_upload('foto')) $foto = $this->upload->data('file_name');
+            else exit('Error : ' . $this->upload->display_errors());
+        }
+        // print_r($foto); exit();
+
+        if ($this->PtkModel->update(['id' => $id], ['foto' => $foto])) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('wali_kelas/profile?page=foto'));
+    }
+
     public function save_inpasing($id)
     {
         $data = [

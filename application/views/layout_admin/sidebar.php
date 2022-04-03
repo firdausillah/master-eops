@@ -120,6 +120,14 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
+                                </li>
+                                <li class="<?= $url == 'profile' ? 'active' : '' ?>">
+                                    <a href="<?= base_url('admin/profile'); ?>" class="waves-effect waves-dark">
+                                        <span class="pcoded-micon"><i class="fas fa-gear"></i><b>FC</b></span>
+                                        <span class="pcoded-mtext">Profile Sekolah</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </nav>
