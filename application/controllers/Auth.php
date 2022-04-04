@@ -145,6 +145,7 @@ class Auth extends CI_Controller
 				'nama'	=> $cek->nama_ptk,
 				'username'	=> $cek->username,
 				'password'	=> $cek->password,
+				'foto'	=> $cek->foto,
 				'role'	=> 'wali_kelas',
 				'status'	=> 'login'
 			];

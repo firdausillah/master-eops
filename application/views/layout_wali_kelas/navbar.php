@@ -36,7 +36,7 @@
                                     <ul class="nav-right">
                                         <li class="user-profile header-notification">
                                             <a href="#!" class="waves-effect waves-light">
-                                                <img src="<?= base_url() ?>assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                                <img src="<?= base_url('uploads/img/ptk/' . $this->session->userdata('foto')) ?>" img-radius" alt="User-Profile-Image">
                                                 <span>John Doe</span>
                                                 <i class="ti-angle-down"></i>
                                             </a>
