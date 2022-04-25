@@ -4,7 +4,7 @@
                             <?php $url = $this->uri->segment(2); ?>
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="<?= base_url('uploads/img/ptk/'. $this->session->userdata('foto') ) ?>" alt="User-Profile-Image">
+                                    <img class="img-80 img-radius" src="<?= $this->session->userdata('foto') ? base_url('uploads/img/ptk/' . $this->session->userdata('foto')) : base_url('uploads/img/ptk/profile.png') ?>" alt="User-Profile-Image">
                                     <div class="user-details">
                                         <span id="more-details">John Doe<i class="fa fa-caret-down"></i></span>
                                     </div>

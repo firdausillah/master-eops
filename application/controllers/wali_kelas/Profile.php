@@ -64,39 +64,36 @@ class Profile extends CI_Controller
     public function save_foto($id)
     {
         $this->load->helper('slug');
-
-        $nama = $this->input->post('nama');
-        $foto = $this->input->post('gambar');
-
+        $nama = $_POST['nama'];
+        $gambar = $_POST['gambar'];
         // Output: 54esmdr0qf
-        $kode = $id .'-'. slugify($nama);
+        $kode = slugify($nama).'-'. $id;
         // echo $kode; exit();
 
-        if (!empty($_FILES['foto']['name'])) { // $_FILES untuk mengambil data foto
-            $cfg = [
-                'upload_path' => './uploads/img/ptk',
-                'allowed_types' => 'png|jpg|gif|jpeg',
-                'file_name' => $kode,
-                // 'overwrite' => TRUE,
-                'overwrite' => (empty($foto) ? FALSE : TRUE),
-                'max_size' => '2028',
-            ];
-            if (!empty($foto)) $cfg['file_name'] = $kode;
-            // print_r($cfg); exit();
-            $this->load->library('upload', $cfg);
+        $folderPath = './uploads/img/ptk/';
 
-            if ($this->upload->do_upload('foto')) $foto = $this->upload->data('file_name');
-            else exit('Error : ' . $this->upload->display_errors());
-        }
-        // print_r($foto); exit();
-
-        if ($this->PtkModel->update(['id' => $id], ['foto' => $foto])) {
-            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        $foto_parts = explode(";base64,", $_POST['foto']);
+        $foto_base64 = base64_decode($foto_parts[1]);
+        if ($gambar) {
+            $file = $folderPath . $gambar;
+            $foto = $gambar;
         } else {
-            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+            $file = $folderPath . $kode . '.png';
+            $foto = $kode.'.png';
         }
+        // echo $foto; exit();
 
-        redirect(base_url('wali_kelas/profile?page=foto'));
+        if (!write_file( $file,  $foto_base64)) {
+
+            echo json_encode(["foto uploaded gagal."]);
+        } else {
+            if ($this->PtkModel->update(['id' => $id], ['foto' => $foto])) {
+                $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+            } else {
+                $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+            }
+            echo json_encode([$foto]);
+        }
     }
 
     public function save_inpasing($id)

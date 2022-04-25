@@ -27,11 +27,12 @@
     <!-- scrollbar.css -->
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/jquery.mCustomScrollbar.css">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/mycss.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/cropper.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/mycss.css">
 </head>
 
 <body>
@@ -130,6 +131,7 @@
     <script src="<?= base_url() ?>assets/js/bootstrap-datepicker.min.js"></script>
     <script src="<?= base_url() ?>assets/js/daterangepicker.js"></script>
     <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/cropper.js"></script>
 
     <script>
         // $(".input-group.date").datepicker({autoclose: true, todayHighlight: true});

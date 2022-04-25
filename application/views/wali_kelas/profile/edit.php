@@ -45,7 +45,7 @@
                                                                     <a class="nav-link <?= $page == 'data_pribadi' ? 'active show' : ''; ?>" data-toggle="tab" href="#data_pribadi" role="tab" aria-selected="false">Pribadi</a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a class="nav-link <?= $page == 'foto' ? 'active show' : ''; ?>" data-toggle="tab" href="#foto" role="tab" aria-selected="false">Foto</a>
+                                                                    <a class="nav-link <?= $page == 'data_foto' ? 'active show' : ''; ?>" data-toggle="tab" href="#data_foto" role="tab" aria-selected="false">Foto</a>
                                                                 </li>
                                                                 <li class="nav-item">
                                                                     <a class="nav-link <?= $page == 'data_kepegawaian' ? 'active show' : ''; ?>" data-toggle="tab" href="#data_kepegawaian" role="tab" aria-selected="false">Kepegawaian</a>
@@ -278,26 +278,19 @@
                                                                         </div>
                                                                     </form>
                                                                 </div>
-                                                                <div class="tab-pane<?= $page == 'foto' ? ' active show' : ''; ?>" id="foto" role="tabpanel">
+                                                                <div class="tab-pane<?= $page == 'data_foto' ? ' active show' : ''; ?>" id="data_foto" role="tabpanel">
                                                                     <form action="<?= base_url('wali_kelas/profile/save_foto/' . $ptk->id) ?>" method="POST" enctype="multipart/form-data">
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label" for="">Foto Profile</label>
-                                                                                    <input class="form-control" type="file" name="foto" id="foto">
+                                                                                    <input class="form-control foto" type="file" name="foto">
                                                                                     <input type="hidden" class="form-control" value="<?= $ptk->foto ?>" name="gambar">
                                                                                     <input type="hidden" class="form-control" value="<?= $ptk->nama_ptk ?>" name="nama">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
                                                                                 <img src="<?= base_url('uploads/img/ptk/' . $ptk->foto) ?>" height="200px" alt="">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-lg-6 text-right">
-                                                                                <div class="form-group">
-                                                                                    <button type="submit" class="btn btn-success btn-sm">Simpan</button>
-                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </form>
@@ -700,3 +693,110 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Modal Upload Gambar -->
+                    <div class="modal fade" id="modalUpload" tabindex="-1" role="dialog" aria-labelledby="modalUploadLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalLabel">Crop image</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="img-container">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <!--  default image where we will set the src via jquery-->
+                                                <img class="cropper" id="foto">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="preview"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                    <button type="button" class="btn btn-primary" id="crop">Simpan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+                    <script src="https://fengyuanchen.github.io/cropperjs/js/cropper.js" type="text/javascript"></script>
+
+                    <script>
+                        var bs_modal = $('#modalUpload');
+                        var foto = document.getElementById('foto');
+                        var cropper, reader, file;
+
+
+                        $("body").on("change", ".foto", function(e) {
+                            var files = e.target.files;
+                            var done = function(url) {
+                                foto.src = url;
+                                bs_modal.modal('show');
+                            };
+
+
+                            if (files && files.length > 0) {
+                                file = files[0];
+
+                                if (URL) {
+                                    done(URL.createObjectURL(file));
+                                } else if (FileReader) {
+                                    reader = new FileReader();
+                                    reader.onload = function(e) {
+                                        done(reader.result);
+                                    };
+                                    reader.readAsDataURL(file);
+                                }
+                            }
+                        });
+
+                        bs_modal.on('shown.bs.modal', function() {
+                            cropper = new Cropper(foto, {
+                                aspectRatio: 1,
+                                viewMode: 3,
+                                preview: '.preview'
+                            });
+                        }).on('hidden.bs.modal', function() {
+                            cropper.destroy();
+                            cropper = null;
+                        });
+
+                        $("#crop").click(function() {
+                            canvas = cropper.getCroppedCanvas({
+                                width: 500,
+                                height: 500,
+                            });
+                            canv = cropper.getCroppedCanvas();
+
+                            canvas.toBlob(function(blob) {
+                                url = URL.createObjectURL(blob);
+                                var reader = new FileReader();
+                                reader.readAsDataURL(blob);
+                                reader.onloadend = function() {
+                                    var base64data = reader.result;
+
+                                    $.ajax({
+                                        type: "POST",
+                                        dataType: "json",
+                                        url: "<?= base_url('wali_kelas/profile/save_foto/' . $ptk->id) ?>",
+                                        data: {
+                                            foto: base64data,
+                                            nama: "<?= $ptk->nama_ptk ?>",
+                                            gambar: "<?= $ptk->foto ?>"
+                                        },
+                                        success: function(data) {
+                                            bs_modal.modal('hide');
+                                            location.reload();
+                                        }
+                                    });
+                                };
+                            });
+                        });
+                    </script>
