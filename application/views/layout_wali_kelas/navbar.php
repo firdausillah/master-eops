@@ -37,7 +37,7 @@
                                         <li class="user-profile header-notification">
                                             <a href="#!" class="waves-effect waves-light">
                                                 <img src="<?= $this->session->userdata('foto') ? base_url('uploads/img/ptk/' . $this->session->userdata('foto')) : base_url('uploads/img/ptk/profile.png') ?>" class="img-80 img-radius" alt="User-Profile-Image">
-                                                <span>John Doe</span>
+                                                <span><?= $this->session->userdata('nama') ? $this->session->userdata('nama') : $this->session->userdata('username') ?></span>
                                                 <i class="ti-angle-down"></i>
                                             </a>
                                             <ul class="show-notification profile-notification">

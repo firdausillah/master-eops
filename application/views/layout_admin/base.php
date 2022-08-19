@@ -32,6 +32,8 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/daterangepicker.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/rowreorder/1.2.8/css/rowReorder.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
 </head>
 
 <body>
@@ -126,10 +128,12 @@
     <script type="text/javascript" src="<?= base_url() ?>assets/js/script.js "></script>
 
     <script src="<?= base_url() ?>assets/js/sweetalert2.all.min.js"></script>
-    <script src="<?= base_url() ?>assets/js/myScript.js"></script>
     <script src="<?= base_url() ?>assets/js/bootstrap-datepicker.min.js"></script>
     <script src="<?= base_url() ?>assets/js/daterangepicker.js"></script>
     <script src="<?= base_url() ?>assets/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/myScript.js"></script>
 
     <script>
         // $(".input-group.date").datepicker({autoclose: true, todayHighlight: true});

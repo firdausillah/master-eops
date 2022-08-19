@@ -42,7 +42,7 @@
                                                     </div>
                                                     <div class="card-block table-border-style">
                                                         <div class="table-responsive">
-                                                            <table id="myTable" class="table table-hover table-sm">
+                                                            <table id="myTable" class="table table-hover table-sm display nowrap" style="width:100%">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>No</th>

@@ -56,7 +56,7 @@
                                                     <div class="card-block">
                                                         <div class="text-left">
                                                             <h4><?= $jumlah_siswa['total'] ?></h4>
-                                                            <p class="m-0">Siswa Total</p>
+                                                            <p class="m-0">Total Siswa</p>
                                                         </div>
                                                         <!-- <span class="label bg-c-blue value-badges">15%</span> -->
                                                     </div>
@@ -93,6 +93,11 @@
                                                                     <td>Status Kepegawaian</td>
                                                                     <td>:</td>
                                                                     <td><?= $profile_ptk->status_kepegawaian ?></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Nomor SK Pengangkatan</td>
+                                                                    <td>:</td>
+                                                                    <td><?= $profile_ptk->sk_pengangkatan ?></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <td>Username</td>

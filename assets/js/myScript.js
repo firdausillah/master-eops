@@ -32,11 +32,17 @@ $('.tombol-hapus').on('click', function(e){
 
 // datatables
 $(document).ready(function () {
-    $('#myTable').DataTable();
+    $('#myTable').DataTable({
+        responsive: true
+    });
 });
 $(document).ready(function () {
-    $('#myTable2').DataTable();
+        $('#myTable2').DataTable( {
+        responsive: true
+    } );
 });
 $(document).ready(function () {
-    $('#myTable3').DataTable();
+        $('#myTable3').DataTable( {
+        responsive: true
+    } );
 });

@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://www.kibrispdr.org/dwn/8/siswa-sma-vector.jpg" class="card-img-top" alt="https://www.kibrispdr.org/dwn/8/siswa-sma-vector.jpg">
+                <img src="https://www.smkkaryateladan.sch.id/upload/picture/68670208vector-student-smk.png" class="card-img-top" alt="https://www.smkkaryateladan.sch.id/upload/picture/68670208vector-student-smk.png">
                 <div class="card-body">
                     <h5 class="card-title">Siswa</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, animi officiis asperiores fugiat eveniet nemo commodi, adipisci, similique nostrum expedita.</p>
