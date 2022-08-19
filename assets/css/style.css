@@ -9689,7 +9689,7 @@ table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
 
 .dataTable.table td,
 .dataTable.table th {
-	padding: 0.75rem;
+	padding: 0.4rem;
 }
 
 table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,

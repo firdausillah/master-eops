@@ -42,17 +42,17 @@
                                                     </div>
                                                     <div class="card-block table-border-style">
                                                         <div class="table-responsive">
-                                                            <table id="myTable" class="table table-hover table-sm display nowrap" style="width:100%">
+                                                            <table id="myTable" class="table table-hover display nowrap" style="width:100%">
                                                                 <thead>
                                                                     <tr>
                                                                         <th>No</th>
-                                                                        <th class="text-midle">Nama</th>
-                                                                        <th class="text-midle">JK</th>
-                                                                        <th class="text-midle">NISN</th>
-                                                                        <th class="text-midle">No. Induk</th>
-                                                                        <th class="text-midle">NIK</th>
-                                                                        <th class="text-midle">Tingkat Kelas</th>
-                                                                        <th class="text-midle">Action</th>
+                                                                        <th>Nama</th>
+                                                                        <th>JK</th>
+                                                                        <th>NISN</th>
+                                                                        <th>No. Induk</th>
+                                                                        <th>NIK</th>
+                                                                        <th>Tingkat Kelas</th>
+                                                                        <th>Action</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
