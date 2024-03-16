@@ -64,10 +64,10 @@
                                                                             <td><?= $sis->nisn ?></td>
                                                                             <td><?= $sis->no_induk ?></td>
                                                                             <td><?= $sis->nik_siswa ?></td>
-                                                                            <td><?= $sis->nisn ?></td>
+                                                                            <td><?= $sis->kelas . ' ' . $sis->jurusan . ' ' . $sis->paralel . ' ' ?></td>
                                                                             <td style="width: 20%;">
-                                                                                <a href="<?= base_url('admin/siswa/edit/' . $sis->id) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
-                                                                                <a href="<?= base_url('admin/siswa/delete/' . $sis->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
+                                                                                <a href="<?= base_url('admin/siswa/edit/' . $sis->id_siswa) ?>" class="btn btn-info btn-small"><i class="ti-pencil-alt"></i></a>
+                                                                                <a href="<?= base_url('admin/siswa/delete/' . $sis->id_siswa) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="ti-trash"></i></a>
                                                                             </td>
                                                                         </tr>
                                                                     <?php endforeach ?>

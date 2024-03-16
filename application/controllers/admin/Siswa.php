@@ -7,6 +7,7 @@ class Siswa extends CI_Controller
     {
         parent::__construct();
         $this->load->model('SiswaModel');
+        $this->load->model('Kelas_siswaModel');
 
         if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth"));
@@ -17,7 +18,7 @@ class Siswa extends CI_Controller
     {
         $data = [
             'title' => 'Siswa',
-            'siswa' => $this->SiswaModel->get()->result(),
+            'siswa' => $this->Kelas_siswaModel->get()->result(),
             'content' => 'admin/siswa/table'
         ];
 
