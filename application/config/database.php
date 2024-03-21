@@ -75,10 +75,6 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	// 'hostname' => 'localhost',
-	// 'username' => 'root',
-	// 'password' => '',
-	// 'database' => 'db_master-pembayaran',
 	'hostname' => 'smkpgripesanggaran.sch.id',
 	'username' => 'u9079729_master-eops',
 	'password' => 'smkpgripesanggaran123',
