@@ -8,6 +8,8 @@ class Siswa extends CI_Controller
         parent::__construct();
         $this->load->model('SiswaModel');
         $this->load->model('Kelas_siswaModel');
+        $this->load->model('PrestasiModel');
+        $this->load->model('BeasiswaModel');
 
         if ($this->session->userdata('role') != 'admin') {
             redirect(base_url("auth"));
@@ -50,6 +52,8 @@ class Siswa extends CI_Controller
         $data = [
             'title' => 'Edit Siswa',
             'siswa' => $this->SiswaModel->findBy(['id' => $id])->row(),
+            'prestasi' => $this->PrestasiModel->findBy(['id_siswa' => $id])->result(),
+            'beasiswa' => $this->BeasiswaModel->findBy(['id_siswa' => $id])->result(),
             'content' => 'admin/siswa/edit'
         ];
 
@@ -61,9 +65,8 @@ class Siswa extends CI_Controller
         $data = [
             'nama' => $this->input->post('nama'),
             'jk' => $this->input->post('jk'),
-            'no_induk' => $this->input->post('no_induk'),
-            'nisn' => $this->input->post('nisn'),
             'nik_siswa' => $this->input->post('nik_siswa'),
+            'password' => $this->input->post('password'),
             'no_kk' => $this->input->post('no_kk'),
             'tempatlahir_siswa' => $this->input->post('tempatlahir_siswa'),
             'tgllahir_siswa' => $this->input->post('tgllahir_siswa'),
@@ -187,7 +190,11 @@ class Siswa extends CI_Controller
             'nis' => $this->input->post('nis'),
             'tgl_masuk_sekolah' => $this->input->post('tgl_masuk_sekolah'),
             'asal_sekolah' => $this->input->post('asal_sekolah'),
+            'asal_sekolah_pd_masuk' => $this->input->post('asal_sekolah_pd_masuk'),
             'nomor_peserta_ujian' => $this->input->post('nomor_peserta_ujian'),
+            'no_induk' => $this->input->post('no_induk'),
+            'nisn' => $this->input->post('nisn'),
+            'tanggal_ijasah' => $this->input->post('tanggal_ijasah'),
             'nomor_seri_ijazah' => $this->input->post('nomor_seri_ijazah')
         ];
 
@@ -200,12 +207,22 @@ class Siswa extends CI_Controller
         redirect(base_url('admin/siswa/edit/' . $id . '?page=registrasi_pd'));
     }
 
-    public function save_pendaftaran_keluar($id)
+    public function save_registrasi_pd_keluar($id)
     {
         $data = [
             'keluar_karena' => $this->input->post('keluar_karena'),
             'tanggal_keluar' => $this->input->post('tanggal_keluar'),
-            'alasan_keluar' => $this->input->post('alasan_keluar')
+            'alasan_keluar' => $this->input->post('alasan_keluar'),
+            'sekolah_tujuan' => $this->input->post('sekolah_tujuan'),
+            'dari_kelas' => $this->input->post('dari_kelas'),
+            'alamat_sekolah_tujuan' => $this->input->post('alamat_sekolah_tujuan'),
+            'npsn' => $this->input->post('npsn'),
+            'tahun_tamat' => $this->input->post('tahun_tamat'),
+            'nomor_seri_ijasah' => $this->input->post('nomor_seri_ijasah'),
+            'tanggal_ijasah_pd_keluar' => $this->input->post('tanggal_ijasah_pd_keluar'),
+            'wirausaha' => $this->input->post('wirausaha'),
+            'bekerja_di' => $this->input->post('bekerja_di'),
+            'melanjutkan_ke' => $this->input->post('melanjutkan_ke')
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {
@@ -214,7 +231,7 @@ class Siswa extends CI_Controller
             $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
         }
 
-        redirect(base_url('admin/siswa/edit/' . $id . '?page=pendaftaran_keluar'));
+        redirect(base_url('admin/siswa/edit/' . $id . '?page=registrasi_pd_keluar'));
     }
 
     public function delete($id){
@@ -225,4 +242,118 @@ class Siswa extends CI_Controller
         }
         redirect('admin/siswa');
     }
+
+    // RIWAYAT BEASISWA
+    public function save_beasiswa($id)
+    {
+        $data = [
+            'id_siswa' => $id,
+            'jenis_beasiswa' => $this->input->post('jenis_beasiswa'),
+            'keterangan' => $this->input->post('keterangan'),
+            'tanggal_mulai' => $this->input->post('tanggal_mulai'),
+            'tanggal_selesai' => $this->input->post('tanggal_selesai')
+        ];
+
+        if ($this->BeasiswaModel->add($data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/siswa/edit/' . $id . '?page=beasiswa'));
+    }
+
+    public function update_beasiswa($id)
+    {
+        $id_siswa = $this->BeasiswaModel->findBy(['id' => $id])->row();
+
+        $data = [
+            'jenis_beasiswa' => $this->input->post('jenis_beasiswa'),
+            'keterangan' => $this->input->post('keterangan'),
+            'tanggal_mulai' => $this->input->post('tanggal_mulai'),
+            'tanggal_selesai' => $this->input->post('tanggal_selesai')
+        ];
+
+        if ($this->BeasiswaModel->update(['id' => $id], $data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/siswa/edit/' . $id_siswa->id_siswa . '?page=beasiswa'));
+    }
+
+    public function delete_beasiswa($id)
+    {
+
+        $id_siswa = $this->BeasiswaModel->findBy(['id' => $id])->row();
+
+        if ($this->BeasiswaModel->delete(['id' => $id])) {
+            $this->session->set_flashdata('flash', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/siswa/edit/' . $id_siswa->id_siswa . '?page=beasiswa'));
+    }
+    // END RIWAYAT BEASISWA
+
+    // RIWAYAT PRESTASI
+    public function save_prestasi($id)
+    {
+        $data = [
+            'id_siswa' => $id,
+            'jenis_prestasi' => $this->input->post('jenis_prestasi'),
+            'tingkat_prestasi' => $this->input->post('tingkat_prestasi'),
+            'nama_prestasi' => $this->input->post('nama_prestasi'),
+            'tahun' => $this->input->post('tahun'),
+            'penyelenggara' => $this->input->post('penyelenggara'),
+            'peringkat' => $this->input->post('peringkat')
+        ];
+
+        if ($this->PrestasiModel->add($data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/siswa/edit/' . $id . '?page=prestasi'));
+    }
+
+    public function update_prestasi($id)
+    {
+        $id_siswa = $this->PrestasiModel->findBy(['id' => $id])->row();
+
+        $data = [
+            'jenis_prestasi' => $this->input->post('jenis_prestasi'),
+            'tingkat_prestasi' => $this->input->post('tingkat_prestasi'),
+            'nama_prestasi' => $this->input->post('nama_prestasi'),
+            'tahun' => $this->input->post('tahun'),
+            'penyelenggara' => $this->input->post('penyelenggara'),
+            'peringkat' => $this->input->post('peringkat')
+        ];
+
+        if ($this->PrestasiModel->update(['id' => $id], $data)) {
+            $this->session->set_flashdata('flash', 'Data berhasil diupdate');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/siswa/edit/' . $id_siswa->id_siswa . '?page=prestasi'));
+    }
+
+    public function delete_prestasi($id)
+    {
+
+        $id_siswa = $this->PrestasiModel->findBy(['id' => $id])->row();
+
+        if ($this->PrestasiModel->delete(['id' => $id])) {
+            $this->session->set_flashdata('flash', 'Data berhasil dihapus');
+        } else {
+            $this->session->set_flashdata('flash', 'Oops! Terjadi suatu kesalahan');
+        }
+
+        redirect(base_url('admin/siswa/edit/' . $id_siswa->id_siswa . '?page=prestasi'));
+    }
+    // END RIWAYAT PRESTASI
 }

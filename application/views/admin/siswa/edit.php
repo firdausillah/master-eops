@@ -55,10 +55,16 @@
                                                                     <a class="nav-link <?= $page == 'data_periodik' ? 'active show' : ''; ?>" data-toggle="tab" href="#data_periodik" role="tab" aria-selected="true">Periodik</a>
                                                                 </li>
                                                                 <li class="nav-item">
+                                                                    <a class="nav-link <?= $page == 'prestasi' ? 'active show' : ''; ?>" data-toggle="tab" href="#prestasi" role="tab" aria-selected="true">Prestasi</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link <?= $page == 'beasiswa' ? 'active show' : ''; ?>" data-toggle="tab" href="#beasiswa" role="tab" aria-selected="true">Beasiswa</a>
+                                                                </li>
+                                                                <li class="nav-item">
                                                                     <a class="nav-link <?= $page == 'registrasi_pd' ? 'active show' : ''; ?>" data-toggle="tab" href="#registrasi_pd" role="tab" aria-selected="true">Registrasi PD</a>
                                                                 </li>
                                                                 <li class="nav-item">
-                                                                    <a class="nav-link <?= $page == 'pendaftaran_keluar' ? 'active show' : ''; ?>" data-toggle="tab" href="#pendaftaran_keluar" role="tab" aria-selected="true">Pendaftaran Keluar</a>
+                                                                    <a class="nav-link <?= $page == 'registrasi_pd_keluar' ? 'active show' : ''; ?>" data-toggle="tab" href="#registrasi_pd_keluar" role="tab" aria-selected="true">Registrasi PD Keluar</a>
                                                                 </li>
                                                             </ul>
                                                             <!-- Tab panes -->
@@ -86,14 +92,14 @@
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">NISN</label>
-                                                                                    <input type="number" class="form-control" name="nisn" value="<?= $siswa->nisn ?>">
+                                                                                    <label class="form-label">NIK <span class="text-danger">*</span></label>
+                                                                                    <input type="number" class="form-control" name="nik_siswa" value="<?= $siswa->nik_siswa ?>">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">NIK <span class="text-danger">*</span></label>
-                                                                                    <input type="number" class="form-control" name="nik_siswa" value="<?= $siswa->nik_siswa ?>">
+                                                                                    <label class="form-label">Password <span class="text-danger">*</span></label>
+                                                                                    <input type="text" class="form-control" name="password" value="<?= $siswa->password ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -296,20 +302,6 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="row">
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-group">
-                                                                                    <label class="form-label">Password <span class="text-danger">*</span></label>
-                                                                                    <input type="text" class="form-control" name="password" value="<?= $siswa->password ?>">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-group">
-                                                                                    <label class="form-label">Nomor Induk</label>
-                                                                                    <input type="text" class="form-control" name="no_induk" value="<?= $siswa->no_induk ?>">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
                                                                             <div class="col-6 text-right">
                                                                                 <div class="form-group">
                                                                                     <a href="<?= base_url('admin/siswa') ?>" class="btn btn-secondary btn-sm">Kembali</a>
@@ -374,20 +366,20 @@
                                                                                     <label class="form-label">Pekerjaan Ayah</label>
                                                                                     <select name="pekerjaan_ayah" id="pekerjaan_ayah" class="form-control">
                                                                                         <option value="">Pilih Disini</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Tidak bekerja' ? 'selected' : '' ?> value="Tidak bekerja">Tidak bekerja</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Nelayan' ? 'selected' : '' ?> value="Nelayan">Nelayan</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Petani' ? 'selected' : '' ?> value="Petani">Petani</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Peternak' ? 'selected' : '' ?> value="Peternak">Peternak</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'PNS/TNI/POLRI' ? 'selected' : '' ?> value="PNS/TNI/POLRI">PNS/TNI/POLRI</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Karyawan Swasta' ? 'selected' : '' ?> value="Karyawan Swasta">Karyawan Swasta</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Pedagang Kecil' ? 'selected' : '' ?> value="Pedagang Kecil">Pedagang Kecil</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Pedagang Besar' ? 'selected' : '' ?> value="Pedagang Besar">Pedagang Besar</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Wiraswasta' ? 'selected' : '' ?> value="Wiraswasta">Wiraswasta</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Wirausaha' ? 'selected' : '' ?> value="Wirausaha">Wirausaha</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Buruh' ? 'selected' : '' ?> value="Buruh">Buruh</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Pensiunan' ? 'selected' : '' ?> value="Pensiunan">Pensiunan</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Meninggal Dunia' ? 'selected' : '' ?> value="Meninggal Dunia">Meninggal Dunia</option>
-                                                                                        <option <?= $siswa->tempat_tinggal == 'Lain-lain' ? 'selected' : '' ?> value="Lain-lain">Lain-lain</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Tidak bekerja' ? 'selected' : '' ?> value="Tidak bekerja">Tidak bekerja</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Nelayan' ? 'selected' : '' ?> value="Nelayan">Nelayan</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Petani' ? 'selected' : '' ?> value="Petani">Petani</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Peternak' ? 'selected' : '' ?> value="Peternak">Peternak</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'PNS/TNI/POLRI' ? 'selected' : '' ?> value="PNS/TNI/POLRI">PNS/TNI/POLRI</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Karyawan Swasta' ? 'selected' : '' ?> value="Karyawan Swasta">Karyawan Swasta</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Pedagang Kecil' ? 'selected' : '' ?> value="Pedagang Kecil">Pedagang Kecil</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Pedagang Besar' ? 'selected' : '' ?> value="Pedagang Besar">Pedagang Besar</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Wiraswasta' ? 'selected' : '' ?> value="Wiraswasta">Wiraswasta</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Wirausaha' ? 'selected' : '' ?> value="Wirausaha">Wirausaha</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Buruh' ? 'selected' : '' ?> value="Buruh">Buruh</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Pensiunan' ? 'selected' : '' ?> value="Pensiunan">Pensiunan</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Meninggal Dunia' ? 'selected' : '' ?> value="Meninggal Dunia">Meninggal Dunia</option>
+                                                                                        <option <?= $siswa->pekerjaan_ayah == 'Lain-lain' ? 'selected' : '' ?> value="Lain-lain">Lain-lain</option>
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
@@ -655,6 +647,114 @@
                                                                         </div>
                                                                     </form>
                                                                 </div>
+                                                                <div class="tab-pane<?= $page == 'prestasi' ? ' active show' : ''; ?>" id="prestasi" role="tabpanel">
+                                                                    <div class="m-2">
+                                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#prestasi_modal">
+                                                                            Tambah Prestasi
+                                                                        </button>
+                                                                        <a href="<?= base_url('admin/siswa') ?>" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                    </div>
+                                                                    <div class="table-responsive">
+                                                                        <table id="myTable" class="table table-hover display nowrap dataTable no-footer dtr-inline collapsed" width="100%">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>No</th>
+                                                                                    <th class="text-midle">Jenis Prestasi</th>
+                                                                                    <th class="text-midle">Tingkat Prestasi</th>
+                                                                                    <th class="text-midle">Nama Prestasi</th>
+                                                                                    <th class="text-midle">Tahun</th>
+                                                                                    <th class="text-midle">Penyelenggara</th>
+                                                                                    <th class="text-midle">Peringkat</th>
+                                                                                    <th class="text-midle">Aksi</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <?php foreach ($prestasi as $no => $item) : ?>
+                                                                                    <tr>
+                                                                                        <form action="<?= base_url('admin/siswa/update_prestasi/' . $item->id) ?>" method="POST">
+                                                                                            <td><?= $no + 1; ?></td>
+                                                                                            <td>
+                                                                                                <select name="jenis_prestasi" id="jenis_prestasi" class="form-control-sm">
+                                                                                                    <option value="">Pilih Disini</option>
+                                                                                                    <option <?= $item->jenis_prestasi == 'Sains' ? 'selected' : '' ?> value="Sains">Sains</option>
+                                                                                                    <option <?= $item->jenis_prestasi == 'Seni' ? 'selected' : '' ?> value="Seni">Seni</option>
+                                                                                                    <option <?= $item->jenis_prestasi == 'Olahraga' ? 'selected' : '' ?> value="Olahraga">Olahraga</option>
+                                                                                                    <option <?= $item->jenis_prestasi == 'LKS' ? 'selected' : '' ?> value="LKS">LKS</option>
+                                                                                                    <option <?= $item->jenis_prestasi == 'Lain-lain' ? 'selected' : '' ?> value="Lain-lain">Lain-lain</option>
+                                                                                                </select>
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <select name="tingkat_prestasi" id="tingkat_prestasi" class="form-control-sm">
+                                                                                                    <option value="">Pilih Disini</option>
+                                                                                                    <option <?= $item->tingkat_prestasi == 'Sekolah' ? 'selected' : '' ?> value="Sekolah">Sekolah</option>
+                                                                                                    <option <?= $item->tingkat_prestasi == 'Kecamatan' ? 'selected' : '' ?> value="Kecamatan">Kecamatan</option>
+                                                                                                    <option <?= $item->tingkat_prestasi == 'Kabupaten' ? 'selected' : '' ?> value="Kabupaten">Kabupaten</option>
+                                                                                                    <option <?= $item->tingkat_prestasi == 'Nasional' ? 'selected' : '' ?> value="Nasional">Nasional</option>
+                                                                                                    <option <?= $item->tingkat_prestasi == 'Internasional' ? 'selected' : '' ?> value="Internasional">Internasional</option>
+                                                                                                </select>
+                                                                                            </td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="nama_prestasi" value="<?= $item->nama_prestasi ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="tahun" value="<?= $item->tahun ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="penyelenggara" value="<?= $item->penyelenggara ?>"></td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="peringkat" value="<?= $item->peringkat ?>"></td>
+                                                                                            <td style="width: 15%;">
+                                                                                                <button type="submit" class="btn btn-success btn-small"><i class="fas fa-save"></i> Simpan</button>
+                                                                                                <a href="<?= base_url('admin/siswa/delete_prestasi/' . $item->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="fas fa-trash"></i> Hapus</a>
+                                                                                            </td>
+                                                                                        </form>
+                                                                                    </tr>
+                                                                                <?php endforeach ?>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane<?= $page == 'beasiswa' ? ' active show' : ''; ?>" id="beasiswa" role="tabpanel">
+                                                                    <div class="m-2">
+                                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#beasiswa_modal">
+                                                                            Tambah Beasiswa
+                                                                        </button>
+                                                                        <a href="<?= base_url('admin/siswa') ?>" class="btn btn-secondary btn-sm">Kembali</a>
+                                                                    </div>
+                                                                    <div class="table-responsive">
+                                                                        <table id="myTable2" class="table table-hover display nowrap dataTable no-footer dtr-inline collapsed" width="100%">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>No</th>
+                                                                                    <th class="text-midle">Jenis Beasiswa</th>
+                                                                                    <th class="text-midle">Keterangan</th>
+                                                                                    <th class="text-midle">Tanggal Mulai</th>
+                                                                                    <th class="text-midle">Tanggal Selesai</th>
+                                                                                    <th class="text-midle">Aksi</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <?php foreach ($beasiswa as $no => $item) : ?>
+                                                                                    <tr>
+                                                                                        <form action="<?= base_url('admin/siswa/update_beasiswa/' . $item->id) ?>" method="POST">
+                                                                                            <td><?= $no + 1; ?></td>
+                                                                                            <td>
+                                                                                                <select name="jenis_beasiswa" id="jenis_beasiswa" class="form-control-sm">
+                                                                                                    <option value="">Pilih Disini</option>
+                                                                                                    <option <?= $item->jenis_beasiswa == 'Anak Berprestasi' ? 'selected' : '' ?> value="Anak Berprestasi">Anak Berprestasi</option>
+                                                                                                    <option <?= $item->jenis_beasiswa == 'Pendidikan' ? 'selected' : '' ?> value="Pendidikan">Pendidikan</option>
+                                                                                                    <option <?= $item->jenis_beasiswa == 'Unggulan' ? 'selected' : '' ?> value="Unggulan">Unggulan</option>
+                                                                                                    <option <?= $item->jenis_beasiswa == 'Anak Kurang Mampu' ? 'selected' : '' ?> value="Anak Kurang Mampu">Anak Kurang Mampu</option>
+                                                                                                </select>
+                                                                                            </td>
+                                                                                            <td><input type="text" class="form-control form-control-sm" name="keterangan" value="<?= $item->keterangan ?>"></td>
+                                                                                            <td><input type="date" class="form-control form-control-sm" name="tanggal_mulai" value="<?= $item->tanggal_mulai ?>"></td>
+                                                                                            <td><input type="date" class="form-control form-control-sm" name="tanggal_selesai" value="<?= $item->tanggal_selesai ?>"></td>
+                                                                                            <td style="width: 15%;">
+                                                                                                <button type="submit" class="btn btn-success btn-small"><i class="fas fa-save"></i> Simpan</button>
+                                                                                                <a href="<?= base_url('admin/siswa/delete_beasiswa/' . $item->id) ?>" class="btn btn-danger btn-small tombol-hapus"><i class="fas fa-trash"></i> Hapus</a>
+                                                                                            </td>
+                                                                                        </form>
+                                                                                    </tr>
+                                                                                <?php endforeach ?>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
                                                                 <div class="tab-pane<?= $page == 'registrasi_pd' ? ' active show' : ''; ?>" id="registrasi_pd" role="tabpanel">
                                                                     <form action="<?= base_url('admin/siswa/save_registrasi_pd/' . $siswa->id) ?>" method="POST">
                                                                         <div class="row">
@@ -668,25 +768,67 @@
                                                                                         <option <?= $siswa->jenis_pendaftaran == 'Kembali Bersekolah' ? 'selected' : '' ?> value="Kembali Bersekolah">Kembali Bersekolah</option>
                                                                                     </select>
                                                                                 </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Nomor Induk</label>
+                                                                                    <input type="text" class="form-control" name="no_induk" value="<?= $siswa->no_induk ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">NISN</label>
+                                                                                    <input type="text" class="form-control" name="nisn" value="<?= $siswa->nisn ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Nomor Induk Siswa</label>
-                                                                                    <input type="number" class="form-control" name="nis" value="<?= $siswa->nis ?>">
+                                                                                    <input type="text" class="form-control" name="nis" value="<?= $siswa->nis ?>">
                                                                                 </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Tanggal Masuk</label>
                                                                                     <input type="date" class="form-control" name="tgl_masuk_sekolah" value="<?= $siswa->tgl_masuk_sekolah ?>">
                                                                                 </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Asal Sekolah</label>
                                                                                     <input type="text" class="form-control" name="asal_sekolah" value="<?= $siswa->asal_sekolah ?>">
                                                                                 </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Asal Sekolah (Mutasi)</label>
+                                                                                    <input type="text" class="form-control" name="asal_sekolah_pd_masuk" value="<?= $siswa->asal_sekolah_pd_masuk ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Nomor Peserta Ujian</label>
                                                                                     <input type="text" class="form-control" name="nomor_peserta_ujian" value="<?= $siswa->nomor_peserta_ujian ?>">
                                                                                 </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Nomor Seri Ijazah</label>
                                                                                     <input type="text" class="form-control" name="nomor_seri_ijazah" value="<?= $siswa->nomor_seri_ijazah ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Tanggal Ijasah</label>
+                                                                                    <input type="date" class="form-control" name="tanggal_ijasah" value="<?= $siswa->tanggal_ijasah ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -700,8 +842,14 @@
                                                                         </div>
                                                                     </form>
                                                                 </div>
-                                                                <div class="tab-pane<?= $page == 'pendaftaran_keluar' ? ' active show' : ''; ?>" id="pendaftaran_keluar" role="tabpanel">
-                                                                    <form action="<?= base_url('admin/siswa/save_pendaftaran_keluar/' . $siswa->id) ?>" method="POST">
+                                                                <div class="tab-pane<?= $page == 'registrasi_pd_keluar' ? ' active show' : ''; ?>" id="registrasi_pd_keluar" role="tabpanel">
+                                                                    <form action="<?= base_url('admin/siswa/save_registrasi_pd_keluar/' . $siswa->id) ?>" method="POST">
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                            </div>
+                                                                        </div>
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
@@ -718,13 +866,89 @@
                                                                                         <option <?= $siswa->keluar_karena == 'Lainnya' ? 'selected' : '' ?> value="Lainnya">Lainnya</option>
                                                                                     </select>
                                                                                 </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Tanggal Keluar</label>
                                                                                     <input type="date" class="form-control" name="tanggal_keluar" value="<?= $siswa->tanggal_keluar ?>">
                                                                                 </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Alasan Keluar</label>
                                                                                     <input type="text" class="form-control" name="alasan_keluar" value="<?= $siswa->alasan_keluar ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Sekolah Tujuan</label>
+                                                                                    <input type="text" class="form-control" name="sekolah_tujuan" value="<?= $siswa->sekolah_tujuan ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Dari Kelas</label>
+                                                                                    <input type="text" class="form-control" name="dari_kelas" value="<?= $siswa->dari_kelas ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Alamat Sekolah Tujuan</label>
+                                                                                    <input type="text" class="form-control" name="alamat_sekolah_tujuan" value="<?= $siswa->alamat_sekolah_tujuan ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">NPSN</label>
+                                                                                    <input type="text" class="form-control" name="npsn" value="<?= $siswa->npsn ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Tahun Tamat</label>
+                                                                                    <input type="text" class="form-control" name="tahun_tamat" value="<?= $siswa->tahun_tamat ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Nomor Seri Ijasah</label>
+                                                                                    <input type="text" class="form-control" name="nomor_seri_ijasah" value="<?= $siswa->nomor_seri_ijasah ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Tanggal Ijasah</label>
+                                                                                    <input type="date" class="form-control" name="tanggal_ijasah_pd_keluar" value="<?= $siswa->tanggal_ijasah_pd_keluar ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Wirausaha</label>
+                                                                                    <input type="text" class="form-control" name="wirausaha" value="<?= $siswa->wirausaha ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Bekerja di</label>
+                                                                                    <input type="text" class="form-control" name="bekerja_di" value="<?= $siswa->bekerja_di ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Melanjutkan ke</label>
+                                                                                    <input type="text" class="form-control" name="melanjutkan_ke" value="<?= $siswa->melanjutkan_ke ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -749,6 +973,107 @@
                                     <!-- Page-body end -->
                                 </div>
                                 <!-- <div id="styleSelector"> </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Prestasi -->
+                    <div class="modal fade" id="prestasi_modal" tabindex="-1" role="dialog" aria-labelledby="prestasi_modalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="prestasi_modalLabel"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <?= form_open_multipart('admin/siswa/save_prestasi/' . $siswa->id) ?>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Jenis Prestasi</label>
+                                        <select name="jenis_prestasi" id="jenis_prestasi" class="form-control">
+                                            <option value="Sains">Sains</option>
+                                            <option value="Seni">Seni</option>
+                                            <option value="Olahraga">Olahraga</option>
+                                            <option value="LKS">LKS</option>
+                                            <option value="Lain-lain">Lain-lain</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tingkat Prestasi</label>
+                                        <select name="tingkat_prestasi" id="tingkat_prestasi" class="form-control">
+                                            <option value="Sekolah">Sekolah</option>
+                                            <option value="Kecamatan">Kecamatan</option>
+                                            <option value="Kabupaten">Kabupaten</option>
+                                            <option value="Nasional">Nasional</option>
+                                            <option value="Internasional">Internasional</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Nama Prestasi</label>
+                                        <input type="text" class="form-control" name="nama_prestasi">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tahun</label>
+                                        <input type="text" class="form-control" name="tahun">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Penyelenggara</label>
+                                        <input type="text" class="form-control" name="penyelenggara">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Peringkat</label>
+                                        <input type="text" class="form-control" name="peringkat">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Beasiswa -->
+                    <div class="modal fade" id="beasiswa_modal" tabindex="-1" role="dialog" aria-labelledby="beasiswa_modalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="beasiswa_modalLabel"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <?= form_open_multipart('admin/siswa/save_beasiswa/' . $siswa->id) ?>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Jenis Beasiswa</label>
+                                        <select name="jenis_beasiswa" id="jenis_beasiswa" class="form-control">
+                                            <option value="Anak Berprestasi">Anak Berprestasi</option>
+                                            <option value="Pendidikan">Pendidikan</option>
+                                            <option value="Unggulan">Unggulan</option>
+                                            <option value="Anak Kurang Mampu">Anak Kurang Mampu</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Keterangan</label>
+                                        <input type="text" class="form-control" name="keterangan">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tanggal Mulai</label>
+                                        <input type="date" class="form-control" name="tanggal_mulai">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Tanggal Selesai</label>
+                                        <input type="date" class="form-control" name="tanggal_selesai">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
