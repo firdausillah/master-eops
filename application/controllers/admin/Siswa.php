@@ -187,7 +187,7 @@ class Siswa extends CI_Controller
     {
         $data = [
             'jenis_pendaftaran' => $this->input->post('jenis_pendaftaran'),
-            'nis' => $this->input->post('nis'),
+            // 'nis' => $this->input->post('nis'),
             'tgl_masuk_sekolah' => $this->input->post('tgl_masuk_sekolah'),
             'asal_sekolah' => $this->input->post('asal_sekolah'),
             'asal_sekolah_pd_masuk' => $this->input->post('asal_sekolah_pd_masuk'),

@@ -127,7 +127,7 @@
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Nomor Akte Kelahiran</label>
-                                                                                    <input type="number" class="form-control" name="noakte_lahir" value="<?= $siswa->noakte_lahir ?>">
+                                                                                    <input type="text" class="form-control" name="noakte_lahir" value="<?= $siswa->noakte_lahir ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -263,7 +263,7 @@
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Nomor KIP</label>
-                                                                                    <input type="number" class="form-control" name="nomor_kip" value="<?= $siswa->nomor_kip ?>">
+                                                                                    <input type="text" class="form-control" name="nomor_kip" value="<?= $siswa->nomor_kip ?>">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
@@ -777,16 +777,10 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="row">
-                                                                            <div class="col-lg-6">
+                                                                            <div class="col-lg-12">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">NISN</label>
                                                                                     <input type="text" class="form-control" name="nisn" value="<?= $siswa->nisn ?>">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-group">
-                                                                                    <label class="form-label">Nomor Induk Siswa</label>
-                                                                                    <input type="text" class="form-control" name="nis" value="<?= $siswa->nis ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -821,13 +815,13 @@
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Nomor Seri Ijazah</label>
+                                                                                    <label class="form-label">Nomor Seri Ijazah SMP/MTs</label>
                                                                                     <input type="text" class="form-control" name="nomor_seri_ijazah" value="<?= $siswa->nomor_seri_ijazah ?>">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Tanggal Ijasah</label>
+                                                                                    <label class="form-label">Tanggal Ijasah SMP/MTs</label>
                                                                                     <input type="date" class="form-control" name="tanggal_ijasah" value="<?= $siswa->tanggal_ijasah ?>">
                                                                                 </div>
                                                                             </div>
@@ -919,13 +913,13 @@
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Nomor Seri Ijasah</label>
+                                                                                    <label class="form-label">Nomor Seri Ijasah SMK</label>
                                                                                     <input type="text" class="form-control" name="nomor_seri_ijasah" value="<?= $siswa->nomor_seri_ijasah ?>">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Tanggal Ijasah</label>
+                                                                                    <label class="form-label">Tanggal Ijasah SMK</label>
                                                                                     <input type="date" class="form-control" name="tanggal_ijasah_pd_keluar" value="<?= $siswa->tanggal_ijasah_pd_keluar ?>">
                                                                                 </div>
                                                                             </div>
