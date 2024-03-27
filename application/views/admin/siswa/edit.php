@@ -467,6 +467,7 @@
                                                                                     <select name="pekerjaan_ibu" id="pekerjaan_ibu" class="form-control">
                                                                                         <option value="">Pilih Disini</option>
                                                                                         <option <?= $siswa->pekerjaan_ibu == 'Tidak bekerja' ? 'selected' : '' ?> value="Tidak bekerja">Tidak bekerja</option>
+                                                                                        <option <?= $siswa->pekerjaan_ibu == 'Mengurus Rumah Tangga' ? 'selected' : '' ?> value="Mengurus Rumah Tangga">Mengurus Rumah Tangga</option>
                                                                                         <option <?= $siswa->pekerjaan_ibu == 'Nelayan' ? 'selected' : '' ?> value="Nelayan">Nelayan</option>
                                                                                         <option <?= $siswa->pekerjaan_ibu == 'Petani' ? 'selected' : '' ?> value="Petani">Petani</option>
                                                                                         <option <?= $siswa->pekerjaan_ibu == 'Peternak' ? 'selected' : '' ?> value="Peternak">Peternak</option>
