@@ -20,9 +20,10 @@ class Cetak extends CI_Controller
 
         // Konten HTML yang akan dimasukkan ke dalam PDF
         $data = [
-            
+            'title'=>'judul',
+            'content'=>'cetak/cetak_buku_induk'
         ];
-        $html = $this->load->view('admin/cetak/cetak_buku_induk', $data, true);
+        $html = $this->load->view('cetak/base', $data, true);
 
         // Tulis konten HTML ke dalam PDF
         $mpdf->WriteHTML($html);

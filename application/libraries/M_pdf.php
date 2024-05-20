@@ -19,10 +19,10 @@ class M_pdf
                 'format' => 'A4',
                 'default_font_size' => 0,
                 'default_font' => '',
-                'margin_left' => 10,
-                'margin_right' => 10,
-                'margin_top' => 10,
-                'margin_bottom' => 10,
+                'margin_left' => 20,
+                'margin_right' => 15,
+                'margin_top' => 15,
+                'margin_bottom' => 15,
                 'margin_header' => 6,
                 'margin_footer' => 3
             ];
