@@ -74,7 +74,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="pcoded-hasmenu <?= $url == 'siswa' || $url == 'ptk' || $url == 'wali_kelas' || $url == 'kelas_siswa' ? 'active pcoded-trigger' : '' ?>">
+                                <li class="pcoded-hasmenu <?= $url == 'siswa' || $url == 'ptk' || $url == 'wali_kelas' || $url == 'kelas_siswa' || $url == 'print_buku_induk' ? 'active pcoded-trigger' : '' ?>">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
                                         <span class="pcoded-mtext">Akademik</span>
