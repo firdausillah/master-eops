@@ -14,15 +14,15 @@
             </tr>
         </thead>
         <tbody class="td-border">
-            <?php for ($i = 0; $i < 25; $i++) : ?>
+            <?php foreach ($siswa as $key => $value) : ?>
                 <tr>
-                    <td class="text-center" style="font-size: x-small;"><?= $i + 1 ?></td>
-                    <td style="font-size: x-small;">6063/100.9.2.1</td>
-                    <td style="font-size: x-small;">0064369264</td>
-                    <td style="font-size: x-small;">ALBETY DWI ADI PUTRA</td>
-                    <td style="font-size: x-small;">Laki-Laki</td>
+                    <td class="text-center" style="font-size: x-small;"><?= $key + 1 ?></td>
+                    <td style="font-size: x-small;"><?= $value->nis ?></td>
+                    <td style="font-size: x-small;"><?= $value->nisn ?></td>
+                    <td style="font-size: x-small;"><?= $value->nama ?></td>
+                    <td style="font-size: x-small;"><?= $value->jk ?></td>
                 </tr>
-            <?php endfor; ?>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>

@@ -121,7 +121,7 @@
                                                                             $kode = $_GET['k'] . $_GET['j'] . $_GET['p'] . $_GET['tp'];
                                                                         ?>
                                                                             <a href="<?= base_url('export/export_siswa_kelas/' . $kode)  ?>" class="btn btn-sm btn-info btn-block"><i class="fa fa-download"></i> Export Excel</a>
-                                                                            <a href="<?= base_url('cetak/cetak_buku_induk/' . $kode)  ?>" class="btn btn-sm btn-info btn-block"><i class="fa fa-print"></i> Print Buku Induk</a>
+                                                                            <a href="<?= base_url('cetak/cetak_buku_induk/' . $kode)  ?>" class="btn btn-sm btn-info btn-block" target="_blank"><i class="fa fa-print"></i> Print Buku Induk</a>
                                                                         <?php endif ?>
                                                                     </div>
                                                                 </div>

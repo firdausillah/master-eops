@@ -90,12 +90,20 @@
             vertical-align: top;
         }
 
+        .td-text-bottom td {
+            vertical-align: top;
+        }
+
         .text-center {
             text-align: center;
         }
 
         .text-right {
             text-align: right;
+        }
+
+        .text-bottom {
+            vertical-align: text-bottom;
         }
 
         .border {
@@ -108,6 +116,17 @@
             height: 151.18px;
             background-color: lightgray;
             border: 1px solid #333333;
+        }
+
+        .register-container {
+            background-color: blueviolet;
+            width: 100%;
+            height: 100px;
+        }
+
+        .page-header {
+            color: lightgray;
+            text-align: right;
         }
     </style>
 

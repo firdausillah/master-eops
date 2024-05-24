@@ -21,8 +21,11 @@ class Cetak extends CI_Controller
         // Konten HTML yang akan dimasukkan ke dalam PDF
         $data = [
             'title'=>'judul',
-            'content'=>'cetak/cetak_buku_induk'
+            'content'=>'cetak/cetak_buku_induk',
+            'siswa' => $this->Kelas_siswaModel->get_siswa_for_cetak_buku_induk(['kode' => $kode])->result(),
+            'kelas_tapel' => $this->Kelas_siswaModel->get_kelas_tapel(['kode' => $kode])->row()
         ];
+        // print_r($data['siswa']);exit();
         $html = $this->load->view('cetak/base', $data, true);
 
         // Tulis konten HTML ke dalam PDF
