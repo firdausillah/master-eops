@@ -209,7 +209,7 @@
             </table>
         </div>
 
-        <pagefooter name="MyFooter1" content-right="<?= $value->nama ?> | <?= $value->no_induk ?> ({PAGENO}/{nbpg})" footer-style="font-size: 8pt;
+        <pagefooter name="MyFooter1" content-right="<?= $value->nama ?> | <?= $value->no_induk ?> (1/3)" footer-style="font-size: 8pt;
       font-weight: bold; color: #000000;" />
 
         <setpagefooter name="MyFooter1" value="on" />
@@ -400,7 +400,7 @@
             </table>
         </div>
 
-        <pagefooter name="MyFooter1" content-right="<?= $value->nama ?> | <?= $value->no_induk ?> ({PAGENO}/{nbpg})" footer-style="font-size: 8pt;
+        <pagefooter name="MyFooter1" content-right="<?= $value->nama ?> | <?= $value->no_induk ?> (2/3)" footer-style="font-size: 8pt;
       font-weight: bold; color: #000000;" />
 
         <setpagefooter name="MyFooter1" value="on" />
@@ -611,7 +611,7 @@
             </div>
         </div>
 
-        <pagefooter name="MyFooter1" content-right="<?= $value->nama ?> | <?= $value->no_induk ?> ({PAGENO}/{nbpg})" footer-style="font-size: 8pt;
+        <pagefooter name="MyFooter1" content-right="<?= $value->nama ?> | <?= $value->no_induk ?> (3/3)" footer-style="font-size: 8pt;
       font-weight: bold; color: #000000;" />
 
         <setpagefooter name="MyFooter1" value="on" />
