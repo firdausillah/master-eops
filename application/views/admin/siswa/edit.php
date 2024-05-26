@@ -74,8 +74,22 @@
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Nama <span class="text-danger">*</span></label>
+                                                                                    <label class="form-label">Nama Lengkap<span class="text-danger">*</span></label>
                                                                                     <input type="text" class="form-control" name="nama" value="<?= $siswa->nama ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">NIK <span class="text-danger">*</span></label>
+                                                                                    <input type="number" class="form-control" name="nik_siswa" value="<?= $siswa->nik_siswa ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Nama Panggilan<span class="text-danger">*</span></label>
+                                                                                    <input type="text" class="form-control" name="nama_panggilan" value="<?= $siswa->nama_panggilan ?>">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
@@ -86,20 +100,6 @@
                                                                                         <option <?= $siswa->jk == 'Laki-laki' ? 'selected' : '' ?> value="Laki-laki">Laki-laki</option>
                                                                                         <option <?= $siswa->jk == 'Perempuan' ? 'selected' : '' ?> value="Perempuan">Perempuan</option>
                                                                                     </select>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-group">
-                                                                                    <label class="form-label">NIK <span class="text-danger">*</span></label>
-                                                                                    <input type="number" class="form-control" name="nik_siswa" value="<?= $siswa->nik_siswa ?>">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-lg-6">
-                                                                                <div class="form-group">
-                                                                                    <label class="form-label">Password <span class="text-danger">*</span></label>
-                                                                                    <input type="text" class="form-control" name="password" value="<?= $siswa->password ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -298,6 +298,14 @@
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Nomor KPS PKH</label>
                                                                                     <input type="text" class="form-control" name="nomor_kps_pkh" value="<?= $siswa->nomor_kps_pkh ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Password <span class="text-danger">*</span></label>
+                                                                                    <input type="text" class="form-control" name="password" value="<?= $siswa->password ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>

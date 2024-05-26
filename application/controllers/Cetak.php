@@ -13,7 +13,7 @@ class Cetak extends CI_Controller
     }
 
 
-    public function cetak_buku_induk($kode)
+    public function cetak_buku_induk($id_siswa)
     {
         // Buat instance mPDF
         $mpdf = $this->m_pdf->load();
@@ -22,8 +22,8 @@ class Cetak extends CI_Controller
         $data = [
             'title'=>'judul',
             'content'=>'cetak/cetak_buku_induk',
-            'siswa' => $this->Kelas_siswaModel->get_siswa_for_cetak_buku_induk(['kode' => $kode])->result(),
-            'kelas_tapel' => $this->Kelas_siswaModel->get_kelas_tapel(['kode' => $kode])->row()
+            'siswa' => $this->Kelas_siswaModel->get_siswa_for_cetak_buku_induk(['tb_siswa.id' => $id_siswa])->result(),
+            'kelas_tapel' => $this->Kelas_siswaModel->get_kelas_tapel(['tb_siswa.id' => $id_siswa])->row()
         ];
         // print_r($data['siswa']);exit();
         $html = $this->load->view('cetak/base', $data, true);

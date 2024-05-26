@@ -40,7 +40,7 @@
                             <td></td>
                             <td>a. Nama Panggilan</td>
                             <td>:</td>
-                            <td><?= $value->nama ?></td>
+                            <td><?= $value->nama_panggilan ?></td>
                         </tr>
                         <tr>
                             <td>2</td>
@@ -93,7 +93,7 @@
                             <td>9</td>
                             <td>Bahasa sehari-hari</td>
                             <td>:</td>
-                            <td>??</td>
+                            <td>   </td>
                         </tr>
                         <tr>
                             <td>10</td>
@@ -159,7 +159,7 @@
                         <td colspan="3"></td>
                         <td>Provinsi</td>
                         <td>:</td>
-                        <td>??</td>
+                        <td>   </td>
                     </tr>
                     <tr>
                         <td>13</td>
@@ -185,13 +185,13 @@
                         <td width="6%">15</td>
                         <td width="30%">Golongan Darah</td>
                         <td width="2%">:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td>16</td>
                         <td>Riwayat Penyakit</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td>17</td>
@@ -254,31 +254,31 @@
                         <td></td>
                         <td>b. Alasan</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td>20</td>
                         <td>Diterima di sekolah ini</td>
                         <td></td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>a. Di Kelas</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>b. Jurusan</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>c. Tanggal</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                 </tbody>
             </table>
@@ -316,7 +316,7 @@
                         <td></td>
                         <td>d. Kewarganegaraan</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td></td>
@@ -340,7 +340,7 @@
                         <td></td>
                         <td>h. Alamat</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td width="6%">22</td>
@@ -370,7 +370,7 @@
                         <td></td>
                         <td>d. Kewarganegaraan</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td></td>
@@ -394,7 +394,7 @@
                         <td></td>
                         <td>h. Alamat</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                 </tbody>
             </table>
@@ -434,7 +434,7 @@
                         <td></td>
                         <td>c. Hubungan Keluarga</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                     <tr>
                         <td></td>
@@ -458,7 +458,7 @@
                         <td></td>
                         <td>g. Alamat</td>
                         <td>:</td>
-                        <td colspan="3">??</td>
+                        <td colspan="3">   </td>
                     </tr>
                 </tbody>
             </table>
@@ -556,7 +556,7 @@
                             <td></td>
                             <td>d. NPSN Sekolah Tujuan</td>
                             <td>:</td>
-                            <td>??</td>
+                            <td>   </td>
                         </tr>
                         <tr>
                             <td></td>
@@ -568,7 +568,7 @@
                             <td></td>
                             <td>f. Alasan</td>
                             <td>:</td>
-                            <td>??</td>
+                            <td>   </td>
                         </tr>
                         <tr>
                             <td>27</td>
@@ -615,7 +615,6 @@
       font-weight: bold; color: #000000;" />
 
         <setpagefooter name="MyFooter1" value="on" />
-        <pagebreak />
     <?php endforeach ?>
 
 </div>

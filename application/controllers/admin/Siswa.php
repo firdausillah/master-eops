@@ -64,6 +64,7 @@ class Siswa extends CI_Controller
     {
         $data = [
             'nama' => $this->input->post('nama'),
+            'nama_panggilan' => $this->input->post('nama_panggilan'),
             'jk' => $this->input->post('jk'),
             'nik_siswa' => $this->input->post('nik_siswa'),
             'password' => $this->input->post('password'),
