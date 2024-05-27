@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Contoh PDF</title>
+    <title><?= $title ? $title : 'Judul Page' ?></title>
     <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/dataTables.min.css">
     <style>
         @page {

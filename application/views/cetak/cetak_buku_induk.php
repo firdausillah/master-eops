@@ -17,7 +17,3 @@
 <!-- BEGIN III. PETUNJUK PENGISIAN BUKU INDUK SISWA -->
 <?php $this->load->view('cetak/_buku_induk/_petunjuk_pengisian_buku_induk_siswa.php') ?>
 <!-- END III. PETUNJUK PENGISIAN BUKU INDUK SISWA -->
-<pagebreak />
-<!-- BEGIN IV. LEMBAR BUKU INDUK REGISTER -->
-<?php $this->load->view('cetak/_buku_induk/_lembar_buku_induk_register.php') ?>
-<!-- END IV. LEMBAR BUKU INDUK REGISTER -->
