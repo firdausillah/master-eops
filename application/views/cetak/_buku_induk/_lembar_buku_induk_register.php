@@ -340,7 +340,7 @@
                         <td></td>
                         <td>h. Alamat</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->penghasilan_ayah ?></td>
+                        <td colspan="3"><?= $value->alamat_ayah ?></td>
                     </tr>
                     <tr>
                         <td width="6%">22</td>
@@ -394,7 +394,7 @@
                         <td></td>
                         <td>h. Alamat</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->penghasilan_ibu ?></td>
+                        <td colspan="3"><?= $value->alamat_ibu ?></td>
                     </tr>
                 </tbody>
             </table>
