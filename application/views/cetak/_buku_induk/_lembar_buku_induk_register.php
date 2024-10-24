@@ -565,12 +565,6 @@
                             <td><?= $value->tanggal_keluar ?></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td>f. Alasan</td>
-                            <td>:</td>
-                            <td>   </td>
-                        </tr>
-                        <tr>
                             <td>27</td>
                             <td>Tamat Belajar</td>
                             <td></td>

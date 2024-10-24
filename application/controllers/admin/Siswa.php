@@ -90,7 +90,11 @@ class Siswa extends CI_Controller
             'nama_kip' => $this->input->post('nama_kip'),
             'lintang' => $this->input->post('lintang'),
             'bujur' => $this->input->post('bujur'),
+            'bahasa' => $this->input->post('bahasa'),
+            'golongan_darah' => $this->input->post('golongan_darah'),
+            'riwayat_penyakit' => $this->input->post('riwayat_penyakit'),
             'nomor_kks' => $this->input->post('nomor_kks'),
+            'provinsi_siswa' => $this->input->post('provinsi_siswa'),
             'nomor_kps_pkh' => $this->input->post('nomor_kps_pkh')
         ];
         if ($this->SiswaModel->update(['id' => $id], $data)) {
@@ -111,7 +115,8 @@ class Siswa extends CI_Controller
             'tgllahir_ayah' => $this->input->post('tgllahir_ayah'),
             'pendidikan_ayah' => $this->input->post('pendidikan_ayah'),
             'pekerjaan_ayah' => $this->input->post('pekerjaan_ayah'),
-            'penghasilan_ayah' => $this->input->post('penghasilan_ayah')
+            'penghasilan_ayah' => $this->input->post('penghasilan_ayah'),
+            'kewarganegaraan_ayah' => $this->input->post('kewarganegaraan_ayah')
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {
@@ -132,7 +137,8 @@ class Siswa extends CI_Controller
             'tgllahir_ibu' => $this->input->post('tgllahir_ibu'),
             'pendidikan_ibu' => $this->input->post('pendidikan_ibu'),
             'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu'),
-            'penghasilan_ibu' => $this->input->post('penghasilan_ibu')
+            'penghasilan_ibu' => $this->input->post('penghasilan_ibu'),
+            'kewarganegaraan_ibu' => $this->input->post('kewarganegaraan_ibu')
         ];
 
         if ($this->SiswaModel->update(['id' => $id], $data)) {

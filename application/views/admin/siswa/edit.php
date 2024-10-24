@@ -170,44 +170,50 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="row">
-                                                                            <div class="col-lg-6">
+                                                                            <div class="col-lg-4">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">RT</label>
                                                                                     <input type="text" class="form-control" name="rt" value="<?= $siswa->rt ?>">
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-lg-6">
+                                                                            <div class="col-lg-4">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">RW</label>
                                                                                     <input type="text" class="form-control" name="rw" value="<?= $siswa->rw ?>">
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col-lg-6">
+                                                                            <div class="col-lg-4">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Dusun</label>
                                                                                     <input type="text" class="form-control" name="dusun" value="<?= $siswa->dusun ?>">
                                                                                 </div>
                                                                             </div>
+                                                                        </div>
+                                                                        <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Desa</label>
                                                                                     <input type="text" class="form-control" name="desa" value="<?= $siswa->desa ?>">
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Kecamatan</label>
                                                                                     <input type="text" class="form-control" name="kec" value="<?= $siswa->kec ?>">
                                                                                 </div>
                                                                             </div>
+                                                                        </div>
+                                                                        <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Kabupaten</label>
                                                                                     <input type="text" class="form-control" name="kab" value="<?= $siswa->kab ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Provinsi</label>
+                                                                                    <input type="text" class="form-control" name="provinsi_siswa" value="<?= $siswa->provinsi_siswa ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -302,6 +308,26 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Bahasa Sehari Hari</label>
+                                                                                    <input type="text" class="form-control" name="bahasa" value="<?= $siswa->bahasa ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Golongan Darah</label>
+                                                                                    <input type="text" class="form-control" name="golongan_darah" value="<?= $siswa->golongan_darah ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Riwayat Penyakit</label>
+                                                                                    <input type="text" class="form-control" name="riwayat_penyakit" value="<?= $siswa->riwayat_penyakit ?>">
+                                                                                </div>
+                                                                            </div>
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Password <span class="text-danger">*</span></label>
@@ -408,6 +434,12 @@
                                                                                     </select>
                                                                                 </div>
                                                                             </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">kewarganegaraan</label>
+                                                                                    <input type="text" class="form-control" name="kewarganegaraan_ayah" value="<?= $siswa->kewarganegaraan_ayah ?>">
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                         <div class="row">
                                                                             <div class="col-6 text-right">
@@ -507,6 +539,12 @@
                                                                                         <option <?= $siswa->penghasilan_ibu == 'lebih dari 20 juta' ? 'selected' : '' ?> value="lebih dari 20 juta">lebih dari 20 juta</option>
                                                                                         <option <?= $siswa->penghasilan_ibu == 'Tidak Berpenghasilan' ? 'selected' : '' ?> value="Tidak Berpenghasilan">Tidak Berpenghasilan</option>
                                                                                     </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">kewarganegaraan</label>
+                                                                                    <input type="text" class="form-control" name="kewarganegaraan_ibu" value="<?= $siswa->kewarganegaraan_ibu ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
