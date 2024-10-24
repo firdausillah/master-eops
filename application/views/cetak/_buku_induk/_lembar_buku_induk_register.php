@@ -343,6 +343,12 @@
                         <td colspan="3"><?= $value->alamat_ayah ?></td>
                     </tr>
                     <tr>
+                        <td></td>
+                        <td>i. Nomor HP</td>
+                        <td>:</td>
+                        <td colspan="3"><?= $value->nohp_ayah ?></td>
+                    </tr>
+                    <tr>
                         <td width="6%">22</td>
                         <td width="30%">Ibu Kandung</td>
                         <td width="2%"></td>
@@ -395,6 +401,12 @@
                         <td>h. Alamat</td>
                         <td>:</td>
                         <td colspan="3"><?= $value->alamat_ibu ?></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>i. Nomor HP</td>
+                        <td>:</td>
+                        <td colspan="3"><?= $value->nohp_ibu ?></td>
                     </tr>
                 </tbody>
             </table>
@@ -459,6 +471,12 @@
                         <td>g. Alamat</td>
                         <td>:</td>
                         <td colspan="3"><?= $value->alamat_wali ?></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>h. Nomor HP</td>
+                        <td>:</td>
+                        <td colspan="3"><?= $value->nohp_wali ?></td>
                     </tr>
                 </tbody>
             </table>
