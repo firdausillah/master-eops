@@ -202,6 +202,7 @@ class Siswa extends CI_Controller
             'no_induk' => $this->input->post('no_induk'),
             'nisn' => $this->input->post('nisn'),
             'tanggal_ijasah' => $this->input->post('tanggal_ijasah'),
+            'diterima_di_kelas' => $this->input->post('diterima_di_kelas'),
             'nomor_seri_ijazah' => $this->input->post('nomor_seri_ijazah')
         ];
 

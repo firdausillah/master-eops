@@ -824,10 +824,16 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="row">
-                                                                            <div class="col-lg-12">
+                                                                            <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">NISN</label>
                                                                                     <input type="text" class="form-control" name="nisn" value="<?= $siswa->nisn ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Diterima di kelas</label>
+                                                                                    <input type="text" class="form-control" name="diterima_di_kelas" value="<?= $siswa->diterima_di_kelas ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>

@@ -58,7 +58,7 @@
                             <td></td>
                             <td>b. Tanggal Lahir</td>
                             <td>:</td>
-                            <td><?= $value->tgllahir_siswa ?></td>
+                            <td><?= $value->tgllahir_siswa != '0000-00-00' ? date('d F Y', strtotime($value->tgllahir_siswa)) : ''; ?></td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -93,7 +93,7 @@
                             <td>9</td>
                             <td>Bahasa sehari-hari</td>
                             <td>:</td>
-                            <td>   </td>
+                            <td><?= $value->bahasa ?></td>
                         </tr>
                         <tr>
                             <td>10</td>
@@ -159,7 +159,7 @@
                         <td colspan="3"></td>
                         <td>Provinsi</td>
                         <td>:</td>
-                        <td>   </td>
+                        <td><?= $value->provinsi_siswa ?></td>
                     </tr>
                     <tr>
                         <td>13</td>
@@ -171,7 +171,7 @@
                         <td>14</td>
                         <td>Jarak Ke Sekolah</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->jarak_tempat_tinggal ?></td>
+                        <td colspan="3"><?= $value->jarak_tempat_tinggal ?> km</td>
                     </tr>
                 </tbody>
             </table>
@@ -185,25 +185,25 @@
                         <td width="6%">15</td>
                         <td width="30%">Golongan Darah</td>
                         <td width="2%">:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"><?= $value->golongan_darah ?></td>
                     </tr>
                     <tr>
                         <td>16</td>
                         <td>Riwayat Penyakit</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"><?= $value->riwayat_penyakit ?></td>
                     </tr>
                     <tr>
                         <td>17</td>
                         <td>a. Tinggi Badan</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->tinggi_badan ?></td>
+                        <td colspan="3"><?= $value->tinggi_badan ?> cm</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>b. Berat Badan</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->berat_badan ?></td>
+                        <td colspan="3"><?= $value->berat_badan ?> kg</td>
                     </tr>
                 </tbody>
             </table>
@@ -254,31 +254,31 @@
                         <td></td>
                         <td>b. Alasan</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"> </td>
                     </tr>
                     <tr>
                         <td>20</td>
                         <td>Diterima di sekolah ini</td>
                         <td></td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"> </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>a. Di Kelas</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"><?= $value->diterima_di_kelas ?></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>b. Jurusan</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"><?= $value->jurusan ?></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>c. Tanggal</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"> <?= $value->tgl_masuk_sekolah != '0000-00-00' ? date('d F Y', strtotime($value->tgl_masuk_sekolah)) : ''; ?></td>
                     </tr>
                 </tbody>
             </table>
@@ -310,13 +310,13 @@
                         <td></td>
                         <td>c. Tahun Lahir</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->tgllahir_ayah ?></td>
+                        <td colspan="3"><?= $value->tgllahir_ayah != '0000-00-00' ? date('Y', strtotime($value->tgllahir_ayah)) : ''; ?></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>d. Kewarganegaraan</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"><?= $value->kewarganegaraan_ayah ?></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -340,7 +340,7 @@
                         <td></td>
                         <td>h. Alamat</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"> </td>
                     </tr>
                     <tr>
                         <td width="6%">22</td>
@@ -364,13 +364,13 @@
                         <td></td>
                         <td>c. Tahun Lahir</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->tgllahir_ibu ?></td>
+                        <td colspan="3"><?= $value->tgllahir_ibu != '0000-00-00' ? date('Y', strtotime($value->tgllahir_ibu)) : ''; ?></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>d. Kewarganegaraan</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"><?= $value->kewarganegaraan_ibu ?></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -394,7 +394,7 @@
                         <td></td>
                         <td>h. Alamat</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"> </td>
                     </tr>
                 </tbody>
             </table>
@@ -428,13 +428,13 @@
                         <td></td>
                         <td>b. Tahun Lahir</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->tgllahir_wali ?></td>
+                        <td colspan="3"><?= $value->tgllahir_wali != '0000-00-00' ? date('Y', strtotime($value->tgllahir_wali)) : ''; ?></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>c. Hubungan Keluarga</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"> </td>
                     </tr>
                     <tr>
                         <td></td>
@@ -458,7 +458,7 @@
                         <td></td>
                         <td>g. Alamat</td>
                         <td>:</td>
-                        <td colspan="3">   </td>
+                        <td colspan="3"> </td>
                     </tr>
                 </tbody>
             </table>
@@ -520,14 +520,14 @@
                             <td></td>
                             <td>a. Tanggal</td>
                             <td>:</td>
-                            <td><?= $value->tanggal_keluar ?></td>
+                            <td><?= $value->tanggal_keluar != '0000-00-00' ? date('d m Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td></td>
                             <td>b. Alasan</td>
                             <td>:</td>
                             <td><?= $value->alasan_keluar ?></td>
-                        </tr>
+                        </tr> -->
                         <tr>
                             <td>26</td>
                             <td>Pindah Sekolah</td>
@@ -556,13 +556,13 @@
                             <td></td>
                             <td>d. NPSN Sekolah Tujuan</td>
                             <td>:</td>
-                            <td>   </td>
+                            <td><?= $value->npsn ?></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>e. Tanggal</td>
                             <td>:</td>
-                            <td><?= $value->tanggal_keluar ?></td>
+                            <td><?= $value->tanggal_keluar != '0000-00-00' ? date('d m Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
                         </tr>
                         <tr>
                             <td>27</td>
@@ -586,7 +586,7 @@
                             <td></td>
                             <td>c. Nomor Ijazah</td>
                             <td>:</td>
-                            <td><?= $value->nomor_seri_ijazah ?></td>
+                            <td><?= $value->nomor_seri_ijasah ?></td>
                         </tr>
                         <tr>
                             <td></td>
