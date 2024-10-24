@@ -668,7 +668,7 @@
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
                                                                                     <label class="form-label">Alamat</label>
-                                                                                    <input type="text" class="form-control" name="alamat_ayah" value="<?= $siswa->alamat_ayah ?>">
+                                                                                    <input type="text" class="form-control" name="alamat_wali" value="<?= $siswa->alamat_wali ?>">
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-lg-6">
