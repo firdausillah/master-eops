@@ -133,15 +133,15 @@
                     </tr>
                     <tr>
                         <td colspan="3"></td>
-                        <td>RT/RW</td>
-                        <td>:</td>
-                        <td><?= $value->rt ?>/<?= $value->rw ?></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"></td>
                         <td>Dusun</td>
                         <td>:</td>
                         <td><?= $value->dusun ?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"></td>
+                        <td>RT/RW</td>
+                        <td>:</td>
+                        <td><?= $value->rt ?>/<?= $value->rw ?></td>
                     </tr>
                     <tr>
                         <td colspan="3"></td>
