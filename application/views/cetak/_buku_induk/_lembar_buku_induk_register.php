@@ -38,7 +38,7 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td>a. Nama Panggilan</td>
+                            <td>b. Nama Panggilan</td>
                             <td>:</td>
                             <td><?= $value->nama_panggilan ?></td>
                         </tr>
@@ -340,7 +340,7 @@
                         <td></td>
                         <td>h. Alamat</td>
                         <td>:</td>
-                        <td colspan="3"> </td>
+                        <td colspan="3"><?= $value->penghasilan_ayah ?></td>
                     </tr>
                     <tr>
                         <td width="6%">22</td>
@@ -394,7 +394,7 @@
                         <td></td>
                         <td>h. Alamat</td>
                         <td>:</td>
-                        <td colspan="3"> </td>
+                        <td colspan="3"><?= $value->penghasilan_ibu ?></td>
                     </tr>
                 </tbody>
             </table>
@@ -434,7 +434,7 @@
                         <td></td>
                         <td>c. Hubungan Keluarga</td>
                         <td>:</td>
-                        <td colspan="3"> </td>
+                        <td colspan="3"><?= $value->hubungan_keluarga_wali ?></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -458,7 +458,7 @@
                         <td></td>
                         <td>g. Alamat</td>
                         <td>:</td>
-                        <td colspan="3"> </td>
+                        <td colspan="3"><?= $value->alamat_wali ?></td>
                     </tr>
                 </tbody>
             </table>

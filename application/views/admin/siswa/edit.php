@@ -442,6 +442,14 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="row">
+                                                                            <div class="col-lg-12">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Alamat</label>
+                                                                                    <input type="text" class="form-control" name="alamat_ayah" value="<?= $siswa->alamat_ayah ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
                                                                             <div class="col-6 text-right">
                                                                                 <div class="form-group">
                                                                                     <a href="<?= base_url('admin/siswa') ?>" class="btn btn-secondary btn-sm">Kembali</a>
@@ -549,6 +557,14 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="row">
+                                                                            <div class="col-lg-12">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Alamat</label>
+                                                                                    <input type="text" class="form-control" name="alamat_ibu" value="<?= $siswa->alamat_ibu ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
                                                                             <div class="col-6 text-right">
                                                                                 <div class="form-group">
                                                                                     <a href="<?= base_url('admin/siswa') ?>" class="btn btn-secondary btn-sm">Kembali</a>
@@ -645,6 +661,20 @@
                                                                                         <option <?= $siswa->penghasilan_wali == 'lebih dari 20 juta' ? 'selected' : '' ?> value="lebih dari 20 juta">lebih dari 20 juta</option>
                                                                                         <option <?= $siswa->penghasilan_wali == 'Tidak Berpenghasilan' ? 'selected' : '' ?> value="Tidak Berpenghasilan">Tidak Berpenghasilan</option>
                                                                                     </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Alamat</label>
+                                                                                    <input type="text" class="form-control" name="alamat_ayah" value="<?= $siswa->alamat_ayah ?>">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-lg-6">
+                                                                                <div class="form-group">
+                                                                                    <label class="form-label">Hubungan Keluarga</label>
+                                                                                    <input type="text" class="form-control" name="hubungan_keluarga_wali" value="<?= $siswa->hubungan_keluarga_wali ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>

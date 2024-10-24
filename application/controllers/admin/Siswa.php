@@ -116,6 +116,7 @@ class Siswa extends CI_Controller
             'pendidikan_ayah' => $this->input->post('pendidikan_ayah'),
             'pekerjaan_ayah' => $this->input->post('pekerjaan_ayah'),
             'penghasilan_ayah' => $this->input->post('penghasilan_ayah'),
+            'alamat_ayah' => $this->input->post('alamat_ayah'),
             'kewarganegaraan_ayah' => $this->input->post('kewarganegaraan_ayah')
         ];
 
@@ -138,6 +139,7 @@ class Siswa extends CI_Controller
             'pendidikan_ibu' => $this->input->post('pendidikan_ibu'),
             'pekerjaan_ibu' => $this->input->post('pekerjaan_ibu'),
             'penghasilan_ibu' => $this->input->post('penghasilan_ibu'),
+            'alamat_ibu' => $this->input->post('alamat_ibu'),
             'kewarganegaraan_ibu' => $this->input->post('kewarganegaraan_ibu')
         ];
 
@@ -159,6 +161,8 @@ class Siswa extends CI_Controller
             'tgllahir_wali' => $this->input->post('tgllahir_wali'),
             'pendidikan_wali' => $this->input->post('pendidikan_wali'),
             'pekerjaan_wali' => $this->input->post('pekerjaan_wali'),
+            'alamat_wali' => $this->input->post('alamat_wali'),
+            'hubungan_keluarga_wali' => $this->input->post('hubungan_keluarga_wali'),
             'penghasilan_wali' => $this->input->post('penghasilan_wali')
         ];
 
