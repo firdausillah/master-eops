@@ -58,7 +58,7 @@
                             <td></td>
                             <td>b. Tanggal Lahir</td>
                             <td>:</td>
-                            <td><?= $value->tgllahir_siswa != '0000-00-00' ? date('d F Y', strtotime($value->tgllahir_siswa)) : ''; ?></td>
+                            <td><?= $value->tgllahir_siswa != '0000-00-00' ? date('d-f-Y', strtotime($value->tgllahir_siswa)) : ''; ?></td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -298,7 +298,7 @@
                         <td></td>
                         <td>c. Tanggal</td>
                         <td>:</td>
-                        <td colspan="3"> <?= $value->tgl_masuk_sekolah != '0000-00-00' ? date('d F Y', strtotime($value->tgl_masuk_sekolah)) : ''; ?></td>
+                        <td colspan="3"> <?= $value->tgl_masuk_sekolah != '0000-00-00' ? date('d-f-Y', strtotime($value->tgl_masuk_sekolah)) : ''; ?></td>
                     </tr>
                 </tbody>
             </table>
@@ -558,8 +558,7 @@
                             <td></td>
                             <td>a. Tanggal</td>
                             <td>:</td>
-                            <!-- <td><?= $value->tanggal_keluar != '0000-00-00' and $value->tanggal_keluar != null ? date('d m Y', strtotime($value->tanggal_keluar)) : ''; ?></td> -->
-                            <td><?= $value->tanggal_keluar != '0000-00-00' ? date('d F Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
+                            <td><?= $value->tanggal_keluar != '0000-00-00' ? date('d-f-Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
 
                         </tr>
                         <!-- <tr>
@@ -621,8 +620,7 @@
                             <td></td>
                             <td>c. Tanggal Ijazah</td>
                             <td>:</td>
-                            <!-- <td><?= $value->tanggal_ijasah_pd_keluar != '0000-00-00' and $value->tanggal_ijasah_pd_keluar != null ? date('d m Y', strtotime($value->tanggal_ijasah_pd_keluar)) : ''; ?></td> -->
-                            <td><?= $value->tanggal_ijasah_pd_keluar != '0000-00-00' ? date('d F Y', strtotime($value->tanggal_ijasah_pd_keluar)) : ''; ?></td>
+                            <td><?= $value->tanggal_ijasah_pd_keluar != '0000-00-00' ? date('d-f-Y', strtotime($value->tanggal_ijasah_pd_keluar)) : ''; ?></td>
                         </tr>
                         <tr>
                             <td></td>
