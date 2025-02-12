@@ -108,6 +108,20 @@
                             <td>:</td>
                             <td><?= $value->moda_transportasi ?></td>
                         </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Nomor HP
+                            </td>
+                            <td>:</td>
+                            <td><?= $value->nohp ?></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Nomor Akte Kelahiran
+                            </td>
+                            <td>:</td>
+                            <td><?= $value->noakte_lahir ?></td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -544,7 +558,7 @@
                             <td></td>
                             <td>a. Tanggal</td>
                             <td>:</td>
-                            <td><?= $value->tanggal_keluar != '0000-00-00' or $value->tanggal_keluar != null ? date('d m Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
+                            <td><?= $value->tanggal_keluar != '0000-00-00' and $value->tanggal_keluar != null ? date('d m Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
                         </tr>
                         <!-- <tr>
                             <td></td>
@@ -582,12 +596,7 @@
                             <td>:</td>
                             <td><?= $value->npsn ?></td>
                         </tr>
-                        <tr>
-                            <td></td>
-                            <td>e. Tanggal</td>
-                            <td>:</td>
-                            <td><?= $value->tanggal_keluar != '0000-00-00' ? date('d m Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
-                        </tr>
+
                         <tr>
                             <td>27</td>
                             <td>Tamat Belajar</td>
@@ -602,21 +611,33 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td>b. Melanjutkan Ke</td>
-                            <td>:</td>
-                            <td><?= $value->melanjutkan_ke ?></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>c. Nomor Ijazah</td>
+                            <td>b. Nomor Ijazah</td>
                             <td>:</td>
                             <td><?= $value->nomor_seri_ijasah ?></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td>d. Bekerja</td>
+                            <td>c. Tanggal Ijazah</td>
+                            <td>:</td>
+                            <td><?= $value->tanggal_ijazah_pd_keluar != '0000-00-00' and $value->tanggal_ijazah_pd_keluar != null ? date('d m Y', strtotime($value->tanggal_ijazah_pd_keluar)) : ''; ?></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>d. Wirausaha</td>
+                            <td>:</td>
+                            <td><?= $value->wirausaha ?></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>e. Bekerja</td>
                             <td>:</td>
                             <td><?= $value->bekerja_di ?></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>f. Melanjutkan Ke</td>
+                            <td>:</td>
+                            <td><?= $value->melanjutkan_ke ?></td>
                         </tr>
                     </tbody>
                 </table>
