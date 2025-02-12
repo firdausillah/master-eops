@@ -17,7 +17,7 @@
             <?php foreach ($siswa as $key => $value) : ?>
                 <tr>
                     <td class="text-center" style="font-size: x-small;"><?= $key + 1 ?></td>
-                    <td style="font-size: x-small;"><?= $value->nis ?></td>
+                    <td style="font-size: x-small;"><?= $value->no_induk ?></td>
                     <td style="font-size: x-small;"><?= $value->nisn ?></td>
                     <td style="font-size: x-small;"><?= $value->nama ?></td>
                     <td style="font-size: x-small;"><?= $value->jk ?></td>
