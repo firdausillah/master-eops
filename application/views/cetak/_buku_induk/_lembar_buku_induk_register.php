@@ -619,7 +619,7 @@
                             <td></td>
                             <td>c. Tanggal Ijazah</td>
                             <td>:</td>
-                            <td><?= $value->tanggal_ijazah_pd_keluar != '0000-00-00' and $value->tanggal_ijazah_pd_keluar != null ? date('d m Y', strtotime($value->tanggal_ijazah_pd_keluar)) : ''; ?></td>
+                            <td><?= $value->tanggal_ijasah_pd_keluar != '0000-00-00' and $value->tanggal_ijasah_pd_keluar != null ? date('d m Y', strtotime($value->tanggal_ijasah_pd_keluar)) : ''; ?></td>
                         </tr>
                         <tr>
                             <td></td>
