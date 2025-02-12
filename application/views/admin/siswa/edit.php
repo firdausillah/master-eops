@@ -890,8 +890,8 @@
                                                                             </div>
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">Nomor Peserta Ujian</label>
-                                                                                    <input type="text" class="form-control" name="nomor_peserta_ujian" value="<?= $siswa->nomor_peserta_ujian ?>">
+                                                                                    <label class="form-label">Alasan (Mutasi)</label>
+                                                                                    <input type="text" class="form-control" name="alasan_mutasi" value="<?= $siswa->alasan_mutasi ?>">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
