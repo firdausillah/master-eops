@@ -256,7 +256,7 @@
                         <td></td>
                         <td>b. Tanggal & Nomor Ijazah</td>
                         <td>:</td>
-                        <td colspan="3"><?= $value->tanggal_ijasah != '0000-00-00' ? date('d-m-Y', strtotime($value->tanggal_ijasah)) : ''; ?> dan <?= $value->nomor_seri_ijazah ?></td>
+                        <td colspan="3"><?= $value->tanggal_ijasah != '0000-00-00' ? date('d-m-Y', strtotime($value->tanggal_ijasah)) : ''; ?> & <?= $value->nomor_seri_ijazah ?></td>
                     </tr>
                     <tr>
                         <td>19</td>
