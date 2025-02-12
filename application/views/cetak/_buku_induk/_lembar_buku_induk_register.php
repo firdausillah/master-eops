@@ -561,12 +561,18 @@
                             <td><?= $value->tanggal_keluar != '0000-00-00' ? date('d-m-Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
 
                         </tr>
-                        <!-- <tr>
+                        <tr>
                             <td></td>
-                            <td>b. Alasan</td>
+                            <td>b. Keluar Karena</td>
+                            <td>:</td>
+                            <td><?= $value->keluar_karena ?></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>c. Alasan</td>
                             <td>:</td>
                             <td><?= $value->alasan_keluar ?></td>
-                        </tr> -->
+                        </tr>
                         <tr>
                             <td>26</td>
                             <td>Pindah Sekolah</td>
