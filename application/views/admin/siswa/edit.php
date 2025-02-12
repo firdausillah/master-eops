@@ -982,7 +982,7 @@
                                                                         <div class="row">
                                                                             <div class="col-lg-6">
                                                                                 <div class="form-group">
-                                                                                    <label class="form-label">NPSN</label>
+                                                                                    <label class="form-label">NPSN Sekolah Tujuan</label>
                                                                                     <input type="text" class="form-control" name="npsn" value="<?= $siswa->npsn ?>">
                                                                                 </div>
                                                                             </div>
