@@ -260,7 +260,7 @@
                         <td></td>
                         <td>b. Alasan</td>
                         <td>:</td>
-                        <td colspan="3"> </td>
+                        <td colspan="3"><?= $value->alasan_mutasi ?></td>
                     </tr>
                     <tr>
                         <td>20</td>
