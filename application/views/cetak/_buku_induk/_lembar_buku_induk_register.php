@@ -544,7 +544,7 @@
                             <td></td>
                             <td>a. Tanggal</td>
                             <td>:</td>
-                            <td><?= $value->tanggal_keluar != '0000-00-00' ? date('d m Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
+                            <td><?= $value->tanggal_keluar != '0000-00-00' or $value->tanggal_keluar != null ? date('d m Y', strtotime($value->tanggal_keluar)) : ''; ?></td>
                         </tr>
                         <!-- <tr>
                             <td></td>
